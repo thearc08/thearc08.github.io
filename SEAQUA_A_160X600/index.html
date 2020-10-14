@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- click thru -->
+     <style>
+        #clicktagger {
+            background-color: rgba(255,255,255,0);
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 160px;
+            height: 600px;
+            z-index: 5000;
+        }
+    </style>
+<script>
+document.write('<script src="'+ (window.API_URL || 'https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv='+ Math.random()) +'"><\/script>');
+</script>
+
+</head>
+
+<body>
+	<div id="clicktagger" onclick="javascript:window.open(dhtml.getVar('clickTAG'),'_blank');" 	onmouseover="javascript:this.style.cursor='pointer';" onmouseout="javascript:this.style.cursor='auto';"></div>
+    <div id="ad">
+        <div id="banner">
+	 
+			<div id="copywrapper">
+				<div id="copy1g"><img src="images/160x600_copy1g.png" width="94px" height="143px"></div>
+				<div id="copy1w"><img src="images/160x600_copy1w.png" width="94px" height="144px"></div>
+				<div id="copy2"><img src="images/160x600_copy2.png" width="122px" height="240px"></div>
+			</div>
+        	<div id="cta"><img src="images/160x600_cta.png" width="133px" height="35px"/></div>
+        	<div id="logo"><img src="images/160x600_logo.png" width="120px" height="100px"/></div>
+
+
+			<div id="clouds"><img src="images/160x600_clouds.png" width="348px" height="347px"></div>
+
+
+			<div id="octowrapper">
+				<div id="octobody"><img src="images/160x600_octobody.png" width="124px" height="71px"></div>
+				<div id="octoarm1"><img src="images/160x600_octoarm1.png" width="147px" height="125px"></div>
+				<div id="octoarm2"><img src="images/160x600_octoarm2.png" width="91px" height="195px"></div>
+				<div id="octoarm3"><img src="images/160x600_octoarm3.png" width="206px" height="119px"></div>
+			</div>
+
+			<div id="wavefg"><img src="images/160x600_wavefg.png" width="363px" height="246px"></div>
+			 <!-- background -->
+			 <div id="background"><img src="images/160x600_bg.png" width="161px" height="739px"></div>
+			 
+	    </div><!-- end banner -->
+    </div>
+
+    
+<!-- greensock -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>
+<!-- <script src="../GSDevTools.min.js"></script> -->
+<script src="CustomEase.min.js"></script>
+<script src="CustomWiggle.min.js"></script>
+		<script>
+				//GSDevtools
+// 				GSDevTools.create();
+				
+				function fadeIn(){
+					var tl = new TimelineMax();
+						tl.from(["#background","#copywrapper","#wavefg","#clouds","#octowrapper","#octoarm1","#octoarm2","#octoarm3","#octobody"], 0.5, { autoAlpha:0 });
+					return tl;
+				}
+				
+				function clouds(){
+					var tl = new TimelineMax({id:"clouds"});
+						tl.to(["#clouds"], 9.5, { x:50, ease: "none" })
+					return tl;
+				}
+				
+				function pan(){
+					var tl = new TimelineMax({id:"pan"});
+						tl.to(["#background"], 4, { y:-90 })
+						  .to(["#clouds"], 4, { y: -380 },"-=4")
+						  .to(["#copywrapper"], 4, { y:-272 },"-=4")
+						  .from(["#wavefg"], 4, { y:400 }, "-=4")
+						  .from(["#octowrapper"], 4, { y:400 }, "-=4")
+						  
+
+					return tl;
+				}
+				
+				function octoFloat(){
+					var tl = new TimelineMax({id:"octoFloat"});
+						tl.to("#octowrapper", 9.2, { x: -1, y: -1, ease:"myWiggle"})
+					return tl;
+				}
+				
+				function waves(){
+					var tl = new TimelineMax({id:"waves"});
+						tl.to("#wavefg", 14, { x:20, ease:"waveWiggle" })
+					return tl;
+				}
+				
+				
+				function copy1(){
+					var tl = new TimelineMax({id:"copy1"});
+						tl.from(["#copy1g"], .75, { x:-25, autoAlpha: 0})
+					return tl;
+				}
+
+				function copy2(){
+					var tl = new TimelineMax({id:"copy2"});
+						tl.to("#copy1g", .75, { autoAlpha: 0 })
+						  .from(["#copy1w"], .75, {autoAlpha: 0},"-=.75")
+					return tl;
+				}
+
+				function copy3(){
+					var tl = new TimelineMax({id:"copy3"});
+						tl.from(["#copy2"], .75, { x: -25, autoAlpha: 0})
+					return tl;
+				}
+
+				function armWave1(){
+					var tl = new TimelineMax({id:"armWave1"});
+						tl.to(["#octoarm1"], 5.25, { rotate: "-4deg", repeat:1, yoyo:true, ease:"armWiggle" })
+						tl.to(["#octoarm1"], 5.25, { x: 50, y: 10  },"-=11.9")
+					return tl;
+				}
+
+				function armWave2(){
+					var tl = new TimelineMax({id:"armWave2"});
+						tl.to(["#octoarm2"], 5.95, { rotate: "8deg", repeat:1, yoyo:true, ease:"armWiggle" })
+						tl.to(["#octoarm2"], 5.95, { x: 70, y: -10  },"-=10.5")
+					return tl;
+				}
+
+				function armWave3(){
+					var tl = new TimelineMax({id:"armWave3"});
+						tl.to(["#octoarm3"], 5.6, { rotate: "5deg", repeat:1, yoyo:true, ease:"armWiggle" })
+					return tl;
+				}
+
+
+				
+				function endframe(){
+					var tl = new TimelineMax({id:"endframe"}); 							
+						tl.from(["#cta", "#logo"], .75, { scale:0, autoAlpha: 0, stagger: .5 })
+					return tl;
+				}				
+
+
+				CustomWiggle.create("myWiggle", {wiggles:8, type:"random"});
+				CustomWiggle.create("waveWiggle", {wiggles:4, type:"uniform"});
+				CustomWiggle.create("armWiggle", {wiggles:3, type:"easeInOut"});
+				
+				var master = new TimelineMax ();
+	
+	
+				//master timeline
+				
+				
+				master.add(fadeIn())
+					  .add(clouds(),"-=.5")
+					  .add(copy1(),"-=9")
+					  .add(pan(),"-=7.5")
+					  .add(copy2(),"-=7.5")
+					  .add(copy3(),"-=6.5")
+					  .add(octoFloat(),"-=3.75")
+					  .add(armWave1(), 2)
+					  .add(armWave2(), 1.8)
+					  .add(armWave3(), 2)
+					  .add(endframe(),"-=9.75")
+					  .add(waves(), .5)
+  					  ;
+				
+		
+		
+			
+		</script><!-- end greensock animation -->
+	
+	
+</body>
+</html>

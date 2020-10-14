@@ -1,0 +1,82 @@
+body { margin: 0px; padding: 0px; }
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(0, 0, 0) 1px solid;
+    width: 298px;
+    height: 48px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #76CAD2; 
+  
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 298px;
+    height: 48px;
+    background-color: #76CAD2;
+    overflow: hidden;
+}
+/* set positions */
+#background, #copywrapper, #copy1g, #copy1w, #copy2, #cta, #logo, #clouds, #wavefg, #octowrapper, #octobody, #octoarm1, #octoarm2, #octoarm3 {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	visibility: hidden;
+}
+
+#background { z-index: 9; }
+
+#wavefg { left: -120px; top: 33px; z-index: 20;  }
+
+
+#octowrapper { left: 228px; top: 15px }
+
+#octobody { z-index: 15; left: 25px;}
+
+#octoarm1 { 
+	z-index: 16; 
+	top: 22px; 
+	left: -20px;
+	transform: rotate(9deg);
+	transform-origin: bottom right
+}
+		
+#octoarm2 { 
+	z-index: 12;
+	top: 10px;
+	left: 15px;
+	transform: rotate(6deg);
+	transform-origin: bottom right;
+ }
+
+#octoarm3 { 
+	z-index: 11;
+	top: -24px;
+	left: 48px;
+	transform: rotate(-12deg);
+	transform-origin: bottom right;
+}
+
+
+
+
+#clouds { left: -69px; top: -30px;}
+
+
+
+#copywrapper { top: 26px; left: 8px; z-index: 23 }
+
+
+#cta { top:62px; left: 80px; z-index: 32; }
+#logo { top: 56px; left: 215px; z-index: 32; }
+
