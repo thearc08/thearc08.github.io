@@ -6,96 +6,70 @@
     <title></title>
     <link rel="stylesheet" href="style.css" />
     <!-- click thru -->
-    <style>
-      #clicktagger {
-          background-color: rgba(255,255,255,0);
-          position: absolute;
-          left: 0px;
-          top: 0px;
-          z-index: 5000;
-          height: 50px;
-          width: 300px; 
-      }
-    </style>
-    <script>
-      document.write(
-        '<script src="' +
-          (window.API_URL ||
-            "https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv=" +
-              Math.random()) +
-          '"><\/script>'
-      );
-    </script>
   </head>
 
   <body>
-    <div
-      id="clicktagger"
-      onclick="javascript:window.open(dhtml.getVar('clickTAG'),'_blank');"
-      onmouseover="javascript:this.style.cursor='pointer';"
-      onmouseout="javascript:this.style.cursor='auto';"
-    ></div>
     <div id="ad">
       <div id="banner">
         <div id="copywrapper">
           <div id="copy1g">
-            <img src="images/300x50_copy1g.png" width="114px" height="20px" />
+            <img src="images/copy1g.png" width="220px" height="38px" />
           </div>
           <div id="copy1w">
-            <img src="images/300x50_copy1w.png" width="114px" height="20px" />
+            <img src="images/copy1w.png" width="220px" height="38px" />
           </div>
           <div id="copy2">
-            <img src="images/300x50_copy2.png" width="213px" height="20px" />
+            <img src="images/copy2.png" width="188px" height="115px" />
           </div>
         </div>
         <div id="cta">
-          <img src="images/300x50_cta.png" width="102px" height="26px" />
+          <img src="images/cta.png" width="109px" height="28px" />
         </div>
         <div id="logo">
-          <img src="images/300x50_logo.png" width="79px" height="38px" />
+          <img src="images/logo.png" width="75px" height="61px" />
         </div>
 
         <div id="clouds">
-          <img src="images/300x50_clouds.png" width="433px" height="70px" />
+          <img src="images/clouds.png" width="1042px" height="107px" />
         </div>
 
         <div id="octowrapper">
           <div id="octobody">
-            <img src="images/300x50_octobody.png" width="49px" height="28px" />
+            <img src="images/octobody.png" width="124px" height="71px" />
           </div>
           <div id="octoarm1">
-            <img src="images/300x50_octoarm1.png" width="68px" height="29px" />
+            <img src="images/octoarm1.png" width="173px" height="75px" />
           </div>
           <div id="octoarm2">
-            <img src="images/300x50_octoarm2.png" width="64px" height="42px" />
+            <img src="images/octoarm2.png" width="164px" height="107px" />
           </div>
           <div id="octoarm3">
-            <img src="images/300x50_octoarm3.png" width="38px" height="67px" />
+            <img src="images/octoarm3.png" width="106px" height="165px" />
           </div>
         </div>
 
         <div id="wavefg">
-          <img src="images/300x50_wavefg.png" width="462px" height="63px" />
+          <img src="images/wavefg.png" width="944px" height="67px" />
         </div>
         <!-- background -->
         <div id="background">
-          <img src="images/300x50_bg.png" width="301px" height="110px" />
+          <img src="images/bg.png" width="729px" height="200px" />
         </div>
       </div>
       <!-- end banner -->
     </div>
 
     <!-- greensock -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>
+    <script src="../gsap.min.js"></script>
     <!-- <script src="../GSDevTools.min.js"></script> -->
-    <script src="CustomEase.min.js"></script>
-    <script src="CustomWiggle.min.js"></script>
+    <script src="../CustomEase.min.js"></script>
+    <script src="../CustomWiggle.min.js"></script>
     <script>
       //GSDevtools
       // 				GSDevTools.create();
 
       function fadeIn() {
-        var tl = new TimelineMax();
+        var tl = gsap.timeline();
         tl.from(
           [
             "#background",
@@ -107,8 +81,6 @@
             "#octoarm2",
             "#octoarm3",
             "#octobody",
-            "#logo",
-            "#cta",
           ],
           0.5,
           { autoAlpha: 0 }
@@ -117,41 +89,42 @@
       }
 
       function clouds() {
-        var tl = new TimelineMax({ id: "clouds" });
+        var tl = gsap.timeline({ id: "clouds" });
         tl.to(["#clouds"], 9.5, { x: 50, ease: "none" });
         return tl;
       }
 
       function pan() {
-        var tl = new TimelineMax({ id: "pan" });
-        tl.to(["#background"], 4, { y: -50 })
-          .to(["#clouds"], 4, { y: -70 }, "-=4")
-          .to(["#copywrapper"], 2.75, { y: -14 }, "-=4")
-          .from(["#wavefg", "#octowrapper"], 4, { y: 125 }, "-=4");
+        var tl = gsap.timeline({ id: "pan" });
+        tl.to(["#background"], 4, { y: -90 })
+          .to(["#clouds"], 4, { y: -90 }, "-=4")
+          .to(["#copywrapper"], 2.75, { y: -44 }, "-=4")
+          .from(["#wavefg"], 4, { y: 125 }, "-=4")
+          .from(["#octowrapper"], 4, { y: 125 }, "-=4");
 
         return tl;
       }
 
       function octoFloat() {
-        var tl = new TimelineMax({ id: "octoFloat" });
+        var tl = gsap.timeline({ id: "octoFloat" });
         tl.to("#octowrapper", 9.2, { x: -1, y: -1, ease: "myWiggle" });
         return tl;
       }
 
       function waves() {
-        var tl = new TimelineMax({ id: "waves" });
+        var tl = gsap.timeline({ id: "waves" });
         tl.to("#wavefg", 14, { x: 20, ease: "waveWiggle" });
         return tl;
       }
 
       function copy1() {
-        var tl = new TimelineMax({ id: "copy1" });
+        var tl = gsap.timeline({ id: "copy1" });
         tl.from(["#copy1g"], 0.75, { x: -25, autoAlpha: 0 });
         return tl;
       }
 
       function copy2() {
-        var tl = new TimelineMax({ id: "copy2" });
+        var tl = gsap.timeline({ id: "copy2" });
         tl.to("#copy1g", 0.75, { autoAlpha: 0 }).from(
           ["#copy1w"],
           0.75,
@@ -162,26 +135,26 @@
       }
 
       function copy3() {
-        var tl = new TimelineMax({ id: "copy3" });
+        var tl = gsap.timeline({ id: "copy3" });
         tl.from(["#copy2"], 0.75, { x: -25, autoAlpha: 0 });
         return tl;
       }
 
       function armWave1() {
-        var tl = new TimelineMax({ id: "armWave1" });
-        tl.to(["#octoarm1"], 3.25, {
+        var tl = gsap.timeline({ id: "armWave1" });
+        tl.to(["#octoarm1"], 5.25, {
           rotate: "-6deg",
           repeat: 1,
           yoyo: true,
           ease: "armWiggle",
         });
-        tl.to(["#octoarm1"], 3.25, { x: 10, y: -10 }, "-=11.9");
+        tl.to(["#octoarm1"], 5.25, { x: 10, y: -10 }, "-=11.9");
         return tl;
       }
 
       function armWave2() {
-        var tl = new TimelineMax({ id: "armWave2" });
-        tl.to(["#octoarm2"], 3.95, {
+        var tl = gsap.timeline({ id: "armWave2" });
+        tl.to(["#octoarm2"], 5.95, {
           rotate: "19deg",
           repeat: 1,
           yoyo: true,
@@ -192,8 +165,8 @@
       }
 
       function armWave3() {
-        var tl = new TimelineMax({ id: "armWave3" });
-        tl.to(["#octoarm3"], 3.3, {
+        var tl = gsap.timeline({ id: "armWave3" });
+        tl.to(["#octoarm3"], 5.3, {
           rotate: "5deg",
           repeat: 1,
           yoyo: true,
@@ -202,25 +175,13 @@
         return tl;
       }
 
-      function ctaUp() {
-        var tl = new TimelineMax({ id: "ctaUp" });
-        tl.to(["#wavefg", "#background", "#octowrapper"], 1, { y: -38 }).to(
-          ["#copywrapper", "#cta", "#logo"],
-          1,
-          { y: "-=50" },
-          "-=1"
-        );
-        return tl;
-      }
-
-      function ctaDown() {
-        var tl = new TimelineMax({ id: "ctaDown" });
-        tl.to(["#wavefg", "#background", "#octowrapper"], 1, { y: "+=38" }).to(
-          ["#copywrapper", "#cta", "#logo"],
-          1,
-          { y: "+=50" },
-          "-=1"
-        );
+      function endframe() {
+        var tl = gsap.timeline({ id: "endframe" });
+        tl.from(["#cta", "#logo"], 0.75, {
+          scale: 0,
+          autoAlpha: 0,
+          stagger: 0.5,
+        });
         return tl;
       }
 
@@ -228,7 +189,7 @@
       CustomWiggle.create("waveWiggle", { wiggles: 4, type: "uniform" });
       CustomWiggle.create("armWiggle", { wiggles: 3, type: "easeInOut" });
 
-      var master = new TimelineMax();
+      var master = gsap.timeline();
 
       //master timeline
 
@@ -243,9 +204,7 @@
         .add(armWave1(), 2)
         .add(armWave2(), 1.8)
         .add(armWave3(), 2)
-        .add(ctaUp(), "-=7.75")
-        .add(ctaDown(), "-=5.75")
-        .add(ctaUp(), "-=3.75")
+        .add(endframe(), "-=9.75")
         .add(waves(), 0.5);
     </script>
     <!-- end greensock animation -->

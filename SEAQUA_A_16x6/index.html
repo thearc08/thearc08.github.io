@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="ad">
+      <div id="banner">
+        <div id="copywrapper">
+          <div id="copy1g">
+            <img src="images/copy1g.png" width="94px" height="143px" />
+          </div>
+          <div id="copy1w">
+            <img src="images/copy1w.png" width="94px" height="144px" />
+          </div>
+          <div id="copy2">
+            <img src="images/copy2.png" width="122px" height="240px" />
+          </div>
+        </div>
+        <div id="cta">
+          <img src="images/cta.png" width="133px" height="35px" />
+        </div>
+        <div id="logo">
+          <img src="images/logo.png" width="120px" height="100px" />
+        </div>
+
+        <div id="clouds">
+          <img src="images/clouds.png" width="348px" height="347px" />
+        </div>
+
+        <div id="octowrapper">
+          <div id="octobody">
+            <img src="images/octobody.png" width="124px" height="71px" />
+          </div>
+          <div id="octoarm1">
+            <img src="images/octoarm1.png" width="147px" height="125px" />
+          </div>
+          <div id="octoarm2">
+            <img src="images/octoarm2.png" width="91px" height="195px" />
+          </div>
+          <div id="octoarm3">
+            <img src="images/octoarm3.png" width="206px" height="119px" />
+          </div>
+        </div>
+
+        <div id="wavefg">
+          <img src="images/wavefg.png" width="363px" height="246px" />
+        </div>
+        <!-- background -->
+        <div id="background">
+          <img src="images/bg.png" width="161px" height="739px" />
+        </div>
+      </div>
+      <!-- end banner -->
+    </div>
+
+    <!-- greensock -->
+    <script src="../gsap.min.js"></script>
+    <!-- <script src="../GSDevTools.min.js"></script> -->
+    <script src="../CustomEase.min.js"></script>
+    <script src="../CustomWiggle.min.js"></script>
+    <script>
+      //GSDevtools
+      // 				GSDevTools.create();
+
+      function fadeIn() {
+        var tl = gsap.timeline();
+        tl.from(
+          [
+            "#background",
+            "#copywrapper",
+            "#wavefg",
+            "#clouds",
+            "#octowrapper",
+            "#octoarm1",
+            "#octoarm2",
+            "#octoarm3",
+            "#octobody",
+          ],
+          0.5,
+          { autoAlpha: 0 }
+        );
+        return tl;
+      }
+
+      function clouds() {
+        var tl = gsap.timeline({ id: "clouds" });
+        tl.to(["#clouds"], 9.5, { x: 50, ease: "none" });
+        return tl;
+      }
+
+      function pan() {
+        var tl = gsap.timeline({ id: "pan" });
+        tl.to(["#background"], 4, { y: -90 })
+          .to(["#clouds"], 4, { y: -380 }, "-=4")
+          .to(["#copywrapper"], 4, { y: -272 }, "-=4")
+          .from(["#wavefg"], 4, { y: 400 }, "-=4")
+          .from(["#octowrapper"], 4, { y: 400 }, "-=4");
+
+        return tl;
+      }
+
+      function octoFloat() {
+        var tl = gsap.timeline({ id: "octoFloat" });
+        tl.to("#octowrapper", 9.2, { x: -1, y: -1, ease: "myWiggle" });
+        return tl;
+      }
+
+      function waves() {
+        var tl = gsap.timeline({ id: "waves" });
+        tl.to("#wavefg", 14, { x: 20, ease: "waveWiggle" });
+        return tl;
+      }
+
+      function copy1() {
+        var tl = gsap.timeline({ id: "copy1" });
+        tl.from(["#copy1g"], 0.75, { x: -25, autoAlpha: 0 });
+        return tl;
+      }
+
+      function copy2() {
+        var tl = gsap.timeline({ id: "copy2" });
+        tl.to("#copy1g", 0.75, { autoAlpha: 0 }).from(
+          ["#copy1w"],
+          0.75,
+          { autoAlpha: 0 },
+          "-=.75"
+        );
+        return tl;
+      }
+
+      function copy3() {
+        var tl = gsap.timeline({ id: "copy3" });
+        tl.from(["#copy2"], 0.75, { x: -25, autoAlpha: 0 });
+        return tl;
+      }
+
+      function armWave1() {
+        var tl = gsap.timeline({ id: "armWave1" });
+        tl.to(["#octoarm1"], 5.25, {
+          rotate: "-4deg",
+          repeat: 1,
+          yoyo: true,
+          ease: "armWiggle",
+        });
+        tl.to(["#octoarm1"], 5.25, { x: 50, y: 10 }, "-=11.9");
+        return tl;
+      }
+
+      function armWave2() {
+        var tl = gsap.timeline({ id: "armWave2" });
+        tl.to(["#octoarm2"], 5.95, {
+          rotate: "8deg",
+          repeat: 1,
+          yoyo: true,
+          ease: "armWiggle",
+        });
+        tl.to(["#octoarm2"], 5.95, { x: 70, y: -10 }, "-=10.5");
+        return tl;
+      }
+
+      function armWave3() {
+        var tl = gsap.timeline({ id: "armWave3" });
+        tl.to(["#octoarm3"], 5.6, {
+          rotate: "5deg",
+          repeat: 1,
+          yoyo: true,
+          ease: "armWiggle",
+        });
+        return tl;
+      }
+
+      function endframe() {
+        var tl = gsap.timeline({ id: "endframe" });
+        tl.from(["#cta", "#logo"], 0.75, {
+          scale: 0,
+          autoAlpha: 0,
+          stagger: 0.5,
+        });
+        return tl;
+      }
+
+      CustomWiggle.create("myWiggle", { wiggles: 8, type: "random" });
+      CustomWiggle.create("waveWiggle", { wiggles: 4, type: "uniform" });
+      CustomWiggle.create("armWiggle", { wiggles: 3, type: "easeInOut" });
+
+      var master = gsap.timeline();
+
+      //master timeline
+
+      master
+        .add(fadeIn())
+        .add(clouds(), "-=.5")
+        .add(copy1(), "-=9")
+        .add(pan(), "-=7.5")
+        .add(copy2(), "-=7.5")
+        .add(copy3(), "-=6.5")
+        .add(octoFloat(), "-=3.75")
+        .add(armWave1(), 2)
+        .add(armWave2(), 1.8)
+        .add(armWave3(), 2)
+        .add(endframe(), "-=9.75")
+        .add(waves(), 0.5);
+    </script>
+    <!-- end greensock animation -->
+  </body>
+</html>
