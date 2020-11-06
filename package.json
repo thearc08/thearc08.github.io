@@ -1,0 +1,22 @@
+{
+  "name": "thearc08.github.io",
+  "version": "1.0.0",
+  "description": "You can use the [editor on GitHub](https://github.com/thearc08/thearc08.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.",
+  "main": "index.js",
+  "scripts": { "start": "lite-server"},
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thearc08/thearc08.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thearc08/thearc08.github.io/issues"
+  },
+  "homepage": "https://github.com/thearc08/thearc08.github.io#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
