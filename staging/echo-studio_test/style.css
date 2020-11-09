@@ -40,6 +40,11 @@
   z-index: 16;
 }
 
-#light {
+#light-wrapper,
+#dark-light {
   z-index: 17;
+}
+
+#light {
+  z-index: 18;
 }
