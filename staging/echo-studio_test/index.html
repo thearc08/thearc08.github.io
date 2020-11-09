@@ -49,6 +49,7 @@
         <img src="images/speaker-5.png" alt="" />
       </div>
       <div id="top" class="set"><img src="images/top.png" alt="" /></div>
+      <div id="shadow" class="set"><img src="images/shadow.png" alt="" /></div>
     </div>
     <script>
       //Activate Dev tools
@@ -98,6 +99,11 @@
         tl.from("#speaker-4", 2, { x: 1500, y: 1500, ease: "expo.out" });
         return tl;
       }
+      function shadow() {
+        var tl = gsap.timeline({ id: "shadow" });
+        tl.from("#shadow", 1, { autoAlpha: 0 });
+        return tl;
+      }
       function bodyReveal() {
         var tl = gsap.timeline({ id: "body" });
         tl.from("#body-back", 4, {
@@ -125,7 +131,8 @@
           .add(speaker1(), 1.6)
           .add(speaker3(), 1.7)
           .add(speaker4(), 1.4)
-          .add(bodyReveal(), 0.25);
+          .add(bodyReveal(), 0.25)
+          .add(shadow(), 3.5);
       };
     </script>
   </body>

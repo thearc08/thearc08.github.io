@@ -67,18 +67,16 @@
           <div id="lid" class="set">
             <img src="images/lid.png" alt="" width="300px" height="250px" />
           </div>
-          <div id="light-wrapper" class="set">
-            <div id="light" class="set">
-              <img src="images/light.png" alt="" width="300px" height="250px" />
-            </div>
-            <div id="dark-light" class="set">
-              <img
-                src="images/dark-light.png"
-                alt=""
-                width="300px"
-                height="250px"
-              />
-            </div>
+          <div id="light" class="set">
+            <img src="images/light.png" alt="" width="300px" height="250px" />
+          </div>
+          <div id="dark-light" class="set">
+            <img
+              src="images/dark-light.png"
+              alt=""
+              width="300px"
+              height="250px"
+            />
           </div>
           <div id="speaker-1" class="set">
             <img
@@ -123,6 +121,9 @@
           <div id="top" class="set">
             <img src="images/top.png" alt="" width="300px" height="250px" />
           </div>
+          <div id="shadow" class="set">
+            <img src="images/shadow.png" width="300px" height="250px" alt="" />
+          </div>
         </div>
       </div>
     </div>
@@ -149,9 +150,13 @@
           stagger: 0.2,
           ease: "expo.out",
         })
-          .from("#light-wrapper", 2.75, { y: -500, ease: "expo.Out" }, "-=3.5")
+          .from(
+            ["#light", "#dark-light"],
+            2.75,
+            { y: -500, ease: "expo.Out" },
+            "-=3.5"
+          )
           .from("#light", 1, { autoAlpha: 0 }, "+=.5");
-
         return tl;
       }
       function speaker1() {
@@ -201,24 +206,32 @@
       }
       function echoLogo() {
         var tl = gsap.timeline({ id: "echo-logo" });
-        tl.from(["#echo-logo"], 0.75, { scale: 0 });
+        tl.from(["#echo-logo"], 0.75, { x: 250 });
         return tl;
       }
       function price() {
         var tl = gsap.timeline({ id: "price" });
-        tl.from(["#high-price"], 0.75, { x: -250 })
-          .from("#slash", 0.5, {
-            clip: "rect(0px, 300px, 250px, 300px)",
-          })
-          .from("#low-price", 0.5, { scale: 0 });
+        tl.from(["#high-price"], 0.75, { x: -150 })
+          .from(
+            "#slash",
+            0.5,
+            {
+              clip: "rect(0px, 300px, 250px, 300px)",
+            },
+            "-=.25"
+          )
+          .from("#low-price", 0.5, { x: -150 }, "-=.25");
         return tl;
       }
 
       function endFrame() {
         var tl = gsap.timeline({ id: "endframe" });
-        tl.from(["#dolby-logo"], 0.75, { x: 150 }).from("#cta", 0.5, {
-          scale: 0,
-        });
+        tl.from(["#dolby-logo", "#cta"], 0.75, { x: 150, stagger: 0.5 });
+        return tl;
+      }
+      function shadow() {
+        var tl = gsap.timeline({ id: "shadow" });
+        tl.from("#shadow", 3, { autoAlpha: 0 });
         return tl;
       }
 
@@ -233,10 +246,11 @@
           .add(speaker3(), 1.7)
           .add(speaker4(), 1.4)
           .add(bodyReveal(), 0.25)
+          .add(shadow(), 2.5)
           .add(copy1(), 3.75)
-          .add(echoLogo(), 5.25)
+          .add(echoLogo(), 5)
           .add(price(), 5.75)
-          .add(endFrame(), 7);
+          .add(endFrame(), 5.75);
       };
     </script>
   </body>

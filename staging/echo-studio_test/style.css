@@ -35,9 +35,13 @@
   z-index: 12;
 }
 
-#top,
+#top {
+  top: -2px;
+  z-index: 18;
+}
 #lid {
-  z-index: 16;
+  top: -4px;
+  z-index: 19;
 }
 
 #light-wrapper,
@@ -46,5 +50,5 @@
 }
 
 #light {
-  z-index: 18;
+  z-index: 20;
 }

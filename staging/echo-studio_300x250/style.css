@@ -36,7 +36,7 @@
   width: 300px;
   height: 250px;
   transform-origin: top left;
-  top: 12px;
+  top: 5px;
 }
 
 #bg {
@@ -62,9 +62,13 @@
   z-index: 12;
 }
 
-#top,
+#top {
+  top: 0px;
+  z-index: 18;
+}
 #lid {
-  z-index: 16;
+  top: 0px;
+  z-index: 19;
 }
 
 #light-wrapper,
@@ -73,7 +77,7 @@
 }
 
 #light {
-  z-index: 18;
+  z-index: 25;
 }
 
 #copy1a {
