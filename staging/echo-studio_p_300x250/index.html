@@ -143,9 +143,12 @@
       //Animation timelines
       function fadeIn() {
         var tl = gsap.timeline({ id: "fadeIn" });
-        tl.from("#speaker-wrapper", 1, {
-          autoAlpha: 0,
-        });
+        tl
+          .from("#speaker-wrapper", 1, {
+            autoAlpha: 0,
+          })
+          .from(["#copy1a", "#copy1b"], 0.5, { x: 500, stagger: 0.2 }),
+          "-=1.5";
         return tl;
       }
       function enterTop() {
@@ -252,18 +255,18 @@
         var main = gsap.timeline();
         main
           .add(fadeIn())
-          .add(enterTop(), 0.5)
-          .add(speaker2(), 1.5)
-          .add(speaker1(), 1.6)
-          .add(speaker3(), 1.7)
-          .add(speaker4(), 1.4)
-          .add(bodyReveal(), 0.25)
-          .add(shadow(), 2.5)
-          .add(copy1(), 3.75)
-          .add(copy2(), 4)
-          .add(echoLogo(), 5)
-          .add(price(), 5.75)
-          .add(endFrame(), 5.75);
+          .add(enterTop(), 1.5)
+          .add(speaker2(), 2.5)
+          .add(speaker1(), 2.6)
+          .add(speaker3(), 2.7)
+          .add(speaker4(), 2.4)
+          .add(bodyReveal(), 1.25)
+          .add(shadow(), 3.5)
+          .add(copy1(), 4.75)
+          .add(copy2(), 5)
+          .add(echoLogo(), 6)
+          .add(price(), 6.75)
+          .add(endFrame(), 6.75);
       };
     </script>
   </body>
