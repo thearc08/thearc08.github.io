@@ -40,7 +40,6 @@
 
 #bg {
   z-index: 5;
-  opacity: 0.8;
 }
 
 #bass {
@@ -80,13 +79,13 @@
 }
 
 #copy1a {
-  clip: rect(0 300px 74px 0);
+  clip: rect(0 300px 73px 0);
 }
 #copy1b {
-  clip: rect(75px 300px 120px 0);
+  clip: rect(74px 300px 118px 0);
 }
 #copy1c {
-  clip: rect(121px 300px 600px 0);
+  clip: rect(119px 300px 600px 0);
 }
 #copy2a {
   clip: rect(0 300px 60px 0);
