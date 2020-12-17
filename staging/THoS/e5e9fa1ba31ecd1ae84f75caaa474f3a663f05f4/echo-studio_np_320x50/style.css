@@ -1,0 +1,88 @@
+#ad {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border: rgb(0, 0, 0) 1px solid;
+  width: 318px;
+  height: 48px;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+}
+#banner {
+  position: absolute;
+  display: block;
+  width: 318px;
+  height: 48px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.set {
+  position: absolute;
+  display: block;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  visibility: hidden;
+}
+
+#bg {
+  z-index: 5;
+}
+
+#bass {
+  z-index: 11;
+}
+
+#body-back,
+#body-full {
+  clip: rect(0, 320px, 50px, 0);
+}
+
+#body-full {
+  z-index: 15;
+}
+
+#speaker-4,
+#speaker-3 {
+  z-index: 12;
+}
+
+#top {
+  top: 0px;
+  z-index: 18;
+}
+#lid {
+  top: 0px;
+  z-index: 19;
+}
+
+#light-wrapper,
+#dark-light {
+  z-index: 17;
+}
+
+#dolby-logo {
+  top: 50px;
+}
+#light {
+  z-index: 25;
+}
+
+#slash {
+  clip: rect(0 320px 50px 0);
+}
+
+#low-price {
+  transform-origin: 40px 220px;
+}
+
+#cta {
+  transform-origin: 250px 208px;
+}

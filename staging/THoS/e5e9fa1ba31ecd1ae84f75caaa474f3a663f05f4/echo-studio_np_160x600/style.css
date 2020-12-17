@@ -1,0 +1,117 @@
+#ad {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border: rgb(0, 0, 0) 1px solid;
+  width: 158px;
+  height: 598px;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #fff;
+
+  overflow: hidden;
+}
+#banner {
+  position: absolute;
+  display: block;
+  width: 158px;
+  height: 598px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.set {
+  position: absolute;
+  display: block;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  visibility: hidden;
+}
+
+#speaker-wrapper {
+  width: 160px;
+  height: 600px;
+  transform-origin: top left;
+  top: -40px;
+}
+
+#bg {
+  z-index: 5;
+}
+
+#bass {
+  z-index: 11;
+}
+
+#body-back,
+#body-full {
+  clip: rect(0, 160px, 600px, 0);
+}
+
+#body-full {
+  z-index: 15;
+}
+
+#speaker-4,
+#speaker-3 {
+  z-index: 12;
+}
+
+#top {
+  top: 0px;
+  z-index: 18;
+}
+#lid {
+  top: 0px;
+  z-index: 19;
+}
+
+#light-wrapper,
+#dark-light {
+  z-index: 17;
+}
+
+#light {
+  z-index: 25;
+}
+
+#copy1a {
+  clip: rect(0 160px 94px 0);
+}
+#copy1b {
+  clip: rect(95px 160px 125px 0);
+}
+#copy1c {
+  clip: rect(126px 160px 600px 0);
+}
+#copy2a {
+  clip: rect(0 160px 67px 0);
+}
+#copy2b {
+  clip: rect(68px 160px 98px 0);
+}
+#copy2c {
+  clip: rect(99px 160px 125px 0);
+}
+#copy2d {
+  clip: rect(126px 160px 157px 0);
+}
+#copy2e {
+  clip: rect(158px 160px 600px 0);
+}
+
+#slash {
+  clip: rect(0 160px 600px 0);
+}
+
+#low-price {
+  transform-origin: 40px 220px;
+}
+
+#cta {
+  transform-origin: 600px 208px;
+}

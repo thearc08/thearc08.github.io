@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="ad.size" content="width=320,height=50" />
+    <title>Echo Studio 320x50 P</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Greensock -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <!-- Dev tools -->
+    <!-- <script src="../GSDevTools.min.js"></script> -->
+    <script type="text/javascript">
+      var clickTag = "http://www.example.com";
+    </script>
+  </head>
+  <body>
+    <div id="ad" onclick="window.open(window.clickTag, '_blank')">
+      <div id="banner">
+        <div id="price-wrapper" class="set">
+          <div id="low-price" class="set">
+            <img src="images/149.png" alt="" width="320px" height="50px" />
+          </div>
+          <div id="high-price" class="set">
+            <img src="images/199.png" alt="" width="320px" height="50px" />
+          </div>
+          <div id="slash" class="set">
+            <img src="images/slash.png" alt="" width="320px" height="50px" />
+          </div>
+        </div>
+        <div id="bg" class="set">
+          <img src="images/bg.jpg" alt="" width="320px" height="50px" />
+        </div>
+        <div id="copy1" class="set">
+          <img src="images/copy1.png" alt="" width="320px" height="50px" />
+        </div>
+        <div id="cta" class="set">
+          <img src="images/cta.png" alt="" width="320px" height="50px" />
+        </div>
+        <div id="echo-logo" class="set">
+          <img src="images/echo-logo.png" alt="" width="320px" height="50px" />
+        </div>
+      </div>
+    </div>
+    <script>
+      //Activate Dev tools
+      // GSDevTools.create();
+
+      //Define variables
+      //Animation timelines
+      function fadeIn() {
+        var tl = gsap.timeline({ id: "fadeIn" });
+        tl.from(
+          [
+            "#low-price",
+            "#high-price",
+            "#slash",
+            "#price-wrapper",
+            "#bg",
+            "#copy1",
+            "#cta",
+            "#dolby-logo",
+            "#echo-logo",
+          ],
+          1,
+          {
+            autoAlpha: 0,
+          }
+        );
+        return tl;
+      }
+      function enterTop() {
+        var tl = gsap.timeline({ id: "enter" });
+        tl.from(["#bottom", "#bass", "#speaker-5", "#lid", "#top"], 3, {
+          y: -500,
+          stagger: 0.2,
+          ease: "expo.out",
+        })
+          .from(
+            ["#light", "#dark-light"],
+            2.75,
+            { y: -500, ease: "expo.Out" },
+            "-=3.5"
+          )
+          .from("#light", 1, { autoAlpha: 0 }, "+=.5");
+        return tl;
+      }
+      function copyUp() {
+        var tl = gsap.timeline({ id: "copy-up" });
+        tl.to(["#copy1"], 0.5, {
+          y: "-=50",
+        });
+        return tl;
+      }
+      function copyDown() {
+        var tl = gsap.timeline({ id: "copy-down" });
+        tl.to(["#copy1"], 0.5, {
+          y: "+=50",
+        });
+        return tl;
+      }
+      function priceUp() {
+        var tl = gsap.timeline({ id: "price-up" });
+        tl.to(["#price-wrapper"], 0.5, { y: "-=50" });
+        return tl;
+      }
+
+      function priceDown() {
+        var tl = gsap.timeline({ id: "price-down" });
+        tl.to(["#price-wrapper"], 0.5, { y: "+=50" });
+        return tl;
+      }
+
+      //Main timeline
+      window.onload = function () {
+        var main = gsap.timeline();
+        main
+          .add(fadeIn())
+          .add(copyUp(), 3)
+          .add(priceUp(), 3)
+          .add(copyDown(), 6)
+          .add(priceDown(), 6)
+          .add(copyUp(), 9)
+          .add(priceUp(), 9)
+          .add(copyDown(), 12)
+          .add(priceDown(), 12);
+      };
+    </script>
+  </body>
+</html>

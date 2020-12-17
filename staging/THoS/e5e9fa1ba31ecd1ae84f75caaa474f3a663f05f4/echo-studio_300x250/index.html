@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Echo Studio 300x250 P</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Greensock -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <!-- Dev tools -->
+    <script src="../GSDevTools.min.js"></script>
+  </head>
+  <body>
+    <div id="ad">
+      <div id="banner">
+        <div id="low-price" class="set">
+          <img src="images/149.png" alt="" width="300px" height="250px" />
+        </div>
+        <div id="high-price" class="set">
+          <img src="images/199.png" alt="" width="300px" height="250px" />
+        </div>
+        <div id="bg" class="set">
+          <img src="images/bg.jpg" alt="" width="300px" height="250px" />
+        </div>
+        <div id="copy1a" class="set">
+          <img src="images/copy1.png" alt="" width="300px" height="250px" />
+        </div>
+        <div id="copy1b" class="set">
+          <img src="images/copy1.png" alt="" width="300px" height="250px" />
+        </div>
+        <div id="cta" class="set">
+          <img src="images/cta.png" alt="" width="300px" height="250px" />
+        </div>
+        <div id="dolby-logo" class="set">
+          <img src="images/dolbylogo.png" alt="" width="300px" height="250px" />
+        </div>
+        <div id="echo-logo" class="set">
+          <img src="images/echo-logo.png" alt="" width="300px" height="250px" />
+        </div>
+        <div id="slash" class="set">
+          <img src="images/slash.png" alt="" width="300px" height="250px" />
+        </div>
+
+        <div id="speaker-wrapper" class="set">
+          <div id="bass" class="set">
+            <img src="images/bass.png" alt="" width="300px" height="250px" />
+          </div>
+          <div id="body-back" class="set">
+            <img
+              src="images/body-back.png"
+              alt=""
+              width="300px"
+              height="250px"
+            />
+          </div>
+          <div id="body-full" class="set">
+            <img
+              src="images/body-full.png"
+              alt=""
+              width="300px"
+              height="250px"
+            />
+          </div>
+          <div id="bottom" class="set">
+            <img src="images/bottom.png" alt="" width="300px" height="250px" />
+          </div>
+          <div id="lid" class="set">
+            <img src="images/lid.png" alt="" width="300px" height="250px" />
+          </div>
+          <div id="light" class="set">
+            <img src="images/light.png" alt="" width="300px" height="250px" />
+          </div>
+          <div id="dark-light" class="set">
+            <img
+              src="images/dark-light.png"
+              alt=""
+              width="300px"
+              height="250px"
+            />
+          </div>
+          <div id="speaker-1" class="set">
+            <img
+              src="images/speaker-1.png"
+              alt=""
+              width="300px"
+              height="250px"
+            />
+          </div>
+          <div id="speaker-2" class="set">
+            <img
+              src="images/speaker-2.png"
+              alt=""
+              width="300px"
+              height="250px"
+            />
+          </div>
+          <div id="speaker-3" class="set">
+            <img
+              src="images/speaker-3.png"
+              alt=""
+              width="300px"
+              height="250px"
+            />
+          </div>
+          <div id="speaker-4" class="set">
+            <img
+              src="images/speaker-4.png"
+              alt=""
+              width="300px"
+              height="250px"
+            />
+          </div>
+          <div id="speaker-5" class="set">
+            <img
+              src="images/speaker-5.png"
+              alt=""
+              width="300px"
+              height="250px"
+            />
+          </div>
+          <div id="top" class="set">
+            <img src="images/top.png" alt="" width="300px" height="250px" />
+          </div>
+          <div id="shadow" class="set">
+            <img src="images/shadow.png" width="300px" height="250px" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      //Activate Dev tools
+      GSDevTools.create();
+
+      //Define variables
+      var speaker =
+        "['#body-back','#body-full','#light-wrapper','#speaker-1','#speaker-2','#speaker-3','#speaker-4','#speaker-5']";
+
+      //Animation timelines
+      function fadeIn() {
+        var tl = gsap.timeline({ id: "fadeIn" });
+        tl.from("#speaker-wrapper", 1, {
+          autoAlpha: 0,
+        });
+        return tl;
+      }
+      function enterTop() {
+        var tl = gsap.timeline({ id: "enter" });
+        tl.from(["#bottom", "#bass", "#speaker-5", "#lid", "#top"], 3, {
+          y: -500,
+          stagger: 0.2,
+          ease: "expo.out",
+        })
+          .from(
+            ["#light", "#dark-light"],
+            2.75,
+            { y: -500, ease: "expo.Out" },
+            "-=3.5"
+          )
+          .from("#light", 1, { autoAlpha: 0 }, "+=.5");
+        return tl;
+      }
+      function speaker1() {
+        var tl = gsap.timeline({ id: "speaker1" });
+        tl.from("#speaker-1", 2, { x: -500, y: -500, ease: "expo.out" });
+        return tl;
+      }
+      function speaker2() {
+        var tl = gsap.timeline({ id: "speaker2" });
+        tl.from("#speaker-2", 2, { x: 500, y: -500, ease: "expo.out" });
+        return tl;
+      }
+      function speaker3() {
+        var tl = gsap.timeline({ id: "speaker3" });
+        tl.from("#speaker-3", 2, { x: -500, y: 500, ease: "expo.out" });
+        return tl;
+      }
+      function speaker4() {
+        var tl = gsap.timeline({ id: "speaker4" });
+        tl.from("#speaker-4", 2, { x: 500, y: 500, ease: "expo.out" });
+        return tl;
+      }
+      function bodyReveal() {
+        var tl = gsap.timeline({ id: "body" });
+        tl.from("#body-back", 4, {
+          clip: "rect(0px, 300px, 250px, 300px)",
+          ease: "power2.in",
+        }).from(
+          "#body-full",
+          4,
+          {
+            clip: "rect(0px, 0px, 250px, 0px)",
+            ease: "power4.out",
+          },
+          "-=.75"
+        );
+        return tl;
+      }
+      function copy1() {
+        var tl = gsap.timeline({ id: "copy1" });
+        tl.from(["#copy1a", "#copy1b"], 1, {
+          x: 300,
+          stagger: 0.3,
+          ease: "power1.out",
+        });
+        return tl;
+      }
+      function echoLogo() {
+        var tl = gsap.timeline({ id: "echo-logo" });
+        tl.from(["#echo-logo"], 0.75, { x: 250 });
+        return tl;
+      }
+      function price() {
+        var tl = gsap.timeline({ id: "price" });
+        tl.from(["#high-price"], 0.75, { x: -150 })
+          .from(
+            "#slash",
+            0.5,
+            {
+              clip: "rect(0px, 300px, 250px, 300px)",
+            },
+            "-=.25"
+          )
+          .from("#low-price", 0.5, { x: -150 }, "-=.25");
+        return tl;
+      }
+
+      function endFrame() {
+        var tl = gsap.timeline({ id: "endframe" });
+        tl.from(["#dolby-logo", "#cta"], 0.75, { x: 150, stagger: 0.5 });
+        return tl;
+      }
+      function shadow() {
+        var tl = gsap.timeline({ id: "shadow" });
+        tl.from("#shadow", 3, { autoAlpha: 0 });
+        return tl;
+      }
+
+      //Main timeline
+      window.onload = function () {
+        var main = gsap.timeline();
+        main
+          .add(fadeIn())
+          .add(enterTop(), 0.5)
+          .add(speaker2(), 1.5)
+          .add(speaker1(), 1.6)
+          .add(speaker3(), 1.7)
+          .add(speaker4(), 1.4)
+          .add(bodyReveal(), 0.25)
+          .add(shadow(), 2.5)
+          .add(copy1(), 3.75)
+          .add(echoLogo(), 5)
+          .add(price(), 5.75)
+          .add(endFrame(), 5.75);
+      };
+    </script>
+  </body>
+</html>

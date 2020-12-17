@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="ad.size" content="width=300,height=600" />
+    <title>Echo Studio 300x600 NP</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Greensock -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <!-- Dev tools -->
+    <!-- <script src="../GSDevTools.min.js"></script> -->
+    <script type="text/javascript">
+      var clickTag = "http://www.example.com";
+    </script>
+  </head>
+  <body>
+    <div id="ad" onclick="window.open(window.clickTag, '_blank')">
+      <div id="banner">
+        <!-- <div id="low-price" class="set">
+          <img src="images/149.png" alt="" width="300px" height="600px" />
+        </div>
+        <div id="high-price" class="set">
+          <img src="images/199.png" alt="" width="300px" height="600px" />
+        </div>
+        <div id="slash" class="set">
+          <img src="images/slash.png" alt="" width="300px" height="600px" />
+        </div> -->
+        <div id="bg" class="set">
+          <img src="images/bg.jpg" alt="" width="300px" height="600px" />
+        </div>
+        <div id="copy1a" class="set">
+          <img src="images/copy1.png" alt="" width="300px" height="600px" />
+        </div>
+        <div id="copy1b" class="set">
+          <img src="images/copy1.png" alt="" width="300px" height="600px" />
+        </div>
+        <div id="copy1c" class="set">
+          <img src="images/copy1.png" alt="" width="300px" height="600px" />
+        </div>
+        <div id="copy2a" class="set">
+          <img src="images/copy2.png" alt="" width="300px" height="600px" />
+        </div>
+        <div id="copy2b" class="set">
+          <img src="images/copy2.png" alt="" width="300px" height="600px" />
+        </div>
+        <div id="copy2c" class="set">
+          <img src="images/copy2.png" alt="" width="300px" height="600px" />
+        </div>
+        <div id="copy2d" class="set">
+          <img src="images/copy2.png" alt="" width="300px" height="600px" />
+        </div>
+        <div id="copy2e" class="set">
+          <img src="images/copy2.png" alt="" width="300px" height="600px" />
+        </div>
+        <div id="cta" class="set">
+          <img src="images/cta.png" alt="" width="300px" height="600px" />
+        </div>
+        <div id="dolby-logo" class="set">
+          <img src="images/dolbylogo.png" alt="" width="300px" height="600px" />
+        </div>
+        <div id="echo-logo" class="set">
+          <img src="images/echo-logo.png" alt="" width="300px" height="600px" />
+        </div>
+        <div id="speaker-wrapper" class="set">
+          <div id="bass" class="set">
+            <img src="images/bass.png" alt="" width="300px" height="600px" />
+          </div>
+          <div id="body-back" class="set">
+            <img
+              src="images/body-back.png"
+              alt=""
+              width="300px"
+              height="600px"
+            />
+          </div>
+          <div id="body-full" class="set">
+            <img
+              src="images/body-full.png"
+              alt=""
+              width="300px"
+              height="600px"
+            />
+          </div>
+          <div id="bottom" class="set">
+            <img src="images/bottom.png" alt="" width="300px" height="600px" />
+          </div>
+          <div id="lid" class="set">
+            <img src="images/lid.png" alt="" width="300px" height="600px" />
+          </div>
+          <div id="light" class="set">
+            <img src="images/light.png" alt="" width="300px" height="600px" />
+          </div>
+          <div id="dark-light" class="set">
+            <img
+              src="images/dark-light.png"
+              alt=""
+              width="300px"
+              height="600px"
+            />
+          </div>
+          <div id="speaker-1" class="set">
+            <img
+              src="images/speaker-1.png"
+              alt=""
+              width="300px"
+              height="600px"
+            />
+          </div>
+          <div id="speaker-2" class="set">
+            <img
+              src="images/speaker-2.png"
+              alt=""
+              width="300px"
+              height="600px"
+            />
+          </div>
+          <div id="speaker-3" class="set">
+            <img
+              src="images/speaker-3.png"
+              alt=""
+              width="300px"
+              height="600px"
+            />
+          </div>
+          <div id="speaker-4" class="set">
+            <img
+              src="images/speaker-4.png"
+              alt=""
+              width="300px"
+              height="600px"
+            />
+          </div>
+          <div id="speaker-5" class="set">
+            <img
+              src="images/speaker-5.png"
+              alt=""
+              width="300px"
+              height="600px"
+            />
+          </div>
+          <div id="top" class="set">
+            <img src="images/top.png" alt="" width="300px" height="600px" />
+          </div>
+          <div id="shadow" class="set">
+            <img src="images/shadow.png" width="300px" height="600px" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      //Activate Dev tools
+      // GSDevTools.create();
+
+      //Define variables
+
+      //Animation timelines
+      function fadeIn() {
+        var tl = gsap.timeline({ id: "fadeIn" });
+        tl
+          .from(
+            [
+              "#low-price",
+              "#high-price",
+              "#slash",
+              "#bg",
+              "#copy1a",
+              "#copy1b",
+              "#copy1c",
+              "#copy2a",
+              "#copy2b",
+              "#copy2c",
+              "#cta",
+              "#dolby-logo",
+              "#echo-logo",
+              "#speaker-wrapper",
+              "#bass",
+              "#body-back",
+              "#body-full",
+              "#bottom",
+              "#lid",
+              "#dark-light",
+              "#speaker-1",
+              "#speaker-2",
+              "#speaker-3",
+              "#speaker-4",
+              "#speaker-5",
+              "#top",
+            ],
+            1,
+            {
+              autoAlpha: 0,
+            }
+          )
+          .from(["#copy1a", "#copy1b", "#copy1c"], 0.5, {
+            x: 500,
+            stagger: 0.2,
+          }),
+          "-=1.5";
+        return tl;
+      }
+      function enterTop() {
+        var tl = gsap.timeline({ id: "enter" });
+        tl.from(["#bottom", "#bass", "#speaker-5", "#lid", "#top"], 3, {
+          y: -500,
+          stagger: 0.2,
+          ease: "expo.out",
+        })
+          .from(
+            ["#light", "#dark-light"],
+            2.75,
+            { y: -500, ease: "expo.Out" },
+            "-=3.5"
+          )
+          .from("#light", 1, { autoAlpha: 0 }, "+=.5");
+        return tl;
+      }
+      function speaker1() {
+        var tl = gsap.timeline({ id: "speaker1" });
+        tl.from("#speaker-1", 2, { x: -500, y: -500, ease: "expo.out" });
+        return tl;
+      }
+      function speaker2() {
+        var tl = gsap.timeline({ id: "speaker2" });
+        tl.from("#speaker-2", 2, { x: 500, y: -500, ease: "expo.out" });
+        return tl;
+      }
+      function speaker3() {
+        var tl = gsap.timeline({ id: "speaker3" });
+        tl.from("#speaker-3", 2, { x: -500, y: 500, ease: "expo.out" });
+        return tl;
+      }
+      function speaker4() {
+        var tl = gsap.timeline({ id: "speaker4" });
+        tl.from("#speaker-4", 2, { x: 500, y: 500, ease: "expo.out" });
+        return tl;
+      }
+      function bodyReveal() {
+        var tl = gsap.timeline({ id: "body" });
+        tl.from("#body-back", 3, {
+          clip: "rect(0px, 300px, 600px, 300px)",
+          ease: "power2.in",
+        }).from(
+          "#body-full",
+          3,
+          {
+            clip: "rect(0px, 0px, 600px, 0px)",
+            ease: "power4.out",
+          },
+          "-=.25"
+        );
+        return tl;
+      }
+      function copy1() {
+        var tl = gsap.timeline({ id: "copy1" });
+        tl.to(["#copy1a", "#copy1b", "#copy1c"], 0.5, {
+          x: -300,
+        });
+        return tl;
+      }
+      function copy2() {
+        var tl = gsap.timeline({ id: "copy2" });
+        tl.from(["#copy2a", "#copy2b", "#copy2c"], 1, {
+          x: 300,
+          stagger: 0.3,
+          ease: "power1.out",
+        });
+        return tl;
+      }
+      function echoLogo() {
+        var tl = gsap.timeline({ id: "echo-logo" });
+        tl.from(["#echo-logo"], 0.75, { x: 250 });
+        return tl;
+      }
+
+      function dolbyLogo() {
+        var tl = gsap.timeline({ id: "echo-logo" });
+        tl.from(["#dolby-logo"], 0.75, { x: -250 });
+        return tl;
+      }
+      function price() {
+        var tl = gsap.timeline({ id: "price" });
+        tl.from(["#high-price"], 0.75, { x: 300 })
+          .from(
+            "#slash",
+            0.5,
+            {
+              clip: "rect(0px, 300px, 600px, 300px)",
+            },
+            "-=.25"
+          )
+          .from("#low-price", 0.5, { x: 300 }, "-=.25");
+        return tl;
+      }
+
+      function endFrame() {
+        var tl = gsap.timeline({ id: "endframe" });
+        tl.from(["#cta"], 0.75, { x: 250, stagger: 0.5 });
+        return tl;
+      }
+      function shadow() {
+        var tl = gsap.timeline({ id: "shadow" });
+        tl.from("#shadow", 3, { autoAlpha: 0 });
+        return tl;
+      }
+
+      //Main timeline
+      window.onload = function () {
+        var main = gsap.timeline();
+        main
+          .add(fadeIn())
+          .add(enterTop(), 1.9)
+          .add(speaker2(), 2.5)
+          .add(speaker1(), 2.6)
+          .add(speaker3(), 2.7)
+          .add(speaker4(), 2.4)
+          .add(bodyReveal(), 2.25)
+          .add(shadow(), 3.5)
+          .add(copy1(), 4.75)
+          .add(copy2(), 5)
+          .add(echoLogo(), 6.25)
+          .add(dolbyLogo(), 6.75)
+          .add(endFrame(), 7.25);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+.set {
+  position: absolute;
+  display: block;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  visibility: visible;
+}
+
+#speaker-wrapper {
+  transform: scale(0.25);
+  border: 5px solid black;
+  width: 1920px;
+  height: 1920px;
+  transform-origin: top left;
+  overflow: hidden;
+  background-color: #f3f3f3;
+}
+
+#bass {
+  z-index: 11;
+}
+
+#body-back {
+  clip: rect(0, 1920px, 1920px, 0);
+}
+
+#body-full {
+  clip: rect(0, 1920px, 1920px, 0);
+  z-index: 15;
+}
+
+#speaker-4,
+#speaker-3 {
+  z-index: 12;
+}
+
+#top {
+  top: -2px;
+  z-index: 18;
+}
+#lid {
+  top: -4px;
+  z-index: 19;
+}
+
+#light-wrapper,
+#dark-light {
+  z-index: 17;
+}
+
+#light {
+  z-index: 20;
+}
