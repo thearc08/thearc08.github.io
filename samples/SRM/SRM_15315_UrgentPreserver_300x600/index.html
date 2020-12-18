@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- click thru -->
+     <style>
+        #clicktagger {
+            background-color: rgba(255,255,255,0);
+            cursor: pointer;
+            width: 300px;
+            height: 600px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            z-index: 5000;
+            cursor: pointer;
+        }
+    </style>
+<script>
+document.write('<script src="'+ (window.API_URL || 'https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv='+ Math.random()) +'"><\/script>');
+</script>
+</head>
+
+<body>
+	<div id="clicktagger" onclick="javascript:window.open(dhtml.getVar('clickTAG'),'_blank');" 	onmouseover="javascript:this.style.cursor='pointer';" onmouseout="javascript:this.style.cursor='auto';"></div>
+    <div id="ad">
+        <div id="banner">
+	        
+<!-- 	        <div id="guide"><img src="images/guide2.jpg" width="300px" height="600px"></div> -->
+			
+	        <div id="fg"><img src="images/trans-bokeh.png" width="850px" height="1456px"></div>
+			<div id="light"><img src="images/light.png" width="300px" height="600px"></div>
+			<div id="dark"><img src="images/dark.png" width="300px" height="600px"></div>
+	        <div id="cta"><img src="images/cta.png" width="300px" height="600px"></div>
+<!-- 	        <div id="blueshape"><img src="images/blueshape.png" width="293px" height="187px"></div> -->
+	        <div id="greenshape"><img src="images/greenshape.png" width="905px" height="578px"></div>
+	        <div id="bigblue"><img src="images/bigblue.png" width="300px" height="600px"></div>
+
+			<div id="bluebg"></div>
+			<div id="bluefg"></div>
+				
+	        <div id="photo"><img src="images/photo.jpg" width="365px" height="378px"></div>
+	        <div id="logo"><img src="images/logo.png" width="300px" height="600px"></div>
+
+	        <div id="text1">
+		        <div id="text1a"><img src="images/text1.png" width="300px" height="600px"></div>
+		        <div id="text1b"><img src="images/text1.png" width="300px" height="600px"></div>
+		        <div id="text1c"><img src="images/text1.png" width="300px" height="600px"></div>
+		        <div id="text1d"><img src="images/text1.png" width="300px" height="600px"></div>
+	        </div>
+	        
+	        <div id="text2">
+		        <div id="text2a"><img src="images/text2.png" width="300px" height="600px"></div>
+		        <div id="text2b"><img src="images/text2.png" width="300px" height="600px"></div>
+			</div>
+    </div>
+
+    
+<!-- greensock -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>
+<!-- <script src="../GSDevTools.min.js"></script> -->
+<!--
+<script src="CustomEase.min.js"></script>
+<script src="CustomWiggle.min.js"></script>
+-->
+		<script>
+				//GSDevtools
+// 				GSDevTools.create();
+				
+				function fadeIn(){
+					var tl = new TimelineMax({id:"fadeIn"});
+						tl.from(["#bg","#fg","#photo","#greenshape","#blueshape","#bigblue","#bluebg","#bluefg","#logo","#name","#text1","#text2","#light","#dark"], 0.5, { autoAlpha:0 });
+					return tl;
+				}
+				
+				function shapes(){
+					var tl = new TimelineMax({id:"shapes"});
+						tl.to(["#greenshape"], 10, { x: 18, y: -32, scale: .5, ease: "power2.inOut",  })
+						  .to(["#blueshape"], 10, { x: 78, y: 10, scale: .5, ease: "power1.out", },"-=10");
+					return tl;
+				}
+				
+				function photo(){
+					var tl = new TimelineMax({id:"photo"});
+						tl.to(["#photo"], 12, { x: -25, ease: "power1.inOut"  })
+						  .to(["#dark"], 12, {opacity: .5} ,"-=12")
+					return tl;
+				}
+				
+				function fg(){
+					var tl = new TimelineMax({id:"bg"});
+						tl.to(["#fg"], 10, { x:35, y:-15 })
+					return tl;
+				}
+				
+				function copy1(){
+					var tl = new TimelineMax({id:"copy1"});
+						tl.from(["#text1a","#text1b","#text1c","#text1d"], .75, { x:-15, autoAlpha: 0, stagger:.25  })
+					return tl;
+				}
+
+				function copy2(){
+					var tl = new TimelineMax({id:"copy2"});
+						tl.to(["#text1a","#text1b","#text1c","#text1d","#name"], .75, { x:15, autoAlpha: 0, stagger:.25 })
+						tl.from(["#text2a","#text2b","#text2c","#cta"], .75, { x:-15, autoAlpha: 0, stagger:.25 })
+					return tl;
+				}
+
+				function cta(){
+					var tl = new TimelineMax({id:"cta"});
+						tl.to(["#cta"], .5, { scale:1.1, repeat: 1, yoyo: true },"+=1")
+						  .to(["#cta"], .5, { scale:1.1, repeat: 1, yoyo: true },"+=3")
+					return tl;
+				}
+
+
+// 				CustomWiggle.create("myWiggle", {wiggles:3, type:"random"});
+				
+				var master = new TimelineMax ();
+	
+	
+				//master timeline
+				
+				
+				master.add(fadeIn())
+					  .add(fg())
+					  .add(shapes(), .5)
+					  .add(photo(), .5)
+					  .add(copy1(), 1 )
+					  .add(copy2(), 4.5 )
+					  .add(cta(), 6.5)
+  					  ;
+				
+		
+		
+			
+		</script><!-- end greensock animation -->
+	
+	
+</body>
+<!--
+<script>
+    var clickTag = "";
+    
+    function bgExitHandler(e) {
+        window.open(window.clickTag);
+        console.log("clicked");
+    }
+    document.getElementById('bg-exit').addEventListener('click', bgExitHandler, false);
+  </script>
+-->
+</html>

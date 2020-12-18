@@ -1,0 +1,19 @@
+{
+    "version": "1.0", 
+
+    "title": "728x90 Proactive Planner", 
+    "description": "optional string",  
+    
+    "width" : "728", 
+    "height": "90", 
+
+    "events": {
+        "enabled": 0, 
+    },
+
+    "clicktags": {
+        "clickTAG": "https://www.test.com",
+    },
+
+    "source": "index.html"
+}

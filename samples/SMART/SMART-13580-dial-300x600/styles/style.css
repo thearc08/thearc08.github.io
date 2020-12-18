@@ -1,0 +1,92 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 298px;
+    height: 598px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #ffffff; 
+  
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 300px;
+    height: 600px;
+    background-color: #0073ec;
+    overflow: hidden;
+}
+
+/* set positions */
+ #background, #text1, #logobox, #logo, #guide, #text2, #text3, #block1, #block2, #block3, #block4, #computer, #world, #cta, #nyse, #greywindow, #product  {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	visibility: hidden;
+}
+
+#background {
+	width: 500px;
+	height: 900px;
+	top:-8px; 
+	background-image: url("../images/tileBG.png");
+	transform: scale(.75);
+	transform-origin: top left;
+}
+
+#text1, #text3 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
+	color: #ffffff;
+	font-size: 28pt;
+	}
+	
+#text1 { left: 29px; top: 22px; line-height: 44px; }
+#text2 { top: 278px; left: 58px; }
+#text3 { left: 9px; top: 108px; font-size: 20pt; line-height: 32px; }
+
+#cta { top: 226px; left: 66px; }
+
+#nyse { top: 391px; left: 55px;}
+
+#logobox {
+	width:300px;
+	height:64px;
+	background-color: #003059;
+	top: 503px;
+	z-index: 5;
+	padding-top: 33px;
+}
+
+.center { display: block; margin-left: auto; margin-right: auto; }
+
+#product { top: 291px; left: 19px; }
+
+#computer { top: 356px; left: 46px;  }
+#world { top: 354px; left: 202px;  }
+
+#block1 { top: 367px; left:111px; }
+#block2 { top: 367px; left:133px; }
+#block3 { top: 367px; left:154px; }
+#block4 { top: 367px; left:176px; }
+
+#greywindow { top:259px; left: 29px; z-index: 3 }
+
+#guide { z-index: 6; visibility: visible; opacity: 0; }
+#replay { z-index: 5001; top: 579px; left: 280px; }
+
+
+

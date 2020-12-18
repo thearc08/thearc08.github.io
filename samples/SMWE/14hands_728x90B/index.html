@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- click thru -->
+     <style>
+        #bg-exit {
+            background-color: rgba(255,255,255,0);
+            cursor: pointer;
+            width: 728px;
+            height: 90px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            z-index: 5000;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+	<div id="replay"><a href="#"><img src="images/replay.svg" width="18" height="18" border="0"></a></div>
+	<div id="bg-exit"></div>
+    <div id="ad">
+        <div id="banner">
+            <!-- <div id="guide">
+                <img src="images/guide2.jpg">
+            </div> -->
+            <div id="border"></div>
+            <div id="woodBG"><img src="images/woodBG.jpg" width="299" height="90"></div>
+            <div id="peachDiv"></div>
+            <div id="bottle"><img src="images/bottle.png" width="293" height="90"></div>
+            <div id="handsLogo"><img src="images/14handsLogo.png" width="200" height="58"></div>
+               
+            <div id="text_time"><img src="images/text_time.png" width="77" height="31"></div>
+            
+            <div id="text_its"><img src="images/text_its.png" width="271" height="51"></div>
+            
+            <div id="cta"><img src="images/cta.png" width="178" height="14"></div>
+            
+            <div id="legal"><img src="images/legal.png" width="203" height="6"/></div>
+	    </div><!-- end banner -->
+    </div>
+    
+<!-- greensock -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+<!-- <script src="../GSDevTools.js"></script> -->
+		<script>
+				//GSDevtools
+//                 GSDevTools.create();
+
+                 function finalSlide(){
+                    var tl = new TimelineMax({id:"finalSlide"});
+                        tl
+                          .from(["#border", "#handsLogo", "#cta",
+                                 "#text_its", "#woodBG", "#peachDiv", "#bottle"
+                                ], 0.5, { autoAlpha:0 })
+                          .to("#peachDiv", .1, {width: 430})
+                          .to("#handsLogo", .1, {autoAlpha:0})
+                          .from("#bottle", .75, {x: 300})
+                          .from(["#text_its"], .75, {left: -275 }, "-=.5")
+                          .to("#text_time", .5, {autoAlpha:1, left: 312, y: -9 }, "-=.6")
+                          .from("#cta", 1, {left: -3000})
+                          .from("#legal", 0.5, { autoAlpha:0 });
+                    return tl;
+                }
+
+                var master = new TimelineMax ();
+                master
+                      .add(finalSlide());
+				
+				CSSPlugin.defaultTransformPerspective = 600;
+						
+				//replay
+				document.getElementById("replay").onclick = function () { master.restart();  };
+					
+			
+			
+		</script>
+		<!-- end greensock animation -->
+
+<!-- clickTag -->		
+<script>
+	var clickTag = "";
+	
+	function bgExitHandler(e) {
+	    window.open(window.clickTag);
+	    //console.log("clicked");
+	}
+	document.getElementById('bg-exit').addEventListener('click', bgExitHandler, false);
+</script>		
+<!-- end clickTag -->		
+</body>
+
+</html>

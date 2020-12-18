@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+ 	<meta name="ad.size" content="width=728,height=90">
+   <title></title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- click thru -->
+     <style>
+        #bg-exit {
+            background-color: rgba(255,255,255,0);
+            cursor: pointer;
+            width: 728px;
+            height: 90px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            z-index: 5000;
+            cursor: pointer;
+        }
+    </style>
+<!-- 	<script src="http://ds.serving-sys.com/BurstingScript/adKit/adkit.js"> </script> -->
+	<script src="gsap.min.js"></script>
+</head>
+
+<body>
+	<div id="bg-exit"></div>
+    <div id="ad">
+        <div id="banner">
+			<div id="bg"><img src="images/bg.jpg" width="728px" height="90px"></div>
+			<div id="copy">
+				<div id="copy1"><img src="images/copy.png" width="728px" height="90px"></div>
+				<div id="copy2"><img src="images/copy.png" width="728px" height="90px"></div>
+			</div>
+			<div id="cta"><img src="images/cta.png" width="728px" height="90px"></div>
+			<div id="doc1"><img src="images/doc1.png" width="728px" height="90px"></div>
+			<div id="doc2"><img src="images/doc2.png" width="728px" height="90px"></div>
+			<div id="logo"><img src="images/logo.png" width="728px" height="90px"></div>
+
+
+	    </div>
+	    
+    </div>
+<!-- end banner -->
+       
+        
+<!-- greensock -->
+<script src="gsap.min.js"></script>
+<!-- <script src="../GSDevTools.min.js"></script> -->
+		<script>
+				//GSDevtools
+// 				GSDevTools.create();
+				
+				function fadeIn(){
+					var tl = gsap.timeline({id:"fadein"});
+						tl.from(["#bg","#logo","#copy"], { duration:.5, autoAlpha:0 })
+						tl.from(["#doc1","#doc2"], { duration:.5, autoAlpha:0 },"-=.25");
+					return tl;
+				}
+				
+				function copy(){
+					var tl = gsap.timeline({id:"copy"});
+						tl.from(["#copy1","#copy2"], { stagger: .2, duration:.75, x: -25, autoAlpha:0 })
+					return tl;
+				}
+				
+
+				function ctaPulse(){
+					var tl = gsap.timeline({id:"ctaPulse"});
+						tl.set(["#cta"], {autoAlpha: 1})
+						.from(["#cta"], { duration: 1.5, scale: 0, ease: "elastic.out(.4, 0.35)" })
+						  .to(["#cta"], { duration: .5, scale: 1.1, repeat: 1, yoyo: true },"+=2.25")
+						  .to(["#cta"], { duration: .5, scale: 1.1, repeat: 1, yoyo: true },"+=2.25")
+						  .to(["#cta"], { duration: .5, scale: 1.1, repeat: 1, yoyo: true },"+=2.25")
+					return tl;
+				}
+								
+				//master timeline
+				var master = new TimelineMax ();
+				
+				master.add(fadeIn())
+					  .add(copy())
+					  .add(ctaPulse(),"+=.25")
+			
+					
+			
+			
+		</script>
+		<!-- end greensock animation -->
+
+<!-- clickTag -->		
+<script>
+	var clickTag = "https://www.google.com/";
+	
+	function bgExitHandler(e) {
+	    window.open(window.clickTag);
+	    //console.log("clicked");
+	}
+	document.getElementById('bg-exit').addEventListener('click', bgExitHandler, false);
+</script>		
+<!-- end clickTag -->		
+</body>
+
+</html>

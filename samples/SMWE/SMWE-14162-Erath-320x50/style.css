@@ -1,0 +1,56 @@
+vbody {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 318px;
+    height: 48px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: white; 
+  
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 318px;
+    height: 48px;
+    background-color: #f5eccc;
+    
+    overflow: hidden;
+}
+/* set positions */
+#guide, #bg, #tagline, #border, #logo, #cta, #legal {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	visibility: hidden;
+	
+}
+
+#bg { left:-53px; visibility: hidden}
+
+#border { width: 314px; height: 44px; border: 2px solid #f1e9c8; z-index: 10;  }
+
+#legal { left: 165px; top: 32px;}
+
+#logo { left: 20px; top: -1px; }
+
+#cta { left: 185px; top: 5px; }
+
+#tagline { left: 5px; top: -50px; }
+
+#guide { z-index: 3; visibility: visible; opacity: 0; }
+
+#replay { z-index: 5001; top: 3px; left: 761px; }

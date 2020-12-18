@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title></title>
+	<link rel="stylesheet" href="style.css" />
+	<!-- click thru -->
+	 <style>
+		#clicktagger {
+			background-color: rgba(255,255,255,0);
+			cursor: pointer;
+			width: 300px;
+			height: 250px;
+			left: 0px;
+			position: absolute;
+			top: 0px;
+			z-index: 5000;
+			cursor: pointer;
+		}
+	</style>
+<script>
+document.write('<script src="'+ (window.API_URL || 'https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv='+ Math.random()) +'"><\/script>');
+</script>
+</head>
+
+<body>
+	<div id="clicktagger" onclick="javascript:window.open(dhtml.getVar('clickTAG'),'_blank');" 	onmouseover="javascript:this.style.cursor='pointer';" onmouseout="javascript:this.style.cursor='auto';"></div>
+	<div id="ad">
+		<div id="banner">
+			<div id="copywrapper" class="set">
+				<div id="copy1" class="set"><img src="images/copy1.svg"></div>
+				<div id="copy2" class="set"><img src="images/copy2.svg"></div>
+			</div>
+			<div id="endframewrapper" class="set">
+				<div id="bigO" class="set"><img src="images/bigO.png" width="184" height="184"></div>
+				<div id="copy3a" class="set"><img src="images/copy3a.png" width="300" height="250"></div>
+				<div id="copy3b" class="set"><img src="images/copy3b.png" width="300" height="250"></div>
+				<div id="copy3c" class="set"><img src="images/copy3c.png" width="300" height="250"></div>
+				<div id="copy3d" class="set"><img src="images/copy3d.png" width="300" height="250"></div>
+			</div>
+			<div id="bottombar" class="set"></div>
+				<div id="cta" class="set"><img src="images/cta.png" width="300" height="250"></div>
+				<div id="logo" class="set"><img src="images/logo.png" width="300" height="250"></div>
+			<div id="overlay" class="set"></div>
+			<div id="bg" class="set"><img src="images/bg.jpg" width="300" height="194"></div>
+			
+			<div id="guide" class="set"><img src="images/guide3.png" width="300" height="250"></div>
+			
+		 </div><!-- end banner -->
+	</div>
+
+	
+<!-- greensock -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="../GSDevTools.min.js"></script>
+		<script>
+				//GSDevtools
+				GSDevTools.create();
+				
+				function fadeIn(){
+					var tl = gsap.timeline({id: "fadeIn"})
+					tl.from(["#bg","#bottombar","#cta","#logo"], .5, { autoAlpha:0 })
+					return tl;
+				}
+
+				function overlay1(){
+					var tl = gsap.timeline({id: "overlay1"})
+					tl.from(["#overlay"], 1, { autoAlpha:0 })
+					return tl;
+				}
+				
+				function rotate(){
+					var tl = gsap.timeline({id: "rotate"});
+					tl.to(["#copy1","#copy2"], 3.4, { transformOrigin: "50% 52%", rotate: "+=20" })
+					return tl;
+				}
+				
+				function copy1(){
+					var tl = gsap.timeline({id: "copy1"});
+					tl.from(["#copywrapper"], 1, { scale:.35, x: -100, y: 150, ease:"power2.out" })
+					  .to(["#copy1"], 1, { autoAlpha: 1 },"-=1")
+					return tl;
+				}
+				
+				function copy2(){
+					var tl = gsap.timeline({id: "copy2"});
+					tl.to(["#copywrapper"], 1.25, { x: -182, y: 75, ease:"power1.inout"  })
+					  .to(["#copy1,#copy2"], 1 , { transformOrigin: "50% 52%", rotate:180, ease:"power1.inout" }, "-=1.25")
+					  .to(["#copy1"], .75, { autoAlpha: 0 },"-=.25")
+					  .to(["#copy2"], .75, { autoAlpha: 1 },"-=.75")
+					  .to(["#copywrapper"], 1, { scale:.5, x: -72, y: -5, ease:"power1.in" },"-=.6")
+					  .to(["#copy1,#copy2"], .75, { transformOrigin: "50% 52%", rotate:340 }, "-=1")
+					  .to(["#copy1","#copy2"], 3, { rotate: "+=10" },"-=.1")
+					  
+					return tl;
+				}
+
+				function endframe(){
+					var tl = gsap.timeline({id: "endframe"});
+					tl.to(["#overlay"], 1, { backgroundColor:"#e9f2fa", opacity: 1, ease:"power2.out" })
+					  .to("#copywrapper", 1, {autoAlpha: 0},"-=1")
+					  .to(["#endframewrapper","#bigO"], 1, {autoAlpha: 1},"-=1")
+					  .to(["#copy3a","#copy3b","#copy3c","#copy3d"], 1, { stagger: 0.5, autoAlpha: 1},"+=.25")
+					  .to(["#cta"], .5, { scale: 1.05, repeat: 1, yoyo: true },"+=1")
+					return tl;
+				}
+				
+				function rotate2(){
+					var tl = gsap.timeline({id: "rotate2"});
+					tl.to(["#bigO"], 7, { transformOrigin: "50% 50%", rotate: 180 })
+					return tl;
+				}
+				
+
+				var master = new TimelineMax ();
+				
+				//master timeline
+				master.add(fadeIn())
+					  .add(overlay1(),.75)
+					  .add(rotate(),1)
+					  .add(copy1(),1)
+					  .add(copy2(),3.75)
+					  .add(endframe(),8)
+					  .add(rotate2(),8)
+				
+				;
+		</script><!-- end greensock animation -->
+		
+
+</body>
+<script>
+	var clickTag = "";
+	
+		function bgExitHandler(e) {
+		window.open(window.clickTag);
+		console.log("clicked");
+	}
+	document.getElementById('bg-exit').addEventListener('click', bgExitHandler, false);
+  </script>
+</html>

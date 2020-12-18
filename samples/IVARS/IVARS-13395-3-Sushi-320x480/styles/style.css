@@ -1,0 +1,52 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 318px;
+    height: 478px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #ffffff; 
+  
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 318px;
+    height: 478px;
+    background-color: #ffffff;
+    
+    overflow: hidden;
+}
+/* set positions */
+#guide, #logo, #bg1, #bg2, #waves, #line1, #line2, #line3, #food {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	visibility: hidden;
+}
+
+#guide { z-index: 1; visibility: visible; }
+
+#line1 { top: 49px; left: 11px; }
+#line2 { top:-205px; left:25px; }
+#line3 { z-index: 4; top:221px; left: 7px; }
+
+#food {top:268px; left: -13px; }
+#logo { z-index: 4; }
+#waves { z-index: 4; top: 197px; }
+
+#bg1 { z-index: 2; }
+#bg2 { z-index: 3; }

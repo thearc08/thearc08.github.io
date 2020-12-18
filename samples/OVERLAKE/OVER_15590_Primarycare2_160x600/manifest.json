@@ -1,0 +1,19 @@
+{
+    "version": "1.0", 
+
+    "title": "Primary Care v2 160x600", 
+    "description": "optional string",  
+    
+    "width" : "160", 
+    "height": "600", 
+
+    "events": {
+        "enabled": 0, 
+    },
+
+    "clicktags": {
+        "clickTAG": "https://www.test.com",
+    },
+
+    "source": "index.html"
+}

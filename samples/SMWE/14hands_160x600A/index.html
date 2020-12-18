@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- click thru -->
+     <style>
+        #bg-exit {
+            background-color: rgba(255,255,255,0);
+            cursor: pointer;
+            width: 160px;
+            height: 600px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            z-index: 5000;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+	<div id="replay"><a href="#"><img src="images/replay.svg" width="18" height="18" border="0"></a></div>
+	<div id="bg-exit"></div>
+    <div id="ad">
+        <div id="banner">
+                    <!-- <div id="guide">
+                        <img src="images/guide1.jpg">
+                    </div> -->
+
+                    <div id="woodBG"><img src="images/woodBG.jpg" width="160" height="209"></div>
+                    <div id="photo4"><img src="images/photo4.jpg" width="160" height="185"></div>
+                    <div id="photo3"><img src="images/photo3.jpg" width="160" height="188"></div>
+                    <div id="photo2"><img src="images/photo2.jpg" width="160" height="188"></div>
+                    <div id="cta"><img src="images/cta.png" width="160" height="56"></div>
+                    <div id="border"></div>
+                    
+                    <div id="photo_bottom"><img src="images/photo_bottom.jpg" width="160" height="415"></div>
+                    <div id="photo1"><img src="images/photo1.jpg" width="160" height="190"></div>
+                    
+                    <div id="text_chill"><img src="images/text_chill.png" width="88" height="31"></div>
+                    <div id="text_time"><img src="images/text_time.png" width="77" height="31"></div>
+<!--                     <div id="text_time2"><img src="images/text_time.png" width="77" height="31"></div> -->
+                    <div id="text_game"><img src="images/text_game.png" width="89" height="31"></div>
+                    <div id="text_play"><img src="images/text_play.png" width="79" height="31"></div>
+                    <div id="text_movie"><img src="images/text_movie.png" width="100" height="31"></div>
+                    <div id="text_its"><img src="images/text_its.png" width="132" height="70"></div>
+                    <div id="bottle"><img src="images/bottle.png" width="126" height="497"/></div>
+
+	    </div><!-- end banner -->
+    </div>
+    
+<!-- greensock -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+<script src="../GSDevTools.js"></script>
+		<script>
+				//GSDevtools
+                GSDevTools.create();
+                
+                function fadeIn(){
+					var tl = new TimelineMax({id: "fadeIn"});
+                        tl.from(["#photo1","#photo2", "#photo3", "#photo4",
+                                 "#text_chill", "#text_time", "#woodBG", "#border",
+                                 "#photo_bottom", "#bottle", "#text_its","#text_time2","#cta"], 0.5, { autoAlpha:0 })
+					return tl;
+                }
+
+                function bottle(){
+                    var tl = new TimelineMax({id:"bottle"});
+                        tl.from("#bottle", 0.5, {y: 325})
+                    return tl;
+                }
+                
+                function chillTime(){
+					var tl = new TimelineMax({id:"chillTime"});
+						tl
+                          .from("#text_chill", .25, {clip:"rect(0px, 0px, 95px, 0px)", ease:Power0.easeNone}, "-=.25")
+                          .from("#text_time", .25, {clip:"rect(0px, 0px, 89px, 0px)", ease:Power0.easeNone}, "-=.24");
+                    return tl;
+                }
+
+                function photo1Drop(){
+                    var tl = new TimelineMax({id:"photo1Drop"});
+                        tl.to("#photo1", 1, {ease: Power0.easeNone, x: 500})
+                          .from("#text_game", .25, {x: -50, autoAlpha: 0}, "-=1")
+                          .to("#text_chill", .25, {x: 50, autoAlpha: 0}, "-=1");
+                    return tl;
+                }
+
+                function photo2Drop(){
+                    var tl = new TimelineMax({id:"photo2Drop"});
+                        tl.to("#photo2", 1, {ease: Power0.easeNone, x: 500})
+                          .from("#text_play", .25, {x: -50, autoAlpha: 0}, "-=1")
+                          .to("#text_game", .25, {x: 50, autoAlpha: 0}, "-=1")
+                    return tl;
+                }
+
+                function photo3Drop(){
+                    var tl = new TimelineMax({id:"photo3Drop"});
+                        tl.to("#photo3", 1, {ease: Power0.easeNone, x: 500})
+                          .from("#text_movie", .25, {x: -50, autoAlpha: 0}, "-=1")
+                          .to("#text_play", .25, {x: 50, autoAlpha: 0}, "-=1");
+                    return tl;
+                }
+
+                 function finalSlide(){
+                    var tl = new TimelineMax({id:"finalSlide"});
+                        tl.to("#text_movie", .25, {x: 50, autoAlpha: 0})
+                          .to("#woodBG", .5, {top: 0, clip: "rect(0px, 160px, 209px, 0px)"})
+                          .to("#text_time", .5, { y:-105, x:-3 },"-=.5")
+                          .from("#text_its", .5, { y:-250},"-=.5")
+                          .to("#bottle", .5, { scale:1, top: 252},"-=.5")
+                          .from("#cta", .4, { x:160});
+                          return tl;
+                }
+
+                var master = new TimelineMax ();
+                
+                master
+                      .add(fadeIn())
+                      .add(bottle())
+                      .add(chillTime())
+                      .add(photo1Drop(),"+=.75")
+                      .add(photo2Drop(),"+=.25")
+                      .add(photo3Drop(),"+=.25")
+                      .add(finalSlide(),"+=.5");
+				
+				CSSPlugin.defaultTransformPerspective = 600;				
+						
+				//replay
+				document.getElementById("replay").onclick = function () { master.restart();  };
+											
+		</script>
+		<!-- end greensock animation -->
+
+<!-- clickTag -->		
+<script>
+	var clickTag = "";
+	
+	function bgExitHandler(e) {
+	    window.open(window.clickTag);
+	    //console.log("clicked");
+	}
+	document.getElementById('bg-exit').addEventListener('click', bgExitHandler, false);
+</script>		
+<!-- end clickTag -->		
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- click thru -->
+     <style>
+        #bg-exit {
+            background-color: rgba(255,255,255,0);
+            cursor: pointer;
+            width: 160px;
+            height: 600px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            z-index: 5000;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+	<div id="bg-exit"></div>
+    <div id="ad">
+        <div id="banner">
+	       <!-- background -->
+	       <div id="pic"><img src="images/pic.jpg" width="276" height="488"/></div>
+	       <div id="bottomBar"></div>
+	       <div id="logo"><img src="images/logo.png" width="142" height="40"/></div>
+	       <div id="button"><img src="images/button.png" width="137" height="27"/></div>
+<!--
+	       <div id="left-bracket"><img src="images/left-bracket.png" width="160" height="600"/></div>
+	       <div id="right-bracket"><img src="images/right-bracket.png" width="160" height="600"/></div>
+-->
+	       <div id="left-line"><img src="images/left-line.png" width="160" height="600"/></div>
+	       <div id="top-line"><img src="images/top-line.png" width="160" height="600"/></div>
+	       <div id="right-line"><img src="images/right-line.png" width="160" height="600"/></div>
+	       <div id="bottom-line"><img src="images/bottom-line.png" width="160" height="600"/></div>
+	       
+	       <div id="line1"><img src="images/line1.png" width="113" height="126"/></div>
+	       
+		   <div id="bottle"><img src="images/bottle.png" width="110" height="402"/></div>
+		   <div id="ribbonTopF"><img src="images/ribbonTopF.png" width="104" height="65"></div>
+		   <div id="ribbonTopB"><img src="images/ribbonTopB.png" width="160" height="77"></div>
+		   <div id="ribbonMid"><img src="images/ribbonMid.png" width="154" height="96"></div>
+		   <div id="ribbonBottomB"><img src="images/ribbonBottomB.png" width="160" height="69"></div>
+		   <div id="ribbonBottomF"><img src="images/ribbonBottomF.png" width="42" height="60"></div>
+	       
+	    </div><!-- end banner -->
+    </div>
+    
+<!-- greensock -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+<!-- <script src="../GSDevTools.js"></script> -->
+		<script>
+				//GSDevtools
+// 				GSDevTools.create();
+				//fade in
+				function fadeIn(){
+					var tl = new TimelineMax();
+						tl.from("#pic", 0.5, { autoAlpha:0 })
+							.staggerFrom(["#logo", "#button"], 1, { autoAlpha:0, x:-10 }, 0.2)
+							.from("#pic", 7, { x:"60",ease:Power3.easeOut }, "-=1");
+					return tl;
+				}
+				
+				//brackets
+				function brackets(){
+					var tl = new TimelineMax({id:"brackets"});
+						tl.from("#left-line", 0.5, { clip:"rect(475px, 11px, 475px, 0px)" })
+							.from("#top-line", 0.5, { clip:"rect(0px, 4px, 10px, 0px)" })
+							.from("#right-line", 0.5, { clip:"rect(0px, 160px, 0px, 150px)" })
+							.from("#bottom-line", 0.5, { clip:"rect(475px, 152px, 485px, 152px)" })
+						;
+						return tl;	
+				}
+				
+				function text(){
+					var tl = new TimelineMax({id:"text"});
+						tl.to("#line1", 1, {autoAlpha:1})
+
+					return tl;
+				}
+				
+				//bottle and glasses 
+				function bottle(){
+					var tl = new TimelineMax({id:"bottle"});
+						tl.set(["#bottle"], { visibility: "visible" })
+						.to("#line1", .3, {autoAlpha:0})
+						.staggerFrom(["#bottle",], 0.9, { y:550, ease: Back.easeOut.config(0.8) }, 0.2)
+						.from(["#ribbonTopF", "#ribbonTopB", "#ribbonMid", "#ribbonBottomB", "#ribbonBottomF"], .1, {autoAlpha: 0})
+						.from("#ribbonTopF", .25, {clip:"rect(0px, 104px, 65px, 104px)"})
+						.from("#ribbonTopB", .25, {clip:"rect(160px, 0px, 77px, 0px)"})
+						.from("#ribbonMid", .25, {clip:"rect(0px, 154px, 96px, 154px)"})
+						.from("#ribbonBottomB", .25, {clip:"rect(160px, 0px, 69px, 0px)"})
+						.from("#ribbonBottomF", .25, {clip:"rect(0px, 42px, 60px, 42px)"});
+
+					return tl;	
+				}
+				
+				//master timeline
+				var master = new TimelineMax ();
+				
+				master.add(fadeIn())
+					  .add(brackets(), "-=7")
+					  .add(text(), "-=6")
+					  .add(bottle(), "-=2");
+						
+					
+			
+			
+		</script><!-- end greensock animation -->
+<!-- clickTag -->		
+<script>
+	var clickTag = "clickMacro";
+	
+	function bgExitHandler(e) {
+	    window.open(window.clickTag);
+	    //console.log("clicked");
+	}
+	document.getElementById('bg-exit').addEventListener('click', bgExitHandler, false);
+</script>		
+	
+</body>
+
+</html>

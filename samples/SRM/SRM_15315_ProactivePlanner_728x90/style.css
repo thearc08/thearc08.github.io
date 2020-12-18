@@ -1,0 +1,74 @@
+body { margin: 0px; padding: 0px; }
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(0, 0, 0) 0px solid;
+    width: 728px;
+    height: 90px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #000000; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 728px;
+    height: 90px;
+    background-color: #000000;
+    overflow: hidden;
+}
+/* set positions */
+#bg, #fg, #blueshape, #greenshape, #bigblue, #bluebg, #bluefg, #cta, #name, #logo, #text1, #text1a, #text1b, #text1c, #text1d, #text1e, #text2, #text2a, #text2b, #text2c, #photo, #guide, #light, #dark {
+	position: absolute;
+	display: block;
+	top: 0px;
+	left: 0px;
+	z-index: 10;
+	visibility: hidden;
+}
+
+#text1, #text2 { z-index: 20;}
+
+#text1a { clip: rect(0, 728px, 45px, 0) }
+#text1b { clip: rect(46px 728px 140px 0) }
+
+#text2a { clip: rect(0, 728px, 114px, 0) }
+
+
+#cta { z-index: 20; transform-origin: 252px 65px }
+
+#fg { z-index: 11; 
+	opacity: 1; 
+	transform: scale(.5); 
+	top: -80px; 
+	left: -450px;  }
+
+#name { z-index: 12; }
+#dark { z-index: 10 }
+
+#logo { z-index: 15; }
+
+#blueshape, #greenshape { transform: scale(.4); z-index: 12;  }
+
+#bluebg, #bluefg { 
+	width: 500px; 
+	height: 227px;  
+	background-color: #7ea7ac; 
+}
+
+#bluefg { opacity: .3; z-index: 12; }
+
+#bluebg { z-index: 9; }
+
+#greenshape { top: -110px; left: -195px; z-index: 15; }
+#blueshape { top: -80px; left: 350px; }
+
+#guide { z-index: 11; opacity: .5; visibility: visible; }
+
+#photo { top: 0px; left: 455px; z-index: 8 }

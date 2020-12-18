@@ -1,0 +1,73 @@
+body { margin: 0px; padding: 0px; }
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(0, 0, 0) 0px solid;
+    width: 300px;
+    height: 250px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #000000; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 300px;
+    height: 250px;
+    background-color: #000000;
+    overflow: hidden;
+}
+/* set positions */
+#bg, #fg, #blueshape, #greenshape, #cta, #name, #logo, #text1, #text1a, #text1b, #text1c, #text2, #text2a, #text2b, #text2c, #breanna, #guide, #bottomlight {
+	position: absolute;
+	display: block;
+	top: 0px;
+	left: 0px;
+	z-index: 10;
+	visibility: hidden;
+}
+
+#text1a { clip: rect(0, 250px, 124px, 0) }
+#text1b { clip: rect(124px 250px 148px 0) }
+#text1c { clip: rect(149px 250px 300px 0) }
+
+
+#text2a { clip: rect(0, 250px, 150px, 0) }
+#text2b { clip: rect(151px, 250px, 300px, 0) }
+
+#cta { z-index: 20; transform-origin: 105px 220px }
+
+#bg { 
+	top: -300px; 
+	left: -340px; 
+	transform: scale(.5); 
+	opacity: .8; 
+	z-index: 8;
+}
+
+#fg { z-index: 20; top: -180px; left: 20px; transform: scale(.4); opacity: .3; z-index: 11; }
+
+
+#bottomlight {z-index: 9}
+#logo { z-index: 12; }
+
+#blueshape, #greenshape { transform: scale(.25);  }
+
+#greenshape { top: -281px; left: -450px; z-index: 12;}
+#blueshape { top: 50px; left: -262px; }
+
+#guide { z-index: 11; opacity: .5; visibility: hidden; }
+
+
+#breanna { 
+	transform: scale(.75); 
+	top: -41px; 
+	left: -45px; 
+	z-index: 8 
+}

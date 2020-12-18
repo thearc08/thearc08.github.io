@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+	<!-- choozle clicktag/tracking code -->
+	<script type="text/javascript">
+function getParameterByName(name) {
+name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+results = regex.exec(location.search);
+return results === null ? "" :
+decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+var clickTAG = getParameterByName("clickTAG");
+</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
+</head>
+
+<body>
+    <a href="javascript:window.open(window.clickTAG);void(0);">
+    <div id="ad">
+        <div id="banner">
+			<div id="bg"><img src="images/bg.jpg" width="300px" height="50px"></div>
+			<div id="copy1"><img src="images/copy1.png" width="300px" height="50px"></div>
+			<div id="cta"><img src="images/cta.png" width="300px" height="50px"></div>
+			<div id="logo"><img src="images/logo.png" width="300px" height="50px"></div>
+			
+	    </div>
+    </div>
+<!-- end banner -->
+
+    
+<!-- greensock -->
+<script src="gsap.min.js"></script>
+<!-- <script src="../GSDevTools.min.js"></script> -->
+		<script>
+				//GSDevtools
+// 				GSDevTools.create();
+				
+				function fadeIn(){
+					var tl = gsap.timeline({id:"fadein"});
+						tl.from(["#bg", "#copy1", "#logo", "#cta"], { duration:.5, autoAlpha:0 });
+					return tl;
+				}
+				
+				function ctaUp(){
+					var tl = gsap.timeline({id:"cta"});
+						tl.to(["#copy1"], { duration: .75, y:-50 })
+						tl.to(["#cta"], { duration: .75, y:-50 }, "-=.75")
+					return tl;
+				}
+				function ctaDown(){
+					var tl = gsap.timeline({id:"cta"});
+						tl.to(["#copy1"], { duration: .75, y:0 })
+						tl.to(["#cta"], { duration: .75, y:0 }, "-=.75")
+					return tl;
+				}
+								
+				//master timeline
+				var master = new TimelineMax ();
+				
+				master.add(fadeIn())
+					  .add(ctaUp(), "+=1")
+				      .add(ctaDown(), "+=1.5")
+				      .add(ctaUp(), "+=1.5")
+				      .add(ctaDown(), "+=1.5")
+				      .add(ctaUp(), "+=1.5")					
+			
+			
+		</script>
+<!-- end greensock animation -->
+
+
+
+    </a>
+</body>
+
+</html>

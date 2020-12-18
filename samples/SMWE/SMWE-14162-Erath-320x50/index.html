@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- click thru -->
+     <style>
+        #bg-exit {
+            background-color: rgba(255,255,255,0);
+            cursor: pointer;
+            width: 300px;
+            height: 250px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            z-index: 5000;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+	<div id="bg-exit"></div>
+    <div id="ad">
+        <div id="banner">
+		    <div id="bg"><img src="images/bg.jpg" width="401" height="50"/></div>
+		    <div id="logo"><img src="images/logo.png" width="121" height="50"/></div>
+		    <div id="cta"><img src="images/cta.png" width="114" height="31"/></div>
+		    <div id="tagline"><img src="images/tagline.png" width="156" height="47"/></div>
+		    <div id="legal"><img src="images/legal.png" width="147" height="6"/></div>
+		    <div id="border"></div>
+			
+	    </div>
+	      
+	    </div><!-- end banner -->
+    </div>
+    
+<!-- greensock -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+<!-- <script src="../GSDevTools.js"></script> -->
+		<script>
+				//GSDevtools
+// 				GSDevTools.create();
+				
+				CSSPlugin.defaultTransformPerspective = 600;
+
+				function fadeIn(){
+					var tl = new TimelineMax({id:"fadein"});
+						tl.to(["#bg","#border","#cta","#logo","#tagline","#legal"], .5, { autoAlpha:1 });
+					return tl;
+				}
+
+				function bg(){
+					var tl = new TimelineMax({id:"bg"});
+						tl.to("#bg", 10, { x:55 });
+					return tl;
+				}
+
+				function swap1(){
+					var tl = new TimelineMax({id:"swap1"});
+						tl.to("#logo", .25, {y: 50})
+						tl.to("#tagline", .25, {y: 50},"-=.2")
+						tl.set("#logo", {y:-50});
+					return tl;
+				}
+				
+				function swap2(){
+					var tl = new TimelineMax({id:"swap2"});
+						tl.to("#tagline", .25, {y: 100})
+						tl.to("#logo", .25, {y: 0},"-=.2")
+						tl.set("#tagline", {y:-50});
+					return tl;
+				}
+				
+				
+				//master timeline
+				var master = new TimelineMax ();
+				
+				master.add(fadeIn())
+					.add(bg())
+					.add(swap1(), "-=8")
+					.add(swap2(), "-=6")
+					.add(swap1(), "-=4")
+					.add(swap2(), "-=2")
+					;
+						
+				//replay
+					
+			
+			
+		</script><!-- end greensock animation -->
+<!-- clickTag -->		
+<script>
+   var clickTag = "";
+    
+    function bgExitHandler(e) {
+        window.open(window.clickTag);
+//         console.log("clicked");
+    }
+    document.getElementById('bg-exit').addEventListener('click', bgExitHandler, false);
+</script>		
+	
+</body>
+
+</html>

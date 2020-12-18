@@ -1,0 +1,19 @@
+{
+    "version": "1.0", 
+
+    "title": "Weight Loss v2 300x250", 
+    "description": "optional string",  
+    
+    "width" : "300", 
+    "height": "250", 
+
+    "events": {
+        "enabled": 0, 
+    },
+
+    "clicktags": {
+        "clickTAG": "https://www.test.com",
+    },
+
+    "source": "index.html"
+}

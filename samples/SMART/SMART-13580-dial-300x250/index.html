@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="styles/style.css" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet" />   
+    <script src="scripts/EBLoader.js"></script>
+	<script src="scripts/script.js"></script>
+
+</head>
+
+<body>
+	<div id="replay"><a href="#"><img src="images/replay.svg" width="18" height="18" border="0"></a></div>
+	<div id="clickthrough-button">
+    <div id="ad">
+        <div id="banner">
+			<div id="logobox"><img src="images/smartlogo.svg" id="smartlogo" width="165" height="26" class="center" /></div>
+<!-- 			<div id="guide"><img src="images/guide3.jpg" /></div> -->
+			<div id="slide1">
+				<div id="background"></div>
+				<div id="text1">96 of the <br>Fortune 100<br> use Smartsheet.</div>
+				<div id="text2"><img src="images/dialup.svg" width="275" height="275" /></div>
+					<div id="computer"><img src="images/computer.png" width="43" height="43" /></div>
+					<div id="world"><img src="images/world.png" width="38" height="38" /></div>
+					<div id="block1"><img src="images/square1.png" width="6" height="6" /></div>
+					<div id="block2"><img src="images/square1.png" width="6" height="6" /></div>
+					<div id="block3"><img src="images/square1.png" width="6" height="6" /></div>
+					<div id="block4"><img src="images/square1.png" width="6" height="6" /></div>
+			</div>
+			
+			<div id="slide2">
+				<div id="text3">How tomorrow works.</div>
+				<div id="cta"><img src="images/cta.svg" width="150" height="150" /></div>
+<!-- 				<div id="nyse"><img src="images/nyse.svg" width="41px" height="41px" /></div> -->
+			</div>	
+	    </div><!-- end banner -->
+    </div>
+</div>
+    
+<!-- greensock -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+<!-- <script src="../GSDevTools.js"></script> -->
+		<script>
+				//GSDevtools
+// 				GSDevTools.create();
+				
+				CSSPlugin.defaultTransformPerspective = 600;
+				//fade in
+				function fadeIn(){
+					var tl = new TimelineMax();
+						tl.from(["#background","#logobox","#smartlogo"], 0.5, { autoAlpha:0 });
+					return tl;
+				}				
+
+				function text1(){
+					var tl = new TimelineMax({id:"text1"});
+						tl.from(["#text1"], 0.5, { autoAlpha:0, y:15 });
+					return tl;
+				}				
+
+				function text2(){
+					var tl = new TimelineMax({id:"text2"});
+						tl.from(["#text2","#computer","#world"], 0.75, { autoAlpha:0 })
+						  .set("#block1", { autoAlpha:1 },"+=.25")
+						  .set("#block2", { autoAlpha:1 },"+=.75")
+						  .set("#block3", { autoAlpha:1 },"+=1")
+						  .set("#block4", { autoAlpha:1 },"+=1.25")
+					return tl;
+				}
+				
+				function endframe(){
+					var tl = new TimelineMax({id:"endframe"});
+						tl.to(["#background","#text2","#computer","#world","#block1","#block2","#block3","#block4"], 2, { autoAlpha:0, ease: Power4.easeInOut });
+						tl.staggerTo(["#cta","#nyse"], .5, { autoAlpha:1, y:-5 }, .75)
+					return tl;
+				}
+				
+
+				var master = new TimelineMax ();
+				
+				master.add(fadeIn())
+					  .add(text1())
+					  .add(text2(), "+=1")
+					  .add(endframe(), "+=.2")
+					  
+				//replay
+				document.getElementById("replay").onclick = function () { master.restart();  };
+					
+			
+		</script><!-- end greensock animation -->
+	
+</body>
+
+</html>

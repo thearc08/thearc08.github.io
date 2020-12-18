@@ -1,0 +1,43 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 298px;
+    height: 248px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #f7f5f1; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 300px;
+    height: 250px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* set positions */
+#bg-light, #bg-dark, #copy1, #copy2, #copy3, #cta, #logo, #bench, #clam  {
+	position: absolute;
+	display: block;
+	top: -1px;
+	left: -1px;
+	z-index: 2;
+	visibility: hidden;
+}
+
+#bg-dark { z-index: 3; }
+#logo, #clam, #bench, #cta { z-index: 5; }
+
+#cta {transform-origin: 85px 135px}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Banner</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="ad.size" content="width=300,height=250">
+    <style>
+        *{margin:0;padding:0;}
+        div{position:absolute; }
+        #loader{width:300px;height:250px;text-align:center;}
+        .loader{position:absolute;top:30%;margin:0 auto;left:0;right:0;}
+    </style>
+    <script type="text/javascript"> var clickTag=""; </script>
+	</head>
+    <body>
+    <div id="loader"><img src='ring.svg' class='loader'></div>
+    <div class="banner" style="display: none">
+        <div id="bg" class="size retina"></div>
+        <div id="bg2" class="size"></div>
+        <div id="lights" class="size">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 250" style="enable-background:new 0 0 300 250;" xml:space="preserve">
+				<g>
+					<defs>
+						<path id="light1" d="M60.13,128.8v-1.57l0.88,0.39L60.13,128.8z"/>
+					</defs>
+					<clipPath id="light1_clipping">
+						<use xlink:href="#light1"  style="overflow:visible;"/>
+					</clipPath>
+					<image style="overflow:visible;clip-path:url(#light1_clipping);" width="300" height="250" xlink:href="img/dots.png"/>
+				</g>
+				<g>
+					<defs>
+						<path id="light2" d="M83.1,128.35l0.43-0.18l0.35,0.63L83.1,128.35z"/>
+					</defs>
+					<clipPath id="light2_clipping">
+						<use xlink:href="#light2"  style="overflow:visible;"/>
+					</clipPath>
+					<image style="overflow:visible;clip-path:url(#light2_clipping);" width="300" height="250" xlink:href="img/dots.png"/>
+				</g>
+			</svg>
+        </div>
+        <div id="mask" class="size">
+        	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 250" style="enable-background:new 0 0 300 250;" xml:space="preserve">
+				<defs>
+					<path id="text1_mask" d="M-489.04-34.32l-10.1-19.35v-24.21l12.9-14.66h28.34L87.59,129.64l-3.7-0.84l3.7-0.16L-489.04-34.32z"/>
+				</defs>
+				<clipPath id="text1_clipping">
+					<use xlink:href="#text1_mask"  style="overflow:visible;"/>
+				</clipPath>
+				<g style="clip-path:url(#text1_clipping);">
+						<image style="overflow:visible;" width="300" height="250" xlink:href="img/text1.png"/>
+				</g>
+			</svg>
+        </div>
+        <div id="light_left"></div>
+        <div id="light_right"></div>
+        <div id="text2" class="size retina"></div>
+        <div id="logo" class="size retina"></div>
+        <div id="cta" class="size retina"></div>
+    	<div id="btn-exit"></div>
+	</div>	
+    
+	<script type="text/javascript" src="js/EBLoader.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+	<script type="text/javascript" src="js/MorphSVGPlugin.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>

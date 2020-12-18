@@ -1,0 +1,60 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 298px;
+    height: 248px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: white; 
+  
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 298px;
+    height: 248px;
+    background-color: #f5eccc;
+    
+    overflow: hidden;
+}
+/* set positions */
+#guide, #bg, #text1a, #text1b, #text2a, #text2b, #text2c, #bottle, #tagline, #legal, #border {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	
+}
+
+#bg { left:-81px; top:3px; visibility: hidden}
+
+#text1a { left:50px; top:45px; clip: rect(0px,190px,55px,0px);}
+#text1b { left:8px; top:103px; clip: rect(0px,285px,60px,0px);}
+
+#text2a { left:67px; top:18px; clip: rect(0px,182px,48px,0px);}
+#text2b { left:20px; top:67px; clip: rect(0px,265px,85px,0px);}
+#text2c { left:30px; top:150px; clip: rect(0px,222px,81px,0px);}
+
+#border { visibility:visible; z-index: 10; top: -1px; left: -1px; }
+
+
+#bottle { left: 110px; top:93px; z-index: 12; visibility: hidden; transform: rotate(90deg) scale(1); )}
+#tagline { left: -25px; top:25px; transform: scale(.75) }
+#legal { left: -3px; top:225px; transform: scale(.9) }
+
+
+#guide { z-index: 13; visibility: visible; opacity: 0.35; top: 0%; left: 0%  }
+
+#replay { z-index: 5001; top: 3px; left: 761px; }

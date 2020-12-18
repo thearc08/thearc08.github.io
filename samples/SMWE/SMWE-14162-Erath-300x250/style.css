@@ -1,0 +1,62 @@
+vbody {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 298px;
+    height: 248px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: white; 
+  
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 298px;
+    height: 248px;
+    background-color: #f5eccc;
+    
+    overflow: hidden;
+}
+/* set positions */
+#guide, #bg, #text1a, #text1b, #text1c, #bottle, #tagline, #legal, #border, #logo, #cta {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	visibility: hidden;
+	
+}
+
+#bg { left:-81px; top:-20px; visibility: hidden}
+
+#text1a { left:19px; top:19px; clip: rect(0px,176px,57px,0px);}
+#text1b { left:20px; top:81px; clip: rect(0px,175px,43px,0px);}
+#text1c { left:24px; top:130px; clip: rect(0px,169px,36px,0px);}
+
+
+#border { visibility:visible; z-index: 10; top: -1px; left: -1px; }
+
+
+#bottle { left: 200px; top:0px; z-index: 12; }
+#legal { left: 26px; top:229px; }
+
+#logo { left: 156px; top: 161px; }
+
+#cta { left: 20px; top: 184px; }
+
+
+#guide { z-index: 3; visibility: visible; opacity: 0; }
+
+#replay { z-index: 5001; top: 3px; left: 761px; }

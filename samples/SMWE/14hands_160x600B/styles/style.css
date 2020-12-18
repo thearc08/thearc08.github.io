@@ -1,0 +1,123 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 158px;
+    height: 598px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #5eb389; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 160px;
+    height: 600px;
+    background-color: #5eb389;
+    overflow: hidden;
+}
+
+/* set positions */
+#guide, #photo1, #photo2, #photo3, #photo4, #photo_bottom, 
+#bottle, #woodBG, #border,
+#text_chill, #text_time, 
+#text_time2, #text_game, #cta, 
+#text_play, #text_movie, #text_its, #legal {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	visibility: hidden;
+}
+
+#woodBG {
+	clip: rect(0px, 160px, 209px, 0px)
+	}
+
+#border {
+    z-index: 8;
+	border-style: solid;
+    border-width: 5px;
+	border-color: #57b088;
+    width: 148px;
+    height: 588px;    
+}
+
+#photo1, #photo2, #photo3, #photo4 {
+    bottom: 320px;
+    z-index: 4;
+}
+
+#photo1 {
+    top: -16px;
+} 
+
+#cta {
+    top: 180px;
+    z-index: 6;
+}
+
+#photo_bottom {
+    top: 200px;
+}
+
+#text_play {
+    top: 187px;
+    left: 44px;
+    z-index: 5;
+}
+
+#text_game, 
+#text_chill {
+    top: 187px;
+    left: 38px;
+    z-index: 5;
+    clip: rect(0px,95px,34px,0px);
+}
+
+#text_movie {
+    top: 187px;
+    left: 32px;
+    z-index: 5;
+    clip: rect(0px,95px,34px,0px);
+}
+
+
+#text_time {
+    top: 125px;
+    left: 44px;
+    z-index: 5;
+    clip: rect(0px,89px,36px,0px);
+}
+
+
+#text_its {
+    top: 42px;
+    left: 14px;
+    z-index: 5;
+    /* visibility: hidden; */
+}
+
+#bottle {
+    top: 258px;
+    left: 18px;
+    transform: scale(1);
+    z-index: 10;
+}
+/* #guide { z-index: 1; visibility: visible; opacity: .5; } */
+#replay { z-index: 5001; top: 579px; left: 280px; }
+
+#legal { z-index: 10; top:389px; left: -1px; }
+
+

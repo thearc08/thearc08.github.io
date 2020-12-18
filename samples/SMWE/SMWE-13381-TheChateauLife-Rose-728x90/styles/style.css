@@ -1,0 +1,63 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 726px;
+    height: 88px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #faf4e1; 
+  
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 726px;
+    height: 88px;
+    background-color: #faf4e1;
+    
+    overflow: hidden;
+}
+/* set positions */
+#guide, #logo, #left-bracket, #right-bracket, #bottom-line, #left-line, #top-line, #right-line, #line1, #line2, #glass1, #glass2, #button, #background, #legal {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	visibility: hidden;
+}
+
+#guide { z-index: 1; visibility: visible; }
+
+
+#logo { top:8px; left: 582px; }
+#button { top:56px; left: 585px; }
+#background { z-index: 3; }
+#legal { top:74px; left: 225px; }
+#left-bracket, #right-bracket {  }
+
+#left-line {  visibility: visible; position: fixed; clip:rect(0px, 11px, 45px, 0px);  }
+
+#top-line { visibility: visible; position: fixed;  clip:rect(0px, 567px, 10px, 0px);  }
+
+#right-line {  visibility: visible; position: fixed;  clip:rect(0px, 568px, 45px, 563px);  }
+
+#bottom-line { visibility: visible; position: fixed;  clip:rect(80px, 527px, 90px, 179px);  }
+
+
+#line1 { top:24px; left: 194px;  }
+#line2 { top:38px; left: 389px;  }
+
+#glass1 { top: 17px; left: 395px; visibility: hidden; }
+#glass2 { top: 17px; left: 533px; visibility: hidden; }

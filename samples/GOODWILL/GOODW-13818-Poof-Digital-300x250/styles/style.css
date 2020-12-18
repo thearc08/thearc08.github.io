@@ -1,0 +1,62 @@
+body { margin: 0px; padding: 0px; }
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 298px;
+    height: 248px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #287bf7; 
+  
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 298px;
+    height: 248px;
+    background-color: #287bf7;
+    
+    overflow: hidden;
+}
+/* set positions */
+#guide, #replay, #background, #logo, #boxes1, #boxes2, #boxes3, #furniture, #desk, #drums, #vacuum, #ironingBoard, #chair, #weights, #poof, #frame3Container, #frame1Container, #carContainer, #line1, #car, #logo, #cta  {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	visibility: hidden;
+}
+
+#guide  { z-index: 1; }
+#guide { visibility: visible; }
+
+#replay { z-index: 5001; top: 230px; left: 2px; }
+#frame1Container { width: 300px; height: 250px; visibility: visible;  }
+#furniture { left:127px; top:-1px; }
+#vacuum { left: 243px; top:-44px; z-index: 9; }
+#desk { top:14px; left:-4px; z-index: 9; }
+#boxes1 { top:-38px; left: 50px; z-index: 8;  }
+#chair { top:148px; left:56px;  }
+#drums { top:114px; left:-96px; z-index: 11; }
+#boxes2 { top:212px; left: 63px;  }
+#ironingBoard { top:183px; left: 191px; }
+#weights { top:114px; left: 260px; }
+
+#poof { top:-172px; left:-117px; }
+
+#line1 { top:27px; left:4px; }
+#frame3Container { width: 300px; height: 250px; visibility: visible;  }
+#carContainer { width: 300px; height: 250px; visibility: visible;  }
+#boxes3 { top:165px; left: -34px; }
+#logo { top:98px; left:19px; z-index: 9; }
+#car { top:117px; left:111px; z-index: 9; }
+
+#cta { top:26px; left: 47px; }

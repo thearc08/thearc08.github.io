@@ -1,0 +1,85 @@
+.banner {
+    width:300px;
+    height:600px;
+    border:1px solid #333;
+    background:#0bb4cb;
+    overflow:hidden;
+    display:block !important;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+#loader-container {
+    display:none;
+}
+
+#btn-exit{
+    width:100%;
+    height:100%;   
+    cursor:pointer;
+    opacity:0;
+}
+
+.size {
+    width: 300px;
+    height: 600px;
+    top: -1px;
+    left: -1px;
+}
+
+.retina {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#bg {
+    background-image: url(../img/bg.png);
+}
+
+#bg2 {
+    background-image: url(../img/bg2.png);
+    opacity: 0;
+}
+
+#text1_1 {
+    background-image: url(../img/text1_1.png);
+    opacity: 0;
+    left: -200px;
+}
+
+#text1_2 {
+    background-image: url(../img/text1_2.png);
+    opacity: 0;
+    left: -200px;
+}
+
+#text1_3 {
+    background-image: url(../img/text1_3.png);
+    opacity: 0;
+    left: -200px;
+}
+
+#text1_4 {
+    background-image: url(../img/text1_4.png);
+    opacity: 0;
+    left: -200px;
+}
+
+#text2 {
+    background-image: url(../img/text2.png);
+    opacity: 0;
+}
+
+#badge {
+    background-image: url(../img/badge.png);
+}
+
+#logo {
+    background-image: url(../img/logo.png);
+    opacity: 0;
+}
+
+#cta {
+    background-image: url(../img/cta.png);
+    opacity: 0;
+}

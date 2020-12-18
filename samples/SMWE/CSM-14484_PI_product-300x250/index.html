@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- click thru -->
+     <style>
+        #bg-exit {
+            background-color: rgba(255,255,255,0);
+            cursor: pointer;
+            width: 300px;
+            height: 250px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            z-index: 5000;
+            cursor: pointer;
+        }
+    </style>
+	<script src="http://ds.serving-sys.com/BurstingScript/adKit/adkit.js"> </script>
+</head>
+
+<body>
+	<div id="bg-exit"></div>
+    <div id="ad">
+        <div id="banner">
+			<div id="bg"><img src="images/csm_bg.png" width="300px" height="250px"></div>
+			<div id="text"><img src="images/csm_copy.png" width="144px" height="80px"></div>
+			<div id="highlight"><img src="images/highlight.png" width="59px" height="54px"></div>
+			<div id="tab"><img src="images/csm_tab.png" width="41px" height="95px"></div>
+			<div id="cta">
+				<div id="cta-text"><img src="images/csm_cta.png" width="80px" height="42px"></div>
+				<div id="cta-arrow"><img src="images/csm_arrow.png" width="11px" height="10px"></div>
+				<div id="cta-fill"></div>
+			</div>
+			<div id="photo"><img src="images/csm_img.png" width="98px" height="219px"></div>
+			<div id="flare"><img src="images/flare2-mod.png" width="151px" height="151px"></div>
+			<div id="logo"><img src="images/csm_logo.png" width="148px" height="43px"></div>
+			<div id="legal"><img src="images/legal.png" width="110px" height="7px"></div>
+			
+	    </div>
+	    
+    </div>
+<!-- end banner -->
+
+    
+<!-- greensock -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+<!-- <script src="../GSDevTools.js"></script> -->
+		<script>
+				//GSDevtools
+// 				GSDevTools.create();
+				
+				function fadeIn(){
+					var tl = new TimelineMax({ide:"fadein"});
+						tl.set(["#bg","#photo","#logo","#tab","#text","#cta-text","#cta","#cta-arrow","#legal","#flare"], { autoAlpha:1 });
+					return tl;
+				}
+				
+				function background(){
+					var tl = new TimelineMax({id:"background"});
+						tl.from(["#bg","#logo","#legal"], .75, { y:100, opacity: 0 })
+						  .from(["#photo"], .75, {y:-100, opacity: 0}, "-=.75")
+						  .from(["#tab"], .75, {x:-100, opacity:0, ease: Power4.easeOut }, "-=.5")
+					return tl;
+				}
+				
+				function copy(){
+					var tl = new TimelineMax({id:"copy"});
+						tl.from(["#text"], .75, { y:-10, opacity: 0 })
+						  .from(["#cta-text"], .75, { x:50, opacity: 0},"-=.5")
+						  .from(["#cta-arrow"], .75, { x:-20, y:20, opacity: 0},"-=.75")
+					return tl;
+				}
+				
+				function highlight(){
+					var tl = new TimelineMax({repeat:2, repeatDelay:2, id:"highlight"});
+						tl.to(["#highlight"], .15, { autoAlpha: 1 })
+						  .to(["#highlight"], 1.25, { x:22, y:99, ease: Power3.easeOut },"-=.15")
+						  .to(["#highlight"], .5, { autoAlpha: 0},"-=.3")
+					return tl;
+				}
+				
+				function flare(){
+					var tl = new TimelineMax({repeat:2, repeatDelay:1.2, id:"flare"});
+						tl.from(["#flare"], 1.5, { scale: .1, x: 5, y:-15, rotation: -60, opacity: 0, ease: Power1.easeIn })
+						  .to(["#flare"], 1.25, { rotation: 60, opacity: 0 })
+					return tl;
+				}
+
+				function ctaPulse(){
+					var tl = new TimelineMax({repeat:2, repeatDelay:2.5, id:"ctaPulse"});
+						tl.to(["#cta-fill"], .5, { autoAlpha: 1, repeat: 1, yoyo:true })
+						  .to(["#cta-arrow"], .5, { x: 10, y: -10, repeat: 1, yoyo:true },"-=1")
+					return tl;
+				}
+				
+								
+				//master timeline
+				var master = new TimelineMax ();
+				
+				master.add(fadeIn())
+				      .add(background())
+				      .add(copy(), "-=.4")
+				      .add(highlight(), "+=1")
+				      .add(flare(), "-=9.25")
+				      .add(ctaPulse(), "-=6.5")      
+				      ;
+						
+					
+			
+			
+		</script>
+<!-- end greensock animation -->
+
+
+
+<!-- clickTag -->		
+<script>
+	var clickTag = "https://www.google.com/";
+	
+	function bgExitHandler(e) {
+	    window.open(window.clickTag);
+	    //console.log("clicked");
+	}
+	document.getElementById('bg-exit').addEventListener('click', bgExitHandler, false);
+</script>		
+<!-- end clickTag -->		
+
+</body>
+
+</html>

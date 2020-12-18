@@ -1,0 +1,112 @@
+body { margin: 0px; padding: 0px; }
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(0, 0, 0) 1px solid;
+    width: 298px;
+    height: 598px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #ffffff; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 298px;
+    height: 598px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+/* set positions */
+#background, .fmslogo, .bar, .pins1, .pins2, #tagline, #amicalogo, #cta, #guide, #replay {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	visibility: hidden;
+}
+
+#background {z-index: 1; left:-150px; top: -300px }
+#guide { z-index: 115; opacity: 0.25}
+
+
+/*
+#background {
+	transform: scale(1);
+	top: -350px;
+	left: -550px;
+}
+*/
+
+.fmslogo {
+	top: 78px;
+	left: 6px;
+	z-index: 5;
+}
+
+#wordmark {
+	display: inherit;
+	position: inherit;
+	left: 44px;
+	top: 53px;
+}
+	
+
+#tagline { top:175px; left:43px; }
+
+#amicalogo { top: 505px; left: 64px; visibility: hidden; }
+
+#cta { top: 330px; left: 61px; transform: scale(1.25) }
+
+.bar {
+	top: 78px;
+	left: 30px;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-family: 'Arial Narrow', sans-serif;
+	color: #00463c;
+	font-size: 20px;
+}
+
+.barText {
+	position: inherit;
+	display: inherit;
+	top: 8px;
+	left: 34px;
+	width: 225px;
+	height: 35px;
+}
+
+#barText1, #barText2 {
+	display: inline;
+}
+
+#pin1A, #pin1B, #pin1C, #pin1D, #pin2A, #pin2B, #pin2C, #pin2D, #pin2E, #pin2F {
+	position: inherit;
+	display: inherit;
+}
+
+#pin1A {left: 170px; top: 24px; }
+#pin1B {left: 245px; top: 185px; }
+#pin1C {left: 95px; top: 385px; }
+#pin1D {left: 215px; top: 285px; }
+
+#pin2A {left: 40px; top: 20px; }
+#pin2B {left: 75px; top: 210px; }
+#pin2C {left: 109px; top: 292px; }
+#pin2D {left: 150px; top: 362px; }
+#pin2E {left: 212px; top: 392px; }
+#pin2F {left: 220px; top: 482px; }
+
+
+
+#guide { visibility: visible; }
+#fmslogo { visibility: hidden; }
+#replay { z-index: 5001; top: 4px; left: 280px; }

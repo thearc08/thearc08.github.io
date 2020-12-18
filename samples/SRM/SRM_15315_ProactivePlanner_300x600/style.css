@@ -1,0 +1,72 @@
+body { margin: 0px; padding: 0px; }
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(0, 0, 0) 0px solid;
+    width: 300px;
+    height: 600px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #000000; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 300px;
+    height: 600px;
+    background-color: #000000;
+    overflow: hidden;
+}
+/* set positions */
+#bg, #fg, #blueshape, #greenshape, #bigblue, #bluebg, #bluefg, #cta, #name, #logo, #text1, #text1a, #text1b, #text1c, #text1d, #text2, #text2a, #text2b, #text2c, #photo, #guide, #light, #dark {
+	position: absolute;
+	display: block;
+	top: 0px;
+	left: 0px;
+	z-index: 10;
+	visibility: hidden;
+}
+
+#text1, #text2 { z-index: 20;}
+
+#text1a { clip: rect(0, 300px, 70px, 0) }
+#text1b { clip: rect(71px 300px 95px 0) }
+#text1c { clip: rect(96px 300px 126px 0) }
+#text1d { clip: rect(127px 300px 600px 0) }
+
+#text2a { clip: rect(0, 250px, 143px, 0) }
+#text2b { clip: rect(144px, 250px, 300px, 0) }
+
+#cta { z-index: 20; transform-origin: 105px 192px }
+
+#fg { z-index: 11; opacity: 1; transform: scale(.5); top: -400px; left: -270px;  }
+
+#name { z-index: 12; }
+#dark { z-index: 10 }
+
+#logo { z-index: 12; }
+
+#blueshape, #greenshape { transform: scale(.4); z-index: 12;  }
+
+#bluebg, #bluefg { 
+	width: 300px; 
+	height: 226px;  
+	background-color: #7ea7ac; 
+}
+
+#bluefg { opacity: .5; z-index: 12; }
+
+#bluebg { z-index: 9; }
+
+#greenshape { top: -300px; left: -466px; z-index: 15; }
+#blueshape { top: 102px; left: -105px; }
+
+#guide { z-index: 11; opacity: .5; visibility: visible; }
+
+#photo { top: 222px; left: -20px; z-index: 8 }

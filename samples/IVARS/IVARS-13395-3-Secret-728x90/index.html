@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- click thru -->
+     <style>
+        #bg-exit {
+            background-color: rgba(255,255,255,0);
+            cursor: pointer;
+            width: 728px;
+            height: 900px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            z-index: 5000;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+	<div id="bg-exit"></div>
+    <div id="ad">
+        <div id="banner">
+	        <!-- frame 1 -->
+	        <div id="line1"><img src="images/line1.png" width="702" height="52"/></div>
+	        
+	         <!-- frame 2 -->
+	        <div id="line2"><img src="images/line2.png" width="728" height="90"/></div>
+	        <div id="food"><img src="images/food.png" width="179" height="118"/></div>
+	        
+	         <!-- frame 3 -->
+	        <div id="line3"><img src="images/line3.png" width="237" height="28"/></div>
+	        <div id="logo"><img src="images/logo.png" width="728" height="90"/></div>
+	       
+	        <!-- backgrounds -->
+	        
+	        <div id="bg1"><img src="images/bg1.jpg" width="728" height="90"/></div>
+	        <div id="bg2"><img src="images/bg2.jpg" width="408" height="90"/></div>
+	    </div><!-- end banner -->
+    </div>
+    
+<!-- greensock -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+<!--<script src="../GSDevTools.js"></script>-->
+		<script>
+				//GSDevtools
+				//GSDevTools.create();
+				//fade in
+				function fadeIn(){
+					var tl = new TimelineMax();
+						tl.set("#line1", { visibility: "visible" })
+							.from("#bg1", 0.5, { autoAlpha:0 })
+							.from("#line1", 0.4, { x:-720});
+					return tl;
+				}
+				
+				
+				
+				//frame2 
+				function frame2(){
+					var tl = new TimelineMax({id:"frame 2"});
+						tl.set(["#line2","#food"], { visibility: "visible" })
+							.from(["#line2","#food"], 0.5, { y:95, ease: Back.easeOut.config(1) })
+							.to("#line1", 0.3, { y:-90 }, "-=0.5");
+						return tl;	
+				}
+				
+				//frame 3
+				function frame3(){
+					var tl = new TimelineMax({id:"frame 3"});
+						tl.set("#logo", { visibility: "visible" })
+							.to("#line2", 0.2, { y:90 })
+							.from("#logo", 0.5, { y:90 }, "+=0.2")
+							.from(["#bg2","#waves"], 0.5, { autoAlpha:0}, "-=0.3")
+							.from("#line3", 0.5, { autoAlpha:0, scale:4, ease: Power2.easeIn }, "+=0.5");
+						return tl;	
+				}
+				
+				
+				
+				//master timeline
+				var master = new TimelineMax ({repeat:1, repeatDelay:2});
+				
+				master.add(fadeIn())
+						.add(frame2(), "+=1.5")
+						.add(frame3(), "+=1.3");
+						
+					
+			
+			
+		</script><!-- end greensock animation -->
+<!-- clickTag -->		
+<script>
+	var clickTag = "";
+	
+	function bgExitHandler(e) {
+	    window.open(window.clickTag);
+	    //console.log("clicked");
+	}
+	document.getElementById('bg-exit').addEventListener('click', bgExitHandler, false);
+</script>		
+	
+</body>
+
+</html>

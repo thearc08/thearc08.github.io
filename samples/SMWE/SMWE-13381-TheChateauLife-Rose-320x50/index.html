@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- click thru -->
+     <style>
+        #bg-exit {
+            background-color: rgba(255,255,255,0);
+            cursor: pointer;
+            width: 320px;
+            height: 50px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            z-index: 5000;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+	<div id="bg-exit"></div>
+    <div id="ad">
+        <div id="banner">
+	       <!-- background -->
+	       <div id="background"><img src="images/background.jpg" width="320" height="50"/></div>
+	       <div id="logo"><img src="images/logo.png" width="93" height="27"/></div>
+	       <div id="button"><img src="images/button.png" width="92" height="8"/></div>
+	       <div id="left-bracket"><img src="images/left-bracket.png" width="320" height="50"/></div>
+	       <div id="right-bracket"><img src="images/right-bracket.png" width="320" height="50"/></div>
+	       <div id="left-line"><img src="images/left-line.png" width="320" height="50"/></div>
+	       <div id="top-line"><img src="images/top-line.png" width="320" height="50"/></div>
+	       <div id="right-line"><img src="images/right-line.png" width="320" height="50"/></div>
+	       <div id="bottom-line"><img src="images/bottom-line.png" width="320" height="50"/></div>
+	       
+	       <!-- shield -->
+	       <div id="line1"><img src="images/line1.png" width="151" height="36"/></div>
+	       <div id="line2"><img src="images/line2.png" width="123" height="17"/></div>
+	       
+	       <!-- bottle and glasses -->
+	       <div id="glass1"><img src="images/glass.png" width="13" height="36"/></div>
+	       <div id="glass2"><img src="images/glass.png" width="13" height="36"/></div>
+	    </div><!-- end banner -->
+    </div>
+    
+<!-- greensock -->
+<script src="gs/TweenMax.min.js"></script>
+<!--<script src="../GSDevTools.js"></script>-->
+		<script>
+				//GSDevtools
+				//GSDevTools.create();
+				//fade in
+				function fadeIn(){
+					var tl = new TimelineMax();
+						tl.from("#background", 0.5, { autoAlpha:0 })
+							.staggerFrom(["#logo", "#button"], 1, { autoAlpha:0, x:-5 }, 0.2);
+					return tl;
+				}
+				
+				//brackets
+				function brackets(){
+					var tl = new TimelineMax({id:"brackets"});
+						tl.from("#left-bracket", 0.3, { autoAlpha:0 })
+							.from("#left-line", 0.3, { clip:"rect(21px, 7px, 21px, 0px)"})
+							.from("#top-line", 0.3, { clip:"rect(0px, 4px, 7px, 0px)"})
+							.from("#right-line", 0.3, { clip:"rect(0px, 214px, 0px, 208px)"})
+							.from("#right-bracket", 0.3, { autoAlpha:0 })
+							.from("#bottom-line", 0.3, { clip:"rect(42px, 186px, 50px, 185px)"});
+						return tl;	
+				}
+				
+				//line 1 
+				function line1(){
+					var tl = new TimelineMax({id:"line1"});
+						tl.from("#line1", 1, { autoAlpha:0, x:-5 })
+							.to("#line1", 0.5, { autoAlpha:0 }, "+=3");
+						return tl;	
+				}
+				
+				//line 2 
+				function line2(){
+					var tl = new TimelineMax({id:"line2"});
+						tl.from("#line2", 1, { autoAlpha:0, x:-15 });
+						return tl;	
+				}
+				
+				//glasses 
+				function glasses(){
+					var tl = new TimelineMax({id:"glasses"});
+						tl.from("#glass1", 0.5, { autoAlpha:0, y:"5" })
+							.from("#glass2", 1, { autoAlpha:0, x:"-20" });
+						return tl;	
+				}
+				
+				
+				
+				//tilt glasses 
+				function glassKiss(){
+					var tl = new TimelineMax({id:"glass kiss"});
+						tl.to("#glass1", 0.8, {rotation:15, transformOrigin:"center bottom", x:-5, ease:Power4.easeIn})
+						  .to("#glass2", 0.8, {rotation:-15, transformOrigin:"center bottom", x:5, ease:Power4.easeIn}, "-=0.8")
+						  
+						  .to("#glass1", 0.8, {rotation:5, transformOrigin:"center bottom", x:-1})
+						  .to("#glass2", 0.8, {rotation:-5, transformOrigin:"center bottom", x:2}, "-=0.8");
+					return tl;	
+				}
+				
+				
+				//master timeline
+				var master = new TimelineMax ();
+				
+				master.add(fadeIn())
+						.add(brackets(), "-=1")
+						.add(line1(), "-=2.6")
+						.add(line2())
+						.add(glasses(), "-=0.5")
+						.add(glassKiss(), "+=0.3");
+						
+					
+			
+			
+		</script><!-- end greensock animation -->
+<!-- clickTag -->		
+<script>
+	var clickTag = "clickMacro";
+	
+	function bgExitHandler(e) {
+	    window.open(window.clickTag);
+	    //console.log("clicked");
+	}
+	document.getElementById('bg-exit').addEventListener('click', bgExitHandler, false);
+</script>		
+	
+</body>
+
+</html>

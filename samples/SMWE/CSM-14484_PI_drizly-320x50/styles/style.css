@@ -1,0 +1,58 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 318px;
+    height: 48px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #f7f5f1; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 320px;
+    height: 50px;
+    background-color: #f7f5f1;
+    overflow: hidden;
+}
+
+/* set positions */
+#bg, #text, #guide, #tab, #cta, #cta-text, #cta-arrow, #cta-fill, #logo, #legal, #drizly {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	visibility: hidden;
+}
+
+#text { top: 8px; left: 26px; }
+
+#tab { left: 112px; z-index: 4; }
+#bg { z-index: 1; }
+#highlight { top: 64px; left: -28px; z-index: 10; transform: rotate(-10deg); }
+
+#cta { top: 4px; left: 197px; z-index: 3; visibility: visible; }
+#cta-text, #cta-arrow { z-index: 3; visibility: visible; }
+#cta-arrow { top: 20px; left: 86px; z-index: 3; visibility: visible; }
+#cta-fill { background-color: white; width: 111px; height: 34px; z-index: 2; }
+#drizly { top: 5px; left: 145px; z-index: 3; visibility: visible; }
+
+#photo { left: 189px; }
+
+#logo { top: 9px; left: 6px; }
+
+#legal { top: 34px; left: 98px; }
+
+#guide { z-index: 30; opacity:0; }

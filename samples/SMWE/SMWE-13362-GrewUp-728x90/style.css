@@ -1,0 +1,52 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 726px;
+    height: 88px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: white; 
+  
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 726px;
+    height: 88px;
+    background-color: #f5eccc;
+    
+    overflow: hidden;
+}
+/* set positions */
+#guide, #bg, #text1, #bottle, #tagline, #legal, #border {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+#bg { left:-1px; top:-1px; visibility: hidden}
+#border { z-index: 10; top: -1px; left: -1px; }
+
+#text1 { left:48px; top:10px; clip: rect(0px,637px,69px,0px); }
+
+#bottle { left: 416px; top:3px; z-index: 11; visibility: hidden; transform: scale(.9)}
+#tagline { left: 131px; top:-1px; }
+#legal { left: -45px; top:70px; }
+
+
+#guide { z-index: 3; visibility: visible; opacity: 0; top:0%; left:0%  }
+
+#replay { z-index: 5001; top: 3px; left: 761px; }

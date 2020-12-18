@@ -1,0 +1,159 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 726px;
+    height: 88px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #ffffff; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 726px;
+    height: 88px;
+    background-color: #ffffff; 
+    overflow: hidden;
+}
+/* set positions */
+#guide, #bg, #bodyText, #diamondR, #logo, 
+#redLine, #cta1, #cta2, #cta3, #bottomBar,
+#bottom-line, #left-line, #top-line, #right-line, 
+#fullPlaid, #nameAudrey, #nameKate, #nameNori, 
+#redLogo_CS, #redLogo_M, #ctaBackground, #shield {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	visibility: hidden;
+}
+
+/* #guide { z-index: 1; visibility: visible; } */
+
+#logoBackground {
+    position: absolute;
+    display: block;
+    width: 158px;
+    height: 88px;
+    background-color: white;
+    overflow: hidden;
+    z-index: 7;
+    left: 570px;
+}
+
+#ctaBackground { 
+    visibility: visible; 
+    background-color: #2c7b7f; 
+    width: 134px; 
+    height: 26px; 
+    left: 585px;
+    top: 56px; 
+    z-index: 8;
+}
+
+#logo { 
+    top: 8px; 
+    left: 582px;
+    z-index: 10;
+}
+
+#bottomBar {
+    top: 196px;
+}
+
+#cta1, #cta2, #cta3 {
+	z-index: 10;
+}
+
+#cta1 {
+    top: 60px;
+    left: 608px;
+}
+
+#cta2 {
+    top: 60px;
+    left: 600px;
+}
+
+#cta3 {
+    top: 61px;
+    left: 602px;
+}
+
+#shield {
+    left: 37px;
+    z-index: 4;
+}
+
+#redLogo_CS {
+    top: 16px;
+    left: 239px;
+    z-index: 4;
+}
+
+#redLogo_M {
+    top: 31px;
+    left: 311px;
+    z-index: 4;
+}
+
+#nameKate {
+    top: 34px;
+    left: 368px;
+    z-index: 4;
+}
+
+#nameNori {
+    top: 33px;
+    left: 368px;
+    z-index: 4;
+}
+
+#nameAudrey {
+    top: 33px;
+    left: 366px;
+    z-index: 4;
+}
+
+#redLine {
+    top: 32px;
+    left: 363px;
+    z-index: 4;
+}
+
+#diamondR {
+    top: 78px;
+    left: 133px;
+    z-index: 4;
+}
+
+#bodyText {
+    top: 59px;
+    left: 200px;
+    z-index: 4;
+}
+
+/* #guide { z-index: 4; visibility: visible; opacity: .5; } */
+
+#left-line {  visibility: visible; position: fixed; clip:rect(0px, 11px, 83px, 0px);  }
+
+#top-line { visibility: visible; position: fixed;  clip:rect(0px, 567px, 10px, 0px);  }
+
+#right-line {  visibility: visible; position: fixed;  clip:rect(0px, 572px, 83px, 563px);  }
+
+#bottom-line {  visibility: visible; position: fixed;  clip:rect(80px, 582px, 90px, 5px);  }
+
+
+

@@ -1,0 +1,58 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 726px;
+    height: 88px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #f7f5f1; 
+  
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 728px;
+    height: 90px;
+    background-color: #f7f5f1;
+    overflow: hidden;
+}
+
+/* set positions */
+#bg, #text, #guide, #cta, #cta-text, #cta-arrow, #cta-fill, #photo, #logo, #legal, #highlight, #flare, #drizly {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	visibility: hidden;
+}
+
+#text { top: 6px; left: 204px; z-index: 5; }
+
+#highlight { top: -35px; left: 575px; z-index: 10; transform: rotate(-10deg); }
+
+#cta { top: 15px; left: 609px; }
+#cta-text, #cta-arrow { z-index: 3; }
+#cta-arrow { top: 30px; left: 74px; z-index: 3; }
+#cta-fill { background-color: white; width: 100px; height: 42px; z-index: 2; }
+#drizly { left: 556px; top: 16px; }
+
+#photo { left: 192px; }
+#flare { left: 365px; top: -52px; transform: scale(.35)}
+
+#logo { top: 22px; left: 21px; }
+
+#legal { top: 67px; left: 551px; }
+
+#guide { z-index: 30; opacity:0; }

@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- click thru -->
+     <style>
+        #bg-exit {
+            background-color: rgba(255,255,255,0);
+            cursor: pointer;
+            width: 728px;
+            height: 90px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            z-index: 5000;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+	<div id="guide"><img src="images/backup.jpg"/></div>
+	<div id="bg-exit"></div>
+    <div id="ad">
+        <div id="banner">
+		    <div id="bg"><img src="images/bg.jpg" width="724" height="306"/></div>
+		    <div id="border"><img src="images/border.png" width="728" height="90"/></div>
+			<div id="text1"><img src="images/text1.png" width="253" height="34"/></div>
+			<div id="text2"><img src="images/text2.png" width="164" height="34"/></div>
+			<div id="bottle"><img src="images/bottle.png" width="116" height="370"/></div>
+			<div id="logo"><img src="images/logo.png" width="155" height="71"/></div>
+			<div id="cta"><img src="images/cta.png" width="141" height="38"></div>
+			<div id="legal"><img src="images/legal.png" width="218" height="8"/></div></div>
+			
+	    </div>
+	      
+	    </div><!-- end banner -->
+    </div>
+    
+<!-- greensock -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+<!-- <script src="../GSDevTools.js"></script> -->
+		<script>
+				//GSDevtools
+// 				GSDevTools.create();
+				
+				CSSPlugin.defaultTransformPerspective = 600;
+
+				function fadeIn(){
+					var tl = new TimelineMax({id:"fadein"});
+						tl.to(["#bg","#border","#text1","#text2","#legal","#logo"], .5, { autoAlpha:1 });
+						tl.set("#bottle", {visibility:"visible"})
+					return tl;
+				}
+
+				
+				function text1(){
+					var tl = new TimelineMax({id:"text1"});
+						tl.from("#text1", .5, { clip:"rect(0px,0px,34px,0px)", ease: Power0.easeNone });
+						tl.from("#text2", .5, { clip:"rect(0px,0px,34px,0px)", ease: Power0.easeNone });
+					return tl;
+				}
+
+				function bg(){
+					var tl = new TimelineMax({id:"bg"});
+						tl.from("#bg", 5, { y:-100 });
+					return tl;
+				}
+
+				function endFrame(){
+					var tl = new TimelineMax({id:"endframe"});
+						tl.from("#bottle", .75, {x:450, ease: Power1.easeOut})
+						tl.to("#logo", .1, {autoAlpha: 0},"-=.5")
+						tl.to("#bottle", .75, {transformOrigin:"left left", rotation:0, x:8, y:-102, scale:1, ease:Power3.easeOut},"+=.15")
+						tl.to("#cta", .25, {autoAlpha: 1},"-=.25")
+
+					return tl;
+				}
+				
+				//master timeline
+				var master = new TimelineMax ();
+				
+				master.add(fadeIn())
+					.add(bg())
+					.add(text1(), 1)
+					.add(endFrame(), "-=3")
+					;
+						
+					
+			
+			
+		</script><!-- end greensock animation -->
+<!-- clickTag -->		
+<script>
+   var clickTag = "";
+    
+    function bgExitHandler(e) {
+        window.open(window.clickTag);
+//         console.log("clicked");
+    }
+    document.getElementById('bg-exit').addEventListener('click', bgExitHandler, false);
+</script>		
+	
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 298px;
+    height: 248px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #5eb389; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 300px;
+    height: 250px;
+    background-color: #5eb389;
+    overflow: hidden;
+}
+
+/* set positions */
+ #guide, 
+ #bottle, #woodBG,
+ #text_time, 
+ #text_its, #cta, #text_14hands, #border, #legal {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 2;
+    visibility: hidden;
+}
+
+#bottle {
+    top: 5px;
+    z-index: 10; 
+}
+
+#woodBG {
+    top: 0px;
+    z-index: 3;
+    clip: rect(0px, 299px, 250px, 0px);
+}
+
+#border {
+    z-index: 8;
+	border-style: solid;
+    border-width: 5px;
+	border-color: #57b088;
+    width: 288px;
+    height: 238px;    
+}
+
+#text_time {
+    top: 17px;
+    left: 190px;
+    z-index: 4;
+    clip: rect(0px,257px,57px,0px);
+}
+
+#text_its {
+    top: 42px;
+    left: 224px;
+    z-index: 4;
+}
+
+#cta {
+    top: 197px;
+    left: 77px;
+    z-index: 3;
+}
+
+#text_14hands {
+    top: -5px;
+    left: -5px;
+    z-index: 4;
+}
+
+#guide { z-index: 1; visibility: hidden; opacity: .5; }
+#replay { z-index: 5001; top: 579px; left: 280px; }
+#legal { z-index: 10; top:229px; left: 87px;}
+
+

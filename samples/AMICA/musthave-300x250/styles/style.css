@@ -1,0 +1,70 @@
+body { margin: 0px; padding: 0px; }
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(0, 0, 0) 1px solid;
+    width: 298px;
+    height: 248px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #ffffff; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 298px;
+    height: 248px;
+    background-color: #00534c;
+    overflow: hidden;
+}
+/* set positions */
+#foreground, #fmslogo, #tagline, #amicalogo, #cta, #musthavecontainer, #activitycontainer, #replay, #guide {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	visibility: hidden;
+}
+
+#guide, #background { z-index: 1; }
+
+#guide { z-index: 19;}
+
+#foreground { width:300px; height:75px; top: 190px; z-index: 3 }
+
+#fmslogo { top: 207px; left: 6px; z-index: 15; }
+
+#cta, #amicalogo, #tagline {z-index: 10; }
+
+
+#musthavecontainer { width:300px; background-color:rgba(0,0,0,0.4); padding: 7px 0px 7px 0px }
+#musthave { display: block; margin-left: auto; margin-right: auto; width: 50%; }
+
+#activitycontainer { top: 34px; width:300px; background-color:rgba(255,255,255,0.8); padding: 9px 0px 9px 0px }
+#activity { display: block; margin-left: auto; margin-right: auto }
+
+
+	
+#pin { 	display: inherit; position: inherit; }
+
+#tagline { top:64px; left:48px;}
+
+#amicalogo { top: 195px; left: 102px; visibility:hidden }
+
+#cta { top: 135px; left: 56px; transform: scale(.85);}
+
+#videocontainer { top:50px; }
+
+#map {transform: scale(.25); transform-origin: top left; top:-540px, left:-649px; }
+
+
+#guide { visibility: visible; opacity:0 }
+#fmslogo { visibility: hidden; }
+#replay { z-index: 5001; top: 225px; left: 275px; }

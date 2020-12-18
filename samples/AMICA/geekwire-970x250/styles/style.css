@@ -1,0 +1,246 @@
+body { margin: 0px; padding: 0px; }
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(0, 0, 0) 1px solid;
+    width: 968px;
+    height: 248px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #ffffff; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 968px;
+    height: 248px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+/* set positions */
+#background, #mapbg, #logo_FM, #logo_parks, .bar, 
+#pin1, #pin2, #pin3, #pin4, #pin5, #pin6, #pin7,
+#pin0A, #pin1A, #pin2A, #pin3A, #pin4A, #pin5A, #pin6A,
+#pinRes1, #pinRes2, #pinRes3, #pinRes4, #pinRes5, #pinRes6, #pinRes7, #pinRes8, #pinRes9,
+#tagline, #amicalogo, #cta, #replay, #guide,
+#logo_schools, #logo_restaurants, #logo_S {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+#pin1 {
+	top: 115px;
+	left: 114px;
+	z-index: 4;
+}
+
+#pin2 {
+	top: 30px;
+	left: 204px;
+	z-index: 4;
+}
+
+#pin3 {
+	top: 29px;
+	left: 601px;
+	z-index: 4;
+}
+
+#pin4 {
+	top: 32px;
+	left: 724px;
+	z-index: 4;
+}
+
+#pin5 {
+	top: 49px;
+	left: 836px;
+	z-index: 4;
+}
+
+#pin6 {
+	top: 29px;
+	left: 921px;
+	z-index: 4;
+}
+
+#pin7 {
+	top: 116px;
+	left: 867px;
+	z-index: 4;
+}
+
+#pin0A {
+	top: 50px;
+	left: 86px;
+	z-index: 4;
+}
+
+#pin1A {
+	top: 112px;
+	left: 203px;
+	z-index: 4;
+}
+
+#pin2A {
+	top: 90px;
+	left: 422px;
+	z-index: 4;
+}
+
+#pin3A {
+	top: 29px;
+	left: 520px;
+	z-index: 4;
+}
+
+#pin4A {
+	top: 79px;
+	left: 685px;
+	z-index: 4;
+}
+
+#pin5A {
+	top: 23px;
+	left: 815px;
+	z-index: 4;
+}
+
+#pin6A {
+	top: 90px;
+	left: 901px;
+	z-index: 4;
+}
+
+#pinRes1 {
+	top: 40px;
+	left: 102px;
+	z-index: 4;
+}
+
+#pinRes2 {
+	top: 106px;
+	left: 218px;
+	z-index: 4;
+}
+
+#pinRes3 {
+	top: 10px;
+	left: 240px;
+	z-index: 4;
+}
+
+#pinRes4 {
+	top: 10px;
+	left: 446px;
+	z-index: 4;
+}
+
+#pinRes5 {
+	top: 68px;
+	left: 574px;
+	z-index: 4;
+}
+
+#pinRes6 {
+	top: 31px;
+	left: 681px;
+	z-index: 4;
+}
+
+#pinRes7 {
+	top: 90px;
+	left: 799px;
+	z-index: 4;
+}
+
+#pinRes8 {
+	top: 32px;
+	left: 869px;
+	z-index: 4;
+}
+
+#guide { z-index: 10; }
+
+#background {
+	top: 0;
+	left: 0; 
+	z-index: 4; 
+}
+
+#mapbg {
+	top: 0;
+	left: 0;
+	z-index: 3;
+	height: 200px;
+}
+
+#bottomGreenDiv {
+	position: absolute;
+	background-image: url("../images/mapbg_green.jpg");
+	z-index: 4;
+	width: 970px;
+	height: 250px;
+	clip:rect(179px, 970px, 250px, 0px);
+}
+
+#logo_FM {
+	top: 182px;
+	left: 21px;
+	z-index: 5;
+}
+
+#logo_parks {
+	left: 286px;
+	top: 194px;
+	z-index: 5;
+}
+
+#logo_schools {
+	left: 283px;
+	top: 194px;
+	z-index: 5;
+}
+
+#logo_restaurants {
+	left: 287px;
+	top: 194px;
+	z-index: 5;
+}
+
+#logo_S {
+	left: 424px;
+	top: 40px;
+	z-index: 5;
+}
+
+#tagline { 
+	top: 114px; 
+	left: 230px;
+	z-index: 5;
+}
+
+#amicalogo { 
+	top: 188px; 
+	left: 825px;
+	z-index: 5; 
+}
+
+#cta {
+	top: 188px;
+	left: 616px;
+	z-index: 5; 
+}
+
+#guide { visibility: visible; opacity: .5;  }
+
+#replay { z-index: 5001; top: 225px; left: 275px; }

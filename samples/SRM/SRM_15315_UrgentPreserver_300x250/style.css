@@ -1,0 +1,63 @@
+body { margin: 0px; padding: 0px; }
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(0, 0, 0) 0px solid;
+    width: 300px;
+    height: 250px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #000000; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 300px;
+    height: 250px;
+    background-color: #000000;
+    overflow: hidden;
+}
+/* set positions */
+#bg, #fg, #blueshape, #greenshape, #cta, #name, #logo, #text1, #text1a, #text1b, #text1c, #text1d, #text2, #text2a, #text2b, #text2c, #photo, #guide, #light, #dark {
+	position: absolute;
+	display: block;
+	top: 0px;
+	left: 0px;
+	z-index: 10;
+	visibility: hidden;
+}
+
+#text1, #text2 { z-index: 20;}
+
+#text1a { clip: rect(0, 250px, 98px, 0) }
+#text1b { clip: rect(99px 250px 121px 0) }
+#text1c { clip: rect(122px 250px 149px 0) }
+#text1d { clip: rect(150px 250px 300px 0) }
+
+#text2a { clip: rect(0, 250px, 150px, 0) }
+#text2b { clip: rect(151px, 250px, 300px, 0) }
+
+#cta { z-index: 20; transform-origin: 105px 220px }
+
+#fg { z-index: 11; opacity: 1; transform: scale(.5); top: -170px; left: -310px;  }
+
+
+#dark {z-index: 9}
+
+#logo { z-index: 12; }
+
+#blueshape, #greenshape { transform: scale(.4); z-index: 12;  }
+
+#greenshape { top: -304px; left: -466px; }
+#blueshape { top: 132px; left: -89px; }
+
+#guide { z-index: 11; opacity: .5; visibility: visible; }
+
+#name { z-index: 13; }
+#photo { top: 0px; left: 0px; z-index: 8 }

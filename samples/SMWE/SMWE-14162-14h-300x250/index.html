@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- click thru -->
+     <style>
+        #bg-exit {
+            background-color: rgba(255,255,255,0);
+            cursor: pointer;
+            width: 300px;
+            height: 250px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            z-index: 5000;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+	<div id="guide"><img src="images/backup.jpg"/></div>
+	<div id="bg-exit"></div>
+    <div id="ad">
+        <div id="banner">
+		    <div id="bg"><img src="images/bg.png" width="300" height="250"/></div>
+			<div id="text1"><img src="images/text1.png" width="143" height="189"/></div>
+			<div id="text2"><img src="images/text2.png" width="143" height="189"/></div>
+			<div id="text3"><img src="images/text3.png" width="143" height="189"/></div>
+			<div id="text4"><img src="images/text4.png" width="143" height="189"/></div>
+			<div id="text5"><img src="images/text5.png" width="143" height="189"/></div>
+			
+	    </div>
+	      
+	    </div><!-- end banner -->
+    </div>
+    
+<!-- greensock -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+<!-- <script src="../GSDevTools.js"></script> -->
+		<script>
+				//GSDevtools
+// 				GSDevTools.create();
+				
+				CSSPlugin.defaultTransformPerspective = 600;
+
+				function fadeIn(){
+					var tl = new TimelineMax({id:"fadein"});
+						tl.to(["#bg","#lbar","#text1"], .5, { autoAlpha:1 });
+					return tl;
+				}
+
+				
+				function text1(){
+					var tl = new TimelineMax({id:"text1"});
+						tl.to("#text1", .01, {autoAlpha: 0})
+						tl.to("#text2", .005, {autoAlpha: 1},"-=.01");
+					return tl;
+				}
+				function text2(){
+					var tl = new TimelineMax({id:"text2"});
+						tl.to("#text2", .01, {autoAlpha: 0})
+						tl.to("#text3", .005, {autoAlpha: 1},"-=.01");
+					return tl;
+				}
+				function text3(){
+					var tl = new TimelineMax({id:"text3"});
+						tl.to("#text3", .01, {autoAlpha: 0})
+						tl.to("#text4", .005, {autoAlpha: 1},"-=.01");
+					return tl;
+				}
+				function text4(){
+					var tl = new TimelineMax({id:"text4"});
+						tl.to("#text4", .01, {autoAlpha: 0})
+						tl.to("#text5", .005, {autoAlpha: 1},"-=.01");
+					return tl;
+				}
+				function reset(){
+					var tl = new TimelineMax({id:"reset"});
+						tl.to("#text4", .01, {autoAlpha: 0})
+						tl.to("#text1", .005, {autoAlpha: 1},"-=.01");
+					return tl;
+				}
+				
+				//master timeline
+				var master = new TimelineMax ();
+				
+				master.add(fadeIn())
+					.add(text1(),"+=.75")
+					.add(text2(),"+=.75")
+					.add(text3(),"+=.75")
+					.add(reset(),"+=1")
+					.add(text1(),"+=.75")
+					.add(text2(),"+=.75")
+					.add(text3(),"+=.75")
+					.add(reset(),"+=1")
+					.add(text1(),"+=.75")
+					.add(text2(),"+=.75")
+					.add(text3(),"+=.75")
+					.add(text4(),"+=.75")
+					;
+						
+				//replay
+					
+			
+			
+		</script><!-- end greensock animation -->
+<!-- clickTag -->		
+<script>
+   var clickTag = "";
+    
+    function bgExitHandler(e) {
+        window.open(window.clickTag);
+//         console.log("clicked");
+    }
+    document.getElementById('bg-exit').addEventListener('click', bgExitHandler, false);
+</script>		
+	
+</body>
+
+</html>

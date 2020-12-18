@@ -1,0 +1,62 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 318px;
+    height: 48px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #faf4e1; 
+  
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 318px;
+    height: 48px;
+    background-color: #faf4e1;
+    
+    overflow: hidden;
+}
+/* set positions */
+#guide, #logo, #left-bracket, #right-bracket, #bottom-line, #left-line, #top-line, #right-line, #line1, #line2, #glass1, #glass2, #button, #background {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	visibility: hidden;
+}
+
+#guide { z-index: 1; visibility: visible; }
+
+
+#logo { top:5px; left: 221px; }
+#button { top:30px; left: 222px; }
+#background { z-index: 3; }
+#left-bracket, #right-bracket {  }
+
+#left-line { visibility: visible; position: fixed; clip:rect(0px, 7px, 21px, 0px);  }
+
+#top-line { visibility: visible; position: fixed; clip:rect(0px, 214px, 7px, 0px);  }
+
+#right-line { visibility: visible; position: fixed; clip:rect(0px, 214px, 21px, 208px);  }
+
+#bottom-line { visibility: visible; position: fixed; clip:rect(42px, 186px, 50px, 29px);  }
+
+
+#line1 { top:8px; left: 31px; }
+#line2 { top:16px; left: 24px; }
+
+#glass1 { top: 6px; left: 159px; visibility: hidden; }
+#glass2 { top: 6px; left: 176px; visibility: hidden; }

@@ -1,0 +1,58 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 158px;
+    height: 598px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #f7f5f1; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 160px;
+    height: 600px;
+    background-color: #f7f5f1;
+    overflow: hidden;
+}
+
+/* set positions */
+#bg, #text, #guide, #tab, #cta, #cta-text, #cta-arrow, #cta-fill, #photo, #logo, #legal, #drizly, #flare {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	visibility: hidden;
+}
+
+#text { top: 116px; left: 17px; }
+#bg { z-index: 1; }
+
+#tab { top: 465px; left: 116px }
+#highlight { top: 439px; left: 118px; z-index: 10; transform: rotate(-10deg); }
+
+#cta { top: 517px; left: 65px; }
+#cta-arrow { top: 23px; left: 55px; z-index: 3; }
+#cta-fill { background-color: white; width: 80px; height: 37px; z-index: 2; }
+#drizly { top: 517px; left: 14px; }
+
+#photo { left: 9px; top: 95px; z-index: 2; }
+#flare { left: 25px; top: 240px; transform: scale(.3)}
+
+#logo { top: 33px; left: 5px; }
+
+#legal { top: 579px; left: 3px; }
+
+#guide { z-index: 30; opacity:0; }

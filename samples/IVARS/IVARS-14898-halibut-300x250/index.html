@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+	<!-- choozle clicktag/tracking code -->
+	<script type="text/javascript">
+function getParameterByName(name) {
+name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+results = regex.exec(location.search);
+return results === null ? "" :
+decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+var clickTAG = getParameterByName("clickTAG");
+</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
+	
+</head>
+
+<body>
+    <a href="javascript:window.open(window.clickTAG);void(0);">
+    <div id="ad">
+        <div id="banner">
+			<div id="bg-dark"><img src="images/bg-dark.png" width="300px" height="250px"></div>
+			<div id="bg-light"><img src="images/bg-light.jpg" width="300px" height="250px"></div>
+			<div id="copy1"><img src="images/copy1.png" width="300px" height="250px"></div>
+			<div id="copy2"><img src="images/copy2.png" width="300px" height="250px"></div>
+			<div id="copy3"><img src="images/copy3.png" width="300px" height="250px"></div>
+			<div id="cta"><img src="images/cta.png" width="300px" height="250px"></div>
+			<div id="logo"><img src="images/logo.png" width="300px" height="250px"></div>
+			<div id="halibut"><img src="images/halibut.png" width="300px" height="250px"></div>
+    </div>
+    </div>
+<!-- end banner -->
+
+    
+<!-- greensock -->
+<!-- <script src="../GSDevTools.min.js"></script> -->
+		<script>
+				//GSDevtools
+// 				GSDevTools.create();
+				
+				function fadeIn(){
+					var tl = gsap.timeline({id:"fadein"});
+						tl.from(["#bg-light"], { duration:.5, autoAlpha:0 });
+					return tl;
+				}
+				
+				function copy1(){
+					var tl = gsap.timeline({id:"copy1"});
+						tl.from(["#copy1"], { duration:.75, y: -25, autoAlpha:0 })
+						  .from(["#halibut"], { duration:.75, x: 100, autoAlpha:0 }, "-=.75");
+					return tl;
+				}
+				
+				function copy2(){
+					var tl = gsap.timeline({id:"copy2"});
+						tl.to(["#copy1"], { duration:.5, y: 25, autoAlpha:0 })
+						  .from(["#copy2"], { duration:.75, y: -25, autoAlpha:0 },"-=.2")
+					return tl;
+				}
+
+				function copy3(){
+					var tl = gsap.timeline({id:"copy3"});
+						tl.set(["#bg-dark","#logo"], {autoAlpha: 1})
+						  .from(["#bg-dark","#logo"], {duration: 1.5, y: -500})
+						  .set(["#halibut"], {zIndex: 10}, "-=.45")
+// 						tl.to(["#copy2"], { duration:.5, y: 25, autoAlpha:0 }, "-=.8")
+						  .from(["#copy3"], { duration: .5, y: -20, autoAlpha: 0},"-=.35")
+					return tl;
+				}
+
+
+				function ctaPulse(){
+					var tl = gsap.timeline({id:"ctaPulse"});
+						tl.set(["#cta"], {autoAlpha: 1})
+						.from(["#cta"], { duration: 1.5, scale: 0, ease: "elastic.out(.6, 0.35)" })
+						  .to(["#cta"], { duration: .5, scale: 1.1, repeat: 1, yoyo: true },"+=1.25")
+						  .to(["#cta"], { duration: .5, scale: 1.1, repeat: 1, yoyo: true },"+=1.25")
+						  .to(["#cta"], { duration: .5, scale: 1.1, repeat: 1, yoyo: true },"+=1.25")
+					return tl;
+				}
+								
+				//master timeline
+				var master = new TimelineMax ();
+				
+				master.add(fadeIn())
+					  .add(copy1())
+					  .add(copy2(),"+=1.25")
+					  .add(copy3(),"+=1.25")
+					  .add(ctaPulse(),"+=.25")
+					  
+					  
+					  ;			
+			
+		</script>
+<!-- end greensock animation -->
+
+
+
+    </a>
+</body>
+
+</html>

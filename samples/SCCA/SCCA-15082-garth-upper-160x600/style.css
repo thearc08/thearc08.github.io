@@ -1,0 +1,65 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 158px;
+    height: 598px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #f7f5f1; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 158px;
+    height: 598px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+#testerbox {
+	position: absolute;
+	display: block;
+	top: 17px;
+	height: 20px;
+	width: 300px;
+	border: 1px solid red;
+	z-index: 20;
+}
+
+/* set positions */
+#bg, #copy1, #copy1a, #copy1b, #copy1c, #copy1d, #copy1e, #copy2, #copy2a, #copy2b, #copy2c, #copy2d, #copy2e, #copy2f, #cta, #logo  {
+	position: absolute;
+	display: block;
+	top: -1px;
+	left: -1px;
+	z-index: 2;
+	visibility: hidden;
+}
+
+#copy1a { clip: rect(0px 160px 40px 0px)}
+#copy1b { clip: rect(41px 160px 69px 0px)}
+#copy1c { clip: rect(70px 160px 99px 0px)}
+#copy1d { clip: rect(100px 160px 120px 0px)}
+#copy1e { clip: rect(121px 160px 155px 0px)}
+
+
+#copy2a { clip: rect(0px 160px 40px 0px)}
+#copy2b { clip: rect(41px 160px 69px 0px)}
+#copy2c { clip: rect(70px 160px 96px 0px)}
+#copy2d { clip: rect(97px 160px 120px 0px)}
+#copy2e { clip: rect(121px 160px 144px 0px)}
+#copy2f { clip: rect(145px 160px 175px 0px)}
+
+
+#cta {transform-origin: 79px 214px}

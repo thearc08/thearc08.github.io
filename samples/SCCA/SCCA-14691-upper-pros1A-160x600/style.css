@@ -1,0 +1,48 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 158px;
+    height: 598px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #f7f5f1; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 158px;
+    height: 598px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* set positions */
+#bg, #copy, #copy1, #copy2, #copy3, #copy4, #copy5, #cta, #doc1, #doc2, #gradientFG, #logo  {
+	position: absolute;
+	display: block;
+	top: -1px;
+	left: -1px;
+	z-index: 2;
+	visibility: hidden;
+}
+
+#copy1 { clip: rect(0px 160px 67px 0px)}
+#copy2 { clip: rect(67px 160px 104px 0px)}
+#copy3 { clip: rect(104px 160px 137px 0px)}
+#copy4 { clip: rect(137px 160px 167px 0px)}
+#copy5 { clip: rect(167px 160px 247px 0px)}
+
+
+
+#cta {transform-origin: 85px 250px}

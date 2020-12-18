@@ -1,0 +1,103 @@
+body { margin: 0px; padding: 0px; }
+#ad {
+    display: block;
+    border: rgb(0, 0, 0) 1px solid;
+    overflow: hidden;
+    width: 726px;
+    height: 88px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 726px;
+    height: 88px;
+    background-color: #FFF;
+    overflow: hidden;
+}
+/* set positions */
+#background, .fmslogo, .bar, .pins1, .pins2, #tagline, #amicalogo, #cta, #replay, #guide {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	visibility: hidden;
+}
+
+#guide { z-index: 10; }
+
+
+#background {
+	transform: scale(1);
+	left: -365px;
+	top: -130px;
+	 z-index: 1;
+}
+
+.fmslogo {
+	top: 8px;
+	left: 7px;
+	z-index: 5;
+}
+
+#wordmark {
+	display: inherit;
+	position: inherit;
+	left: 48px;
+	top: 52px;
+}
+	
+#pin { 	display: inherit; position: inherit; }
+
+#tagline { top:59px; left:51px;}
+
+#amicalogo { top: 32px; left: 620px; }
+
+#cta {
+	top: 25px;
+	left: 422px;
+}
+
+.bar {
+	top: 8px;
+	left: 33px;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-family: 'Arial Narrow', sans-serif;
+	color: #00463c;
+	font-size: 20px;
+}
+
+.barText {
+	position: inherit;
+	display: inherit;
+	top: 8px;
+	left: 34px;
+	width: 225px;
+	height: 35px;
+}
+
+#barText1, #barText2 {
+	display: inline;
+}
+
+#pin1A, #pin1B, #pin2A, #pin2B, #pin2C {
+	position: inherit;
+	display: inherit;
+}
+
+#pin1A {left: 345px; top: 11px; }
+#pin1B {left: 445px; top: 45px; }
+#pin2A {left: 310px; top: 44px; }
+#pin2B {left: 390px; top: 29px; }
+#pin2C {left: 505px; top: 22px; }
+
+
+#guide { visibility: visible; opacity:0 }
+#fmslogo { visibility: hidden; }
+#replay { z-index: 5001; top: 70px; left: 5px; }

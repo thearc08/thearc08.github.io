@@ -1,0 +1,45 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 158px;
+    height: 598px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #f7f5f1; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 158px;
+    height: 598px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* set positions */
+#bg-light, #bg-dark, #copy1a, #copy1b, #copy2, #copy3, #cta, #logo, #crab  {
+	position: absolute;
+	display: block;
+	top: -2px;
+	left: -2px;
+	z-index: 2;
+	visibility: hidden;
+}
+
+#bg-dark { z-index: 3; }
+#logo, #crab, #cta, #copy3 { z-index: 5; left:-2px }
+
+#crab { left:-33px}
+
+#cta {transform-origin: 85px 315px}

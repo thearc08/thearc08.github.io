@@ -1,0 +1,19 @@
+{
+    "version": "1.0", 
+
+    "title": "Bariatric v2 320x50", 
+    "description": "optional string",  
+    
+    "width" : "320", 
+    "height": "50", 
+
+    "events": {
+        "enabled": 0, 
+    },
+
+    "clicktags": {
+        "clickTAG": "https://www.test.com",
+    },
+
+    "source": "index.html"
+}

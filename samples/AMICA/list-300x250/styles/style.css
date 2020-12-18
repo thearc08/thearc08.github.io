@@ -1,0 +1,72 @@
+body { margin: 0px; padding: 0px; }
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(0, 0, 0) 1px solid;
+    width: 298px;
+    height: 248px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #ffffff; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 298px;
+    height: 248px;
+    background-color: #00534c;
+    overflow: hidden;
+    background-image: url("../images/mapbg.jpg");
+    background-size: 300px 250px;
+}
+/* set positions */
+#background, #fmslogo1, #fmslogo2, #tagline, #amicalogo, #cta, #rule1, #rule2, #artA, #artB, #bikeA, #bikeB, #coffeeA, #coffeeB, #commuteA, #commuteB, #dogA, #dogB, #festivalsA, #festivalsB, #fitnessA, #fitnessB, #musicA, #musicB, #runningA, #runningB, #seattleA, #seattleB, #cinemas, #clubs, #lightrail, #replay {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	visibility: hidden;
+}
+
+#artA, #artB, #bikeA, #bikeB, #coffeeA, #coffeeB, #commuteA, #commuteB, #dogA, #dogB, #festivalsA, #festivalsB, #fitnessA, #fitnessB, #musicA, #musicB, #runningA, #runningB, #seattleA, #seattleB, #cinemas, #clubs, #lightrail {left: inherit; z-index: 10; }
+
+#seattleA, #seattleB { top: -255px }
+#coffeeA, #coffeeB { top: -218px }
+#musicA, #musicB { top:-181px }
+#artA, #artB { top: -144px;  }
+#bikeA, #bikeB { top: -107px; }
+#commuteA, #commuteB { top:-70px; }
+#dogA, #dogB { top:-33px  }
+#runningA, #runningB { top:4px  }
+#fitnessA, #fitnessB { top:41px  }
+#festivalsA, #festivalsB { top: 78px }
+#lightrail { top: 117px;  }
+#cinemas { top: 155px; }
+#clubs { top: 193px;  }
+
+.list {	top: 177px; left: 114px; padding-top: -5px; }
+
+
+#guide, #background { z-index: 1; }
+
+#background { width: 300px; height: 250px; }
+
+#fmslogo1, #fmslogo2 { top: 78px; left: 3px; z-index: 5; }
+#fmslogo2 { position:absolute; left: 114px; }
+
+#tagline { top:64px; left:48px;}
+
+#amicalogo { top: 195px; left: 12px;  }
+
+#cta { top: 132px; left: 56px; transform: scale(.85); }
+
+
+
+#replay { z-index: 5001; top: 225px; left: 275px; }

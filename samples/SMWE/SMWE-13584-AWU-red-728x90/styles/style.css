@@ -1,0 +1,122 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 726px;
+    height: 88px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #faf4e1; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 726px;
+    height: 88px;
+    background-color: #faf4e1;
+    overflow: hidden;
+}
+#logoBackground {
+    position: absolute;
+    display: block;
+    width: 158px;
+    height: 88px;
+    background-color: #faf4e1;
+    overflow: hidden;
+    z-index: 7;
+    left: 570px;
+}
+/* set positions */
+#guide, #logo, #left-bracket, #right-bracket, 
+#bottom-line, #left-line, #top-line, #right-line, 
+#line1, #line2, #bottle,
+#button, #background, #legal, #photo, 
+#ribbonTopF, #ribbonTopB, #ribbonMid,
+#ribbonBottomB, #ribbonBottomF {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	visibility: hidden;
+}
+
+#guide { z-index: 1; visibility: visible; }
+
+#logo { top:8px; left: 582px;z-index: 8;}
+#button { top:56px; left: 585px;z-index: 8; }
+#background { z-index: 3; }
+#legal { top:74px; left: 360px; }
+
+#left-line {  visibility: visible; position: fixed; clip:rect(0px, 11px, 83px, 0px);  }
+
+#top-line { visibility: visible; position: fixed;  clip:rect(0px, 567px, 10px, 0px);  }
+
+#right-line {  visibility: visible; position: fixed;  clip:rect(0px, 572px, 83px, 563px);  }
+
+#bottom-line {  visibility: visible; position: fixed;  clip:rect(80px, 582px, 90px, 5px);  }
+
+#line1 { top:24px; left: 194px;  }
+/* #line2 { top:38px; left: 389px;  } */
+/* 
+#glass1 { top: 17px; left: 395px; visibility: hidden; }
+#glass2 { top: 17px; left: 533px; visibility: hidden; } */
+
+#bottle {
+    top: -96px;
+    left: 548px;
+    z-index: 6;
+}
+
+#background {
+   visibility: visible;
+    background-color:  #6e263c;
+    width: 572px;
+    height: 90px;
+}
+
+#photo {
+    z-index: 6;
+    left: 34px;
+}
+
+#ribbonTopF {
+    left: 200px;
+    z-index: 6;
+    clip: rect(0px, 112px, 64px, 0px);
+}
+
+#ribbonTopB {
+    left: 201px;
+    clip: rect(0px, 169px, 72px, 0px);
+}
+
+#ribbonMid {
+    left: 216px;
+    top: 8px;
+    z-index: 6;
+    clip: rect(0px, 155px, 83px, 0px);
+}
+
+#ribbonBottomB {
+    left: 210px;
+    top: 34px;
+    clip: rect(0px, 177px, 58px, 0px);
+}
+
+#ribbonBottomF {
+    left: 328px;
+    top: 36px;
+    z-index: 6;
+    clip: rect(0px, 56px, 55px, 0px);
+}

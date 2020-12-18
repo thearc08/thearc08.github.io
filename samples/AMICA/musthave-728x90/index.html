@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="scripts/EBLoader.js"></script>
+        <!-- click thru -->
+     <style>
+        #bg-exit {
+            background-color: rgba(255,255,255,0);
+            cursor: pointer;
+            width: 728px;
+            height: 90px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            z-index: 5000;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+	<div id="bg-exit"></div>
+	<div id="replay"><a href="#"><img src="images/replay.svg" width="18" height="18" border="0"></a></div>
+    <div id="ad">
+        <div id="banner">
+<!-- 		<div id="guide"><img src="images/backup.jpg" /></div> -->
+		<div id="fmslogo"><img src="images/FMSlogo.svg" width="253px" height="21px" /></div>
+		
+		<div id="musthavecontainer"><img src="images/musthave.svg" id="musthave" width="135px" height="18px" /></div>
+		<div id="activitycontainer"><img src="images/runningtrails.svg" id="activity" width="230px" height="24px" /></div>
+		
+		<div id="tagline"><img src="images/tagline.svg" width="223px" height="17px" /></div>
+		<div id="amicalogo"><img src="images/amicalogo.svg" width="92px" height="47px" /></div>
+		<div id="cta"><img src="images/CTA.png" id="clickthrough-button" width="200px" height="68px" /></div>
+		<div id="photo"><img src="images/runners.jpg" width="728px" height="251px" /></video>
+		</div>
+			
+	    <!-- background -->
+	    <div id="foreground"><img src="images/mapbg.jpg" width="1456px" height="180px" id="map" /></div>
+	    
+	    </div><!-- end banner -->
+
+
+<!-- greensock -->
+<script src="https://cdn.flashtalking.com/frameworks/js/gsap/latest/TweenMax.min.js"></script>
+<!-- <script src="../GSDevTools.js"></script> -->
+		<script>
+				//GSDevtools
+// 				GSDevTools.create(); 
+				
+				CSSPlugin.defaultTransformPerspective = 600;
+				//fade in
+				function fadeIn(){
+					var tl = new TimelineMax();
+						tl.set(["#musthavecontainer","#activitycontainer"], { autoAlpha:1 })
+						tl.from(["#background","#fmslogo","#foreground","#videocontainer","#photo","#amicalogo"], 0.5, { autoAlpha:0 })
+					return tl;
+				}
+				function panPhoto(){
+					var tl = new TimelineMax({id:"Pan photo"});
+						tl.to("#photo", 4, {top:0})
+					return tl;
+				}
+				
+				function mustHave(){
+					var tl = new TimelineMax({id:"Must Have"});
+						tl.from("#musthavecontainer", .5, {top:-100})
+						  .from("#activitycontainer", .3, {left:-300}, "+=.75")
+					return tl;
+				}
+				
+				function foregroundGrow(){
+					var tl = new TimelineMax({id:"Foreground grow"});
+						tl.to("#foreground", .75, {y:0, x:-450, width:728})
+						  .to("#fmslogo", .75, { scale:1.54, x:-378, y:8}, "-=.75")
+						  .to("#amicalogo", .5, {y:-10, x:75}, "-=.7")
+					return tl;
+				}
+				
+				function endFrame(){
+					var tl = new TimelineMax({id:"Endframe"});
+						tl.from("#tagline", .7, { autoAlpha: 0 })
+						  .from("#cta", .7, { autoAlpha: 0 })
+						  .from('#replay', 0.5, { autoAlpha:0, transformOrigin: "9px 9px", rotation:180, ease: Power1.easeOut }, "+=0.3");	
+						return tl;
+				}
+				
+				
+				//replay
+				document.getElementById("replay").onclick = function () { master.restart();  };
+	
+				
+				//master timeline
+				var master = new TimelineMax ();
+				
+				master.add(fadeIn())
+					  .add(mustHave(),"+=.5")
+// 					  .add(panPhoto(),"-=2.25")
+					  .add(foregroundGrow(), "+=2.25")
+					  .add(endFrame())
+					 
+					 ;
+					  
+		</script>
+<!-- clickTag -->		
+<script>
+	var clickTag = "clickMacro";
+	
+	function bgExitHandler(e) {
+	    window.open(window.clickTag);
+	    //console.log("clicked");
+	}
+	document.getElementById('bg-exit').addEventListener('click', bgExitHandler, false);
+</script>		
+		</div>
+		</div>
+		</body>
+		</html>	 

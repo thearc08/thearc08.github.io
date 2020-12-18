@@ -1,0 +1,143 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 298px;
+    height: 248px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #ffffff; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 298px;
+    height: 248px;
+    background-color: #ffffff; 
+    overflow: hidden;
+}
+/* set positions */
+#guide, #bg, #bodyText, #diamondR, #logo, 
+#redLine, #cta1, #cta2, #cta3, #bottomBar,
+#bottom-line, #left-line, #top-line, #right-line, 
+#fullPlaid, #nameAudrey, #nameKate, #nameNori, 
+#redLogo_CS, #redLogo_M, #ctaBackground, #shield {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	visibility: hidden;
+}
+
+/* #guide { z-index: 1; visibility: visible; } */
+
+#ctaBackground { 
+    visibility: visible; 
+    background-color: #fff; 
+    width: 122px; 
+    height: 24px; 
+    left: 154px;
+    top: 214px; 
+}
+
+#logo { 
+    top: 208px; 
+    left: 20px;
+}
+
+#bottomBar {
+    top: 196px;
+}
+
+#cta1 {
+    top: 217px;
+    left: 170px;
+}
+
+#cta2 {
+    top: 217px;
+    left: 163px;
+}
+
+#cta3 {
+    top: 218px;
+    left: 166px; 
+}
+
+#shield {
+    top: 10px;
+    left: 45px;
+    z-index: 4;
+}
+
+#redLogo_CS {
+    top: 76px;
+    left: 77px;
+    z-index: 4;
+}
+
+#redLogo_M {
+    top: 86px;
+    left: 124px;
+    z-index: 4;
+}
+
+#nameKate {
+    top: 89px;
+    left: 168px;
+    z-index: 4;
+}
+
+#nameNori {
+    top: 87px;
+    left: 172px;
+    z-index: 4;
+}
+
+#nameAudrey {
+    top: 93px;
+    left: 163px;
+    z-index: 4;
+}
+
+#redLine {
+    top: 58px;
+    left: 161px;
+    z-index: 4;
+}
+
+#diamondR {
+    top: 78px;
+    left: 133px;
+    z-index: 4;
+}
+
+#bodyText {
+    top: 96px;
+    left: 90px;
+    z-index: 4;
+}
+
+/* #guide { z-index: 5; visibility: visible; opacity: .5; } */
+
+#left-line { visibility: visible; position: fixed; clip:rect(0px, 11px, 188px, 0px); z-index: 4; top: 4px; }
+
+#top-line { visibility: visible; position: fixed; clip:rect(0px, 300px, 10px, 0px);  z-index: 4; top: 4px;}
+
+#right-line { visibility: visible; position: fixed; clip:rect(0px, 300px, 188px, 290px);  z-index: 4; top: 4px;}
+
+#bottom-line { visibility: visible; position: fixed; clip:rect(180px, 294px, 190px, 5px);  z-index: 4; top: 4px;}
+
+
+

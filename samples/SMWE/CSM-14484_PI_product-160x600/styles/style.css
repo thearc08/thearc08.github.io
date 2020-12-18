@@ -1,0 +1,57 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 158px;
+    height: 598px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #f7f5f1; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 160px;
+    height: 600px;
+    background-color: #f7f5f1;
+    overflow: hidden;
+}
+
+/* set positions */
+#bg, #text, #guide, #tab, #cta, #cta-text, #cta-arrow, #cta-fill, #photo, #logo, #legal, #highlight, #flare {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	visibility: hidden;
+}
+
+#text { top: 112px; left: 23px; }
+#bg { z-index: 1; }
+
+#tab { top: 465px; left: 116px }
+#highlight { top: 439px; left: 118px; z-index: 10; transform: rotate(-10deg); }
+
+#cta { top: 517px; left: 12px; }
+#cta-arrow { top: 42px; left: 72px; z-index: 3; }
+#cta-fill { background-color: white; width: 98px; height: 53px; z-index: 2; }
+
+#photo { left: 9px; top: 95px; z-index: 2; }
+#flare { left: 4px; top: 230px; transform: scale(.3)}
+
+#logo { top: 33px; left: 5px; }
+
+#legal { top: 582px; left: 5px; }
+
+#guide { z-index: 30; opacity:0; }

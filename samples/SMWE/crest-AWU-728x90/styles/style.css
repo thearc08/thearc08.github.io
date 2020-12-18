@@ -1,0 +1,110 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 726px;
+    height: 88px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #ffffff; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 728px;
+    height: 90px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* set positions */
+ #bg, #cta, #boxFront, #foreground,
+ #ribbonTopB, #ribbonMid, #ribbonBottomB,
+ #text1, #text2, #bottle2, #legal {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	visibility: hidden;
+}
+
+#guide { z-index: 1; visibility: visible; opacity: .5;}
+#replay { z-index: 5001; top: 579px; left: 280px; }
+
+#bg { z-index: 3; }
+
+#legal {
+	z-index: 4;
+	top:72px;
+	left: 573px;
+}
+
+#boxFront {
+    top: 0px;
+    left: 52px;
+    z-index: 4;
+}
+
+#bottle2 {
+    top: 0px;
+    left: 351px;
+    z-index: 6;
+}
+
+#foreground {
+    top: 33px;
+    left: 25px;
+    z-index: 4;
+}
+
+#ribbonTopB {
+    top: 0px;
+    left: 253px;
+    z-index: 4;
+    clip:rect(0px, 319px, 90px, 0px);
+}
+
+#ribbonBottomB {
+    top: 15px;
+    left: 241px;
+    z-index: 4;
+    clip: rect(0px, 322px, 76px, 0px);
+}
+
+#ribbonMid {
+    top: 2px;
+    left: 239px;
+    z-index: 6;
+    clip: rect(0px, 335px, 89px, 0px);
+}
+
+#text1 {
+    top: 27px;
+    left: 278px;
+    z-index: 7;
+    /* visibility: hidden; */
+}
+
+#text2 {
+    top: 28px;
+    left: 278px;
+    z-index:7;
+    /* visibility: hidden; */
+}
+
+#cta {
+    top: 22px;
+    left: 576px;
+    z-index: 4;
+}

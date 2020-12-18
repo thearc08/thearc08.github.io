@@ -1,0 +1,45 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 298px;
+    height: 248px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #f7f5f1; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 300px;
+    height: 250px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* set positions */
+#text1, #text2, #text3, #text4, #photo, #cta, #logo1, #logo2 {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	visibility: hidden;
+}
+
+#photo { z-index: 1;}
+#logo {z-index: 4;}
+#logo2 { transform-origin: 73px 201px; z-index: 2 }
+
+
+#cta { transform-origin: 73px 141px; }

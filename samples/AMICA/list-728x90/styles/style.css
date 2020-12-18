@@ -1,0 +1,85 @@
+body { margin: 0px; padding: 0px; }
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(0, 0, 0) 1px solid;
+    width: 726px;
+    height: 88px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #ffffff; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 728px;
+    height: 90px;
+    background-color: #00534c;
+    overflow: hidden;
+    background-image: url("../images/mapbg.jpg");s
+    background-size: 728px 90px;
+}
+/* set positions */
+#background, #fmslogo1, #fmslogo2, #tagline, #amicalogo, #cta, #rule1, #rule2, #artA, #artB, #bikeA, #bikeB, #coffeeA, #coffeeB, #commuteA, #commuteB, #dogA, #dogB, #festivalsA, #festivalsB, #fitnessA, #fitnessB, #musicA, #musicB, #runningA, #runningB, #seattleA, #seattleB, #cinemas, #clubs, #lightrail, #replay {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	visibility: hidden;
+}
+
+#artA, #artB, #bikeA, #bikeB, #coffeeA, #coffeeB, #commuteA, #commuteB, #dogA, #dogB, #festivalsA, #festivalsB, #fitnessA, #fitnessB, #musicA, #musicB, #runningA, #runningB, #seattleA, #seattleB, #cinemas, #clubs, #lightrail {left: inherit; z-index: 10; }
+
+#seattleA { top: -306px }
+#seattleB { top: -308px }
+#coffeeA { top: -269px }
+#coffeeB { top: -271px }
+#musicA { top:-231px  }
+#musicB { top:-233px  }
+#artA { top: -195px;  }
+#artB { top: -196px;  }
+#bikeA { top: -160px; }
+#bikeB { top: -159px; }
+#commuteA { top:-120px; }
+#commuteB { top:-123px; }
+#dogA { top:-82px  }
+#dogB { top:-85px  }
+#runningA { top:-46px  }
+#runningB { top:-48px  }
+#fitnessA { top:-9px  }
+#fitnessB { top:-11px  }
+#festivalsA { top: 36px }
+#festivalsB { top: 25px }
+#lightrail { top: 73px;  }
+#cinemas { top: 155px; }
+#clubs { top: 193px;  }
+
+.list {	left: 212px; padding-top: 125px; }
+
+
+#guide, #background { z-index: 1; }
+
+#background { width: 300px; height: 250px; }
+
+#fmslogo1, #fmslogo2 { top: 25px; left: 17px; z-index: 5; }
+#fmslogo2 { position:absolute; left: 212px; }
+
+#tagline { top:58px; left:51px;}
+
+#amicalogo { top: 30px; left: 620px;  }
+
+#cta { top: 24px; left: 421px; }
+
+
+
+#guide { visibility: visible; }
+#replay { z-index: 5001; top: 70px; left: 5px; }
+
+}

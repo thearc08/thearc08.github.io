@@ -1,0 +1,94 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 726px;
+    height: 88px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #5eb389; 
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 728px;
+    height: 90px;
+    background-color: #5eb389;
+    overflow: hidden;
+}
+
+/* set positions */
+#guide, 
+#text_time, 
+#text_its, #handsLogo,
+#cta, #border, #woodBG, #peachDiv, #bottle, #legal {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	visibility: hidden;
+}
+
+#handsLogo {
+    top: 14px;
+    left: 460px;
+}
+
+#border {
+    z-index: 8;
+	border-style: solid;
+    border-width: 5px;
+	border-color: #57b088;
+    width: 716px;
+    height: 78px;    
+}
+
+#peachDiv {
+    width: 430px;
+    height: 90px;
+    background-color: #fcebcd;
+}
+
+#text_time {
+    top: 27px;
+    left: 128px;
+}
+
+#text_its {
+    top: 9px;
+    left: 29px;
+    /* visibility: hidden; */
+}
+
+#cta {
+    top: 63px;
+    left: 136px;
+    /* visibility: hidden; */
+}
+
+#woodBG {
+    left: 430px;
+}
+
+#bottle {
+    z-index: 10;
+    left: 436px;
+}
+
+#guide { z-index: 1; visibility: hidden; opacity: .5; }
+#replay { z-index: 5001; top: 579px; left: 280px; }
+
+#legal { z-index: 10; top:74px; left: 347px; }
+
+

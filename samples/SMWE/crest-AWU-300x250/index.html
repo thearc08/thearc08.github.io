@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- click thru -->
+     <style>
+        #bg-exit {
+            background-color: rgba(255,255,255,0);
+            cursor: pointer;
+            width: 300px;
+            height: 250px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            z-index: 5000;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+	<div id="replay"><a href="#"><img src="images/replay.svg" width="18" height="18" border="0"></a></div>
+	<div id="bg-exit"></div>
+    <div id="ad">
+        <div id="banner">
+            <!-- <div id="guide">
+                <img src="images/guide1.jpg">
+            </div> -->
+            <div id="bg"><img src="images/bg.jpg" width="300" height="250"></div>
+            <div id="boxFront"><img src="images/boxFront.png" width="182" height="245"></div>
+            <div id="foreground"><img src="images/foreground.png" width="167" height="27"></div>
+            <div id="ribbonTopF"><img src="images/ribbonTopF.png" width="136" height="140"></div>
+            <div id="ribbonTopB"><img src="images/ribbonTopB.png" width="300" height="243"></div>
+            <div id="ribbonMid"><img src="images/ribbonMid.png" width="274" height="167"></div>
+            <div id="ribbonBottomB"><img src="images/ribbonBottomB.png" width="300" height="243"></div>
+            <div id="ribbonBottomF"><img src="images/ribbonBottomF.png" width="104" height="121"></div>
+            <div id="legal"><img src="images/legal.png" width="121" height="10"/></div>
+
+            <!-- Your Holiday Gifts, All Wrapped Up -->
+            <div id="text1"><img src="images/text1.png" width="58" height="44"></div>
+            <div id="text2"><img src="images/text2.png" width="169" height="70"></div>
+            <div id="text3"><img src="images/text3.png" width="57" height="49"></div>
+            <div id="text4"><img src="images/text4.png" width="182" height="85"></div>
+            <div id="text5"><img src="images/text5.png" width="39" height="46"></div>
+
+            <!-- cta -->
+            <div id="cta"><img src="images/cta.png" width="111" height="33"></div>
+	    </div><!-- end banner -->
+    </div>
+    
+<!-- greensock -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+<script src="../GSDevTools.js"></script>
+		<script>
+				//GSDevtools
+				GSDevTools.create();
+                function fadeIn(){
+					var tl = new TimelineMax({id: "fadeIn"});
+						tl.from(["#bg", "#foreground","#boxFront","#legal"], 0.5, { autoAlpha:0 })
+                          .from("#boxFront", 1.5, {y: -300, ease:Power3.easeInOut});
+						return tl;
+				}
+
+                function ribbon(){
+					var tl = new TimelineMax({id:"ribbon"});
+					tl
+						.set(["#ribbonTopF", "#ribbonTopB", "#ribbonMid", "#ribbonBottomB", "#ribbonBottomF"], {autoAlpha: 1})
+						.from("#ribbonTopF", .15, {clip:"rect(0px, 136px, 140px, 136px)"})
+                        .from("#text1", .2, {autoAlpha:0})
+						.from("#ribbonTopB", .15, {clip:"rect(0px, 0px, 243px, 0px)"})
+						.from("#ribbonMid", .15, {clip:"rect(0px, 274px, 167px, 274px)"})
+                        .from("#text2", .2, {autoAlpha: 0})
+						.from("#ribbonBottomB", .15, {clip:"rect(0px, 0px, 243px, 0px)"})
+						.from("#ribbonBottomF", .15, {clip:"rect(0px, 104px, 121px, 104px)"});
+					return tl;
+				}	
+                
+                function textDrop() {
+                    var tl = new TimelineMax({id:"textDrop"});
+					tl.to(["#text1", "#text2"], .2, { x:15, y:-5, autoAlpha: 0})
+					  .from(["#text3", "#text4", "#text5"], .2, {x:-15, y:5, autoAlpha: 0},"-=.1")
+
+                      .from("#cta", .5, {autoAlpha: 0});
+                    return tl;
+                }
+
+				CSSPlugin.defaultTransformPerspective = 600;
+				
+				
+						
+				//replay
+				document.getElementById("replay").onclick = function () { master.restart();  };
+					
+					//master timeline
+				var master = new TimelineMax ();
+				
+				master.add(fadeIn())
+                      .add(ribbon(), "+=.1")
+                      .add(textDrop(), "+=.75");
+			
+		</script>
+		<!-- end greensock animation -->
+
+<!-- clickTag -->		
+<script>
+	var clickTag = "";
+	
+	function bgExitHandler(e) {
+	    window.open(window.clickTag);
+	    //console.log("clicked");
+	}
+	document.getElementById('bg-exit').addEventListener('click', bgExitHandler, false);
+</script>		
+<!-- end clickTag -->		
+</body>
+
+</html>

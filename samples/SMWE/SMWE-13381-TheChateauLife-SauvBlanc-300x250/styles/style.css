@@ -1,0 +1,64 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+}
+#ad {
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: block;
+    border: rgb(102, 102, 102) 1px solid;
+    width: 298px;
+    height: 248px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #ffffff; 
+  
+    overflow: hidden;
+}
+#banner {
+    position: absolute;
+    display: block;
+    width: 298px;
+    height: 248px;
+    background-color: #ffffff;
+    
+    overflow: hidden;
+}
+/* set positions */
+#guide, #logo, #left-bracket, #right-bracket, #bottom-line, #left-line, #top-line, #right-line, #shield, #line1, #line2, #bottle, #glass1, #glass2, #button, #pic, #bottomBar {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	visibility: hidden;
+}
+
+#guide { z-index: 1; visibility: visible; }
+
+#bottomBar { visibility: visible; background-color: #fed16d; width: 300px; height: 60px; top:190px; z-index: 4; }
+#logo { top:195px; left: 7px;  }
+#button { top:203px; left: 196px;}
+
+#left-line { visibility: visible; position: fixed; clip:rect(0px, 11px, 150px, 0px);  }
+
+#top-line { visibility: visible; position: fixed; clip:rect(0px, 300px, 10px, 0px);  }
+
+#right-line { visibility: visible; position: fixed; clip:rect(0px, 300px, 158px, 290px);  }
+
+#bottom-line { visibility: visible; position: fixed; clip:rect(180px, 256px, 190px, 45px);  }
+
+#shield { top:18px; left: 57px;  }
+#line1 { top:46px; left: 81px; }
+#line2 { top:89px; left: 88px; }
+
+#bottle { top: 97px; left: 240px;  }
+#glass1 { top: 140px; left: 224px; }
+#glass2 { top: 140px; left: 263px; }
+
+#pic { z-index: 3; left: -40px; top:-50px; }
+

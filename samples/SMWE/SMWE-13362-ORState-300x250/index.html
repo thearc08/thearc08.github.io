@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="scripts/EBLoader.js"></script>
+    <script src="scripts/script.js"></script>
+
+</head>
+
+<body>
+	<div id="replay"><a href="#"><img src="images/replay.svg" width="18" height="18" border="0"></a></div>
+<!-- 	<div id="guide"><img src="images/0002_728x90AF3.jpg"/></div> -->
+	<div id="clickthrough-button">
+    <div id="ad">
+        <div id="banner">
+		    <div id="bg"><img src="images/bg.jpg" width="483" height="323"/></div>
+			<div id="text1a"><img src="images/text1a.png" width="262" height="36"/></div>
+			<div id="text1b"><img src="images/text1b.png" width="262" height="60"/></div>
+			<div id="text1c"><img src="images/text1c.png" width="270" height="36"/></div>
+			<div id="bottle"><img src="images/bottle.png" width="280" height="94"/></div>
+			<div id="tagline"><img src="images/tagline.png" width="280" height="88"/></div>
+			<div id="legal"><img src="images/legal.png" width="221" height="9"/></div>
+		    <div id="border"><img src="images/border.png" width="300" height="250"/></div>
+			
+	    </div><!-- end banner -->
+	      
+	    </div>
+    </div>
+    
+<!-- greensock -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+<!-- <script src="../GSDevTools.js"></script> -->
+		<script>
+				//GSDevtools
+// 				GSDevTools.create();
+				
+				CSSPlugin.defaultTransformPerspective = 600;
+
+				function fadeIn(){
+					var tl = new TimelineMax({id:"fadein"});
+						tl.to(["#bg","#border"], .5, { autoAlpha:1 });
+						tl.set("#bottle", {visibility:"visible"})
+					return tl;
+				}
+
+				
+				function text1(){
+					var tl = new TimelineMax({id:"text1"});
+						tl.from("#text1a", .75, { clip:"rect(0px,0px,36px,0px)", ease: Power0.easeNone });
+						tl.from("#text1b", .75, { clip:"rect(0px,0px,60px,0px)", ease: Power0.easeNone });
+						tl.from("#text1c", .75, { clip:"rect(0px,0px,36px,0px)", ease: Power0.easeNone });
+						tl.to(["#text1a","#text1b","#text1c"], .5, { autoAlpha:0 }, "+=1.5");
+					return tl;
+				}
+
+				function bg(){
+					var tl = new TimelineMax({id:"bg"});
+						tl.from("#bg", 5, { x:75 });
+					return tl;
+				}
+
+				function endFrame(){
+					var tl = new TimelineMax({id:"endframe"});
+						tl.from(["#tagline","#legal"], .75, {x:-400, ease: Power3.easeOut})
+						tl.from("#bottle", .75, {x:400, ease: Power3.easeOut}, "-=.5")
+
+					return tl;
+				}
+				
+				//master timeline
+				var master = new TimelineMax ();
+				
+				master.add(fadeIn())
+					.add(bg())
+					.add(text1(), 1.5)
+					.add(endFrame(), "+=.25")
+					;
+						
+				//replay
+				document.getElementById("replay").onclick = function () { master.restart();  };
+					
+			
+			
+		</script><!-- end greensock animation -->
+	
+	
+</body>
+
+</html>
