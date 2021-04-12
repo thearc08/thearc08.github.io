@@ -1,100 +1,128 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title></title>
     <link rel="stylesheet" href="style.css" />
-    <script src="scripts/EBLoader.js"></script>
+
     <script src="scripts/script.js"></script>
+  </head>
 
-</head>
-
-<body>
-	<div id="replay"><a href="#"><img src="images/replay.svg" width="18" height="18" border="0"></a></div>
-<!-- 	<div id="guide"><img src="images/728x90F2.jpg"/></div> -->
-	<div id="clickthrough-button">
-    <div id="ad">
-        <div id="banner">
-		    <div id="bg"><img src="images/bg.jpg" width="724" height="306"/></div>
-		    <div id="border"><img src="images/border.png" width="728" height="90"/></div>
-			<div id="text1"><img src="images/text1.png" width="603" height="72"/></div>
-			<div id="text2"><img src="images/text2.png" width="664" height="81"/></div>
-			<div id="bottle"><img src="images/bottle.png" width="311" height="93"/></div>
-			<div id="tagline"><img src="images/tagline.png" width="313" height="90"/>
-			<div id="legal"><img src="images/legal.png" width="221" height="9"/></div></div>
-			
-	    </div><!-- end banner -->
-	      
-	    </div>
+  <body>
+    <div id="replay">
+      <a href="#"
+        ><img src="images/replay.svg" width="18" height="18" border="0"
+      /></a>
     </div>
-    
-<!-- greensock -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
-<!-- <script src="../GSDevTools.js"></script> -->
-		<script>
-				//GSDevtools
-// 				GSDevTools.create();
-				
-				CSSPlugin.defaultTransformPerspective = 600;
+    <!-- 	<div id="guide"><img src="images/728x90F2.jpg"/></div> -->
+    <div id="clickthrough-button">
+      <div id="ad">
+        <div id="banner">
+          <div id="bg">
+            <img src="images/bg.jpg" width="724" height="306" />
+          </div>
+          <div id="border">
+            <img src="images/border.png" width="728" height="90" />
+          </div>
+          <div id="text1">
+            <img src="images/text1.png" width="603" height="72" />
+          </div>
+          <div id="text2">
+            <img src="images/text2.png" width="664" height="81" />
+          </div>
+          <div id="bottle">
+            <img src="images/bottle.png" width="311" height="93" />
+          </div>
+          <div id="tagline">
+            <img src="images/tagline.png" width="313" height="90" />
+            <div id="legal">
+              <img src="images/legal.png" width="221" height="9" />
+            </div>
+          </div>
+        </div>
+        <!-- end banner -->
+      </div>
+    </div>
 
-				function fadeIn(){
-					var tl = new TimelineMax({id:"fadein"});
-						tl.to(["#bg", "#border"], .5, { autoAlpha:1 });
-						tl.set("#bottle", {visibility:"visible"})
-					return tl;
-				}
+    <!-- greensock -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <!-- <script src="../GSDevTools.js"></script> -->
+    <script>
+      //GSDevtools
+      // 				GSDevTools.create();
 
-				
-				function text1(){
-					var tl = new TimelineMax({id:"text1"});
-						tl.from("#text1", 2, { clip:"rect(0px,0px,72px,0px)", ease: Power0.easeNone });
-						tl.to("#text1", .5, { autoAlpha:0 }, "+=1.5");
-					return tl;
-				}
-				
-				function text2(){
-					var tl = new TimelineMax({id:"text2"});
-						tl.from("#text2", 2, { clip:"rect(0px,0px,81px,0px)", ease: Power0.easeNone });
-						tl.to("#text2", .5, { autoAlpha:0 }, "+=1.5");
-					return tl;
-				}
+      CSSPlugin.defaultTransformPerspective = 600;
 
+      function fadeIn() {
+        var tl = new TimelineMax({ id: "fadein" });
+        tl.to(["#bg", "#border"], 0.5, { autoAlpha: 1 });
+        tl.set("#bottle", { visibility: "visible" });
+        return tl;
+      }
 
-				function bg(){
-					var tl = new TimelineMax({id:"bg"});
-						tl.to("#bg", 7, { y:90 });
-					return tl;
-				}
+      function text1() {
+        var tl = new TimelineMax({ id: "text1" });
+        tl.from("#text1", 2, {
+          clip: "rect(0px,0px,72px,0px)",
+          ease: Power0.easeNone,
+        });
+        tl.to("#text1", 0.5, { autoAlpha: 0 }, "+=1.5");
+        return tl;
+      }
 
-				function endFrame(){
-					var tl = new TimelineMax({id:"endframe"});
-						tl.from("#tagline", .75, {x:-450, ease: Power3.easeOut})
-						tl.from("#bottle", .75, {x:400, ease: Power1.easeOut}, "-=.5")
-						tl.to("#bottle", .75, {transformOrigin:"top center", rotation:90, x:30, y:-42, scale:1, ease:Power3.easeOut},"+=.15")
+      function text2() {
+        var tl = new TimelineMax({ id: "text2" });
+        tl.from("#text2", 2, {
+          clip: "rect(0px,0px,81px,0px)",
+          ease: Power0.easeNone,
+        });
+        tl.to("#text2", 0.5, { autoAlpha: 0 }, "+=1.5");
+        return tl;
+      }
 
-					return tl;
-				}
-				
-				//master timeline
-				var master = new TimelineMax ();
-				
-				master.add(fadeIn())
-					.add(bg())
-					.add(text1(), 1)
-					.add(text2(), 4.75)
-					.add(endFrame(), "+=.25")
-					;
-						
-				//replay
-				document.getElementById("replay").onclick = function () { master.restart();  };
-					
-			
-			
-		</script><!-- end greensock animation -->
-	
-	
-</body>
+      function bg() {
+        var tl = new TimelineMax({ id: "bg" });
+        tl.to("#bg", 7, { y: 90 });
+        return tl;
+      }
 
+      function endFrame() {
+        var tl = new TimelineMax({ id: "endframe" });
+        tl.from("#tagline", 0.75, { x: -450, ease: Power3.easeOut });
+        tl.from("#bottle", 0.75, { x: 400, ease: Power1.easeOut }, "-=.5");
+        tl.to(
+          "#bottle",
+          0.75,
+          {
+            transformOrigin: "top center",
+            rotation: 90,
+            x: 30,
+            y: -42,
+            scale: 1,
+            ease: Power3.easeOut,
+          },
+          "+=.15"
+        );
+
+        return tl;
+      }
+
+      //master timeline
+      var master = new TimelineMax();
+
+      master
+        .add(fadeIn())
+        .add(bg())
+        .add(text1(), 1)
+        .add(text2(), 4.75)
+        .add(endFrame(), "+=.25");
+
+      //replay
+      document.getElementById("replay").onclick = function () {
+        master.restart();
+      };
+    </script>
+    <!-- end greensock animation -->
+  </body>
 </html>

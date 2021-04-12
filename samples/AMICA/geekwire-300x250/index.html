@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title></title>
     <link rel="stylesheet" href="styles/style.css" />
-    <script src="scripts/EBLoader.js"></script>
+
     <!-- click thru -->
     <style>
       #bg-exit {
@@ -24,15 +24,8 @@
 
   <body>
     <div id="bg-exit"></div>
-    <div id="replay">
-      <a href="#"
-        ><img src="images/replay.svg" width="18" height="18" border="0"
-      /></a>
-    </div>
     <div id="ad">
       <div id="banner">
-        <!-- <div id="guide"><img src="images/guide4.jpg" /></div> -->
-
         <div id="logo_FM">
           <img src="images/logo_FM.png" width="125px" height="29px" />
         </div>
@@ -134,7 +127,7 @@
       <!-- end banner -->
 
       <!-- greensock -->
-      <script src="https://cdn.flashtalking.com/frameworks/js/gsap/latest/TweenMax.min.js"></script>
+      <script src="../../../gsap.min.js"></script>
       <!-- <script src="../GSDevTools.js"></script> -->
       <script>
         //GSDevtools
@@ -143,7 +136,7 @@
         CSSPlugin.defaultTransformPerspective = 600;
         //fade in
         function fadeIn() {
-          var tl = new TimelineMax();
+          var tl = new gsap.timeline();
           tl.from(
             [
               "#mapbg",
@@ -159,7 +152,7 @@
           return tl;
         }
         function Parks() {
-          var tl = new TimelineMax({ id: "Parks" });
+          var tl = new gsap.timeline({ id: "Parks" });
           tl.from("#logo_parks", 0.2, {
             scaleY: 0,
             autoAlpha: 0,
@@ -194,7 +187,7 @@
           return tl;
         }
         function Schools() {
-          var tl = new TimelineMax({ id: "Schools" });
+          var tl = new gsap.timeline({ id: "Schools" });
           tl.to("#logo_FM", 0.1, { x: -10 })
             .from("#logo_schools", 0.2, {
               scaleY: 0,
@@ -230,7 +223,7 @@
           return tl;
         }
         function Restaurants() {
-          var tl = new TimelineMax({ id: "Restaurants" });
+          var tl = new gsap.timeline({ id: "Restaurants" });
           tl.to("#logo_FM", 0.1, { x: -36 })
             .from("#logo_restaurants", 0.2, {
               scaleY: 0,
@@ -273,7 +266,7 @@
           return tl;
         }
         function Endframe() {
-          var tl = new TimelineMax({ id: "Endframe" });
+          var tl = new gsap.timeline({ id: "Endframe" });
           tl.to(["#topGreenDiv", "#bottomGreenDiv"], 1, {
             clip: "rect(0px, 300px, 250px, 0px)",
           })
@@ -283,13 +276,8 @@
           return tl;
         }
 
-        //replay
-        document.getElementById("replay").onclick = function () {
-          master.restart();
-        };
-
         //master timeline
-        var master = new TimelineMax();
+        var master = new gsap.timeline();
 
         master
           .add(fadeIn())
@@ -299,18 +287,6 @@
           .add(Endframe());
       </script>
       <!-- end greensock animation -->
-      <!-- clickTag -->
-      <script>
-        var clickTag = "clickMacro";
-
-        function bgExitHandler(e) {
-          window.open(window.clickTag);
-          //console.log("clicked");
-        }
-        document
-          .getElementById("bg-exit")
-          .addEventListener("click", bgExitHandler, false);
-      </script>
     </div>
   </body>
 </html>
