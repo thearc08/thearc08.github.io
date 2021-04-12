@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="ad.size" content="width=300,height=250" />
-    <title>Echo Studio 300x250 P</title>
+    <title>Echo Buds 300x250</title>
     <link rel="stylesheet" href="style.css" />
     <!-- Greensock -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
@@ -38,6 +38,9 @@
         <div id="price" class="set">
           <img src="images/price.png" width="300px" height="250px" />
         </div>
+        <div id="sparkles" class="set">
+          <img src="images/sparkles.gif" width="300px" height="250px" />
+        </div>
       </div>
     </div>
     <script>
@@ -55,11 +58,25 @@
 
       function buds() {
         var tl = gsap.timeline({ id: "buds" });
-        tl.from("#buds", 2, {
+        tl.from(["#buds", "#sparkles"], 2, {
           y: 200,
           scale: 2,
           ease: "power3.out",
         });
+        return tl;
+      }
+
+      function sparkle() {
+        var tl = gsap.timeline({ id: "sparkle" });
+        tl.set("#sparkles", {
+          autoAlpha: 1,
+        }).set(
+          "#sparkles",
+          {
+            autoAlpha: 0,
+          },
+          "+=.7"
+        );
         return tl;
       }
 
@@ -99,7 +116,12 @@
             { y: -15, autoAlpha: 0, scale: 1.2, ease: "power2.inOut" },
             "-=.4"
           )
-          .to("#buds", 1, { y: -70, ease: "power2.inOut" }, "-=1")
+          .to(
+            ["#buds", "#sparkles"],
+            1,
+            { y: -70, ease: "power2.inOut" },
+            "-=1"
+          )
           .to(
             "#highlight",
             0.75,
@@ -116,15 +138,35 @@
         return tl;
       }
 
+      // // rollover functionality
+      // var ad = document.getElementById("ad");
+
+      // ad.addEventListener("mouseover", function () {
+      //   console.log("Mouseover");
+      //   // gsap.timeline
+      //   //   .set("#sparkles", {
+      //   //     autoAlpha: 1,
+      //   //   })
+      //   //   .set(
+      //   //     "#sparkles",
+      //   //     {
+      //   //       autoAlpha: 0,
+      //   //     },
+      //   //     "+=.7"
+      //   //   );
+      // });
+
       //Main timeline
       window.onload = function () {
         var main = gsap.timeline();
         main
           .add(fadeIn())
           .add(buds(), 0.5)
+          .add(sparkle(), 1.5)
           .add(copy1(), 1.25)
           .add(copy2(), 3.25)
-          .add(endframe(), 5.5);
+          .add(endframe(), 5.5)
+          .add(sparkle(), 6);
       };
     </script>
   </body>
