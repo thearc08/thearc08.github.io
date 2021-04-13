@@ -38,7 +38,6 @@
         <div id="price" class="set">
           <img src="images/price.png" width="300px" height="250px" />
         </div>
-        <div id="noise" class="set visible"></div>
       </div>
     </div>
     <script>
@@ -60,14 +59,7 @@
           y: 200,
           scale: 2,
           ease: "power3.out",
-        }).to(
-          ["#noise"],
-          0.5,
-          {
-            autoAlpha: 0,
-          },
-          "<.75"
-        );
+        });
         return tl;
       }
 
@@ -99,28 +91,28 @@
         return tl;
       }
 
-      function subwoofer() {
-        var tl = gsap
-          .timeline({ id: "subwoofer" })
-          .to(["#copy2"], 0.45, {
-            scale: 1.2,
-            ease: "elastic.in(.7, .03)",
-            repeat: 5,
-            yoyo: true,
-          })
-          .to(
-            ["#copy2"],
-            0.1,
-            {
-              x: 5,
-              ease: "elastic.in(.7, .03)",
-              repeat: 9,
-              yoyo: true,
-            },
-            "<"
-          );
-        return tl;
-      }
+      // function subwoofer() {
+      //   var tl = gsap
+      //     .timeline({ id: "subwoofer" })
+      //     .to(["#copy2"], 0.45, {
+      //       scale: 1.2,
+      //       ease: "elastic.in(.7, .03)",
+      //       repeat: 5,
+      //       yoyo: true,
+      //     })
+      //     .to(
+      //       ["#copy2"],
+      //       0.1,
+      //       {
+      //         x: 5,
+      //         ease: "elastic.in(.7, .03)",
+      //         repeat: 9,
+      //         yoyo: true,
+      //       },
+      //       "<"
+      //     );
+      //   return tl;
+      // }
 
       function endframe() {
         var tl = gsap.timeline({ id: "endframe" });
@@ -174,8 +166,7 @@
           .add(buds())
           .add(copy1(), 1)
           .add(copy2(), 3.25)
-          .add(subwoofer(), 3.75)
-          .add(endframe(), 7.5);
+          .add(endframe(), 5.75);
       };
     </script>
   </body>
