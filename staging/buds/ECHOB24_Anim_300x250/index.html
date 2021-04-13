@@ -38,9 +38,7 @@
         <div id="price" class="set">
           <img src="images/price.png" width="300px" height="250px" />
         </div>
-        <div id="sparkles" class="set">
-          <img src="images/sparkles.gif" width="300px" height="250px" />
-        </div>
+        <div id="noise" class="set visible"></div>
       </div>
     </div>
     <script>
@@ -58,24 +56,17 @@
 
       function buds() {
         var tl = gsap.timeline({ id: "buds" });
-        tl.from(["#buds", "#sparkles"], 2, {
+        tl.from(["#buds"], 2, {
           y: 200,
           scale: 2,
           ease: "power3.out",
-        });
-        return tl;
-      }
-
-      function sparkle() {
-        var tl = gsap.timeline({ id: "sparkle" });
-        tl.set("#sparkles", {
-          autoAlpha: 1,
-        }).set(
-          "#sparkles",
+        }).to(
+          ["#noise"],
+          0.5,
           {
             autoAlpha: 0,
           },
-          "+=.7"
+          "<.75"
         );
         return tl;
       }
@@ -98,12 +89,36 @@
           1,
           {
             y: -15,
-            scale: 1.2,
+            scale: 1.15,
             autoAlpha: 0,
             ease: "power3.out",
           },
           "-=.25"
         );
+
+        return tl;
+      }
+
+      function subwoofer() {
+        var tl = gsap
+          .timeline({ id: "subwoofer" })
+          .to(["#copy2"], 0.45, {
+            scale: 1.2,
+            ease: "elastic.in(.7, .03)",
+            repeat: 5,
+            yoyo: true,
+          })
+          .to(
+            ["#copy2"],
+            0.1,
+            {
+              x: 5,
+              ease: "elastic.in(.7, .03)",
+              repeat: 9,
+              yoyo: true,
+            },
+            "<"
+          );
         return tl;
       }
 
@@ -116,12 +131,7 @@
             { y: -15, autoAlpha: 0, scale: 1.2, ease: "power2.inOut" },
             "-=.4"
           )
-          .to(
-            ["#buds", "#sparkles"],
-            1,
-            { y: -70, ease: "power2.inOut" },
-            "-=1"
-          )
+          .to(["#buds"], 1, { y: -70, ease: "power2.inOut" }, "-=1")
           .to(
             "#highlight",
             0.75,
@@ -161,12 +171,11 @@
         var main = gsap.timeline();
         main
           .add(fadeIn())
-          .add(buds(), 0.5)
-          .add(sparkle(), 1.5)
-          .add(copy1(), 1.25)
+          .add(buds())
+          .add(copy1(), 1)
           .add(copy2(), 3.25)
-          .add(endframe(), 5.5)
-          .add(sparkle(), 6);
+          .add(subwoofer(), 3.75)
+          .add(endframe(), 7.5);
       };
     </script>
   </body>
