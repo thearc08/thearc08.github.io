@@ -1,0 +1,61 @@
+#ad {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border: rgb(0, 0, 0) 1px solid;
+  width: 968px;
+  height: 248px;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #4aa5ca;
+  overflow: hidden;
+}
+
+#banner {
+  position: absolute;
+  display: block;
+  width: 968px;
+  height: 248px;
+  background-color: #4aa5ca;
+  overflow: hidden;
+}
+.set {
+  position: absolute;
+  display: block;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
+
+#buds {
+  z-index: 20;
+}
+
+#copy1,
+#copy2 {
+  transform-origin: 315px 130px;
+}
+
+#copy3 {
+  transform-origin: 525px 125px;
+}
+
+#buds {
+  transform-origin: 775px 135px;
+}
+
+#logo {
+  transform-origin: 145px 45px;
+}
+
+#price {
+  transform-origin: 850px 150px;
+}
