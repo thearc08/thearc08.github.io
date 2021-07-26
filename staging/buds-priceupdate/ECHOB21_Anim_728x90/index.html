@@ -35,8 +35,11 @@
         <div id="logo" class="set">
           <img src="images/logo.png" width="728px" height="90px" />
         </div>
-        <div id="price" class="set">
-          <img src="images/price.png" width="728px" height="90px" />
+        <div id="price1" class="set">
+          <img src="images/price1.png" width="728px" height="90px" />
+        </div>
+        <div id="price2" class="set">
+          <img src="images/price2.png" width="728px" height="90px" />
         </div>
       </div>
     </div>
@@ -130,12 +133,12 @@
             { autoAlpha: 1, ease: "power2.inOut" },
             "-=.6"
           )
-          .from(["#copy3", "#price"], 1, {
+          .from(["#copy3", "#price1", "#price2"], 1, {
             x: -15,
             scale: 1.2,
             ease: "power3.out",
             autoAlpha: 0,
-            stagger: 0.5,
+            stagger: 0.25,
           });
         return tl;
       }
