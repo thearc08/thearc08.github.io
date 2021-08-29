@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="ad.size" content="width=300,height=600" />
+    <title>Echo Buds 300x600</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Greensock -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <!-- Dev tools -->
+    <!-- <script src="../GSDevTools.min.js"></script> -->
+    <script type="text/javascript">
+      var clickTag = "http://www.example.com";
+    </script>
+  </head>
+  <body>
+    <div id="ad" onclick="window.open(window.clickTag, '_blank')">
+      <div id="banner">
+        <div id="buds" class="set">
+          <img src="images/buds.png" width="300px" height="600px" />
+        </div>
+        <div id="copy1" class="set">
+          <img src="images/copy1.png" width="300px" height="600px" />
+        </div>
+        <div id="copy2" class="set">
+          <img src="images/copy2.png" width="300px" height="600px" />
+        </div>
+        <div id="copy3" class="set">
+          <img src="images/copy3.png" width="300px" height="600px" />
+        </div>
+        <div id="highlight" class="set">
+          <img src="images/highlight.png" width="300px" height="600px" />
+        </div>
+        <div id="logo" class="set">
+          <img src="images/logo.png" width="300px" height="600px" />
+        </div>
+        <div id="price1" class="set">
+          <img src="images/price1.png" width="300px" height="600px" />
+        </div>
+        <div id="price2" class="set">
+          <img src="images/price2.png" width="300px" height="600px" />
+        </div>
+      </div>
+    </div>
+    <script>
+      //Activate Dev tools
+      // GSDevTools.create();
+
+      //Animation timelines
+      function fadeIn() {
+        var tl = gsap.timeline({ id: "fadeIn" });
+        tl.from(["#buds"], 0.25, {
+          autoAlpha: 0,
+        });
+        return tl;
+      }
+
+      function buds() {
+        var tl = gsap.timeline({ id: "buds" });
+        tl.from(["#buds"], 2, {
+          y: 200,
+          scale: 1.75,
+          ease: "power3.out",
+        });
+        return tl;
+      }
+
+      function copy1() {
+        var tl = gsap.timeline({ id: "copy1" });
+        tl.from(["#copy1"], 1, {
+          y: -15,
+          scale: 1.2,
+          autoAlpha: 0,
+          ease: "power3.out",
+        });
+        return tl;
+      }
+
+      function copy2() {
+        var tl = gsap.timeline({ id: "copy2" });
+        tl.to(["#copy1"], 0.5, { y: 15, autoAlpha: 0, scale: 0.8 }).from(
+          ["#copy2"],
+          1,
+          {
+            y: -15,
+            scale: 1.15,
+            autoAlpha: 0,
+            ease: "power3.out",
+          },
+          "-=.25"
+        );
+
+        return tl;
+      }
+
+      // function subwoofer() {
+      //   var tl = gsap
+      //     .timeline({ id: "subwoofer" })
+      //     .to(["#copy2"], 0.45, {
+      //       scale: 1.2,
+      //       ease: "elastic.in(.7, .03)",
+      //       repeat: 5,
+      //       yoyo: true,
+      //     })
+      //     .to(
+      //       ["#copy2"],
+      //       0.1,
+      //       {
+      //         x: 5,
+      //         ease: "elastic.in(.7, .03)",
+      //         repeat: 9,
+      //         yoyo: true,
+      //       },
+      //       "<"
+      //     );
+      //   return tl;
+      // }
+
+      function endframe() {
+        var tl = gsap.timeline({ id: "endframe" });
+        tl.to(["#copy2"], 0.5, { y: 15, autoAlpha: 0, scale: 0.8 })
+          .from(
+            "#logo",
+            1,
+            { y: -15, autoAlpha: 0, scale: 1.2, ease: "power2.inOut" },
+            "-=.4"
+          )
+          .to(["#buds"], 1, { y: -210, ease: "power2.inOut" }, "-=1")
+          .to(
+            "#highlight",
+            0.75,
+            { autoAlpha: 1, ease: "power2.inOut" },
+            "-=.6"
+          )
+          .from(["#copy3", "#price1", "#price2"], 1, {
+            y: 15,
+            scale: 1.2,
+            ease: "power3.out",
+            autoAlpha: 0,
+            stagger: 0.25,
+          });
+        return tl;
+      }
+
+      // // rollover functionality
+      // var ad = document.getElementById("ad");
+
+      // ad.addEventListener("mouseover", function () {
+      //   console.log("Mouseover");
+      //   // gsap.timeline
+      //   //   .set("#sparkles", {
+      //   //     autoAlpha: 1,
+      //   //   })
+      //   //   .set(
+      //   //     "#sparkles",
+      //   //     {
+      //   //       autoAlpha: 0,
+      //   //     },
+      //   //     "+=.7"
+      //   //   );
+      // });
+
+      //Main timeline
+      window.onload = function () {
+        var main = gsap.timeline();
+        main
+          .add(fadeIn())
+          .add(buds())
+          .add(copy1(), 1)
+          .add(copy2(), 3.25)
+          .add(endframe(), 5.75);
+      };
+    </script>
+  </body>
+</html>
