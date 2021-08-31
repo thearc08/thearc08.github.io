@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="ad.size" content="width=160,height=600" />
-    <title>Echo Frames NP 160x600</title>
+    <title>Echo Frames TPR 160x600</title>
     <link rel="stylesheet" href="style.css" />
     <!-- Greensock -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
@@ -65,8 +65,14 @@
         <div id="copy3" class="set">
           <img src="images/copy3.png" width="160px" height="600px" alt="" />
         </div>
-        <div id="cta" class="set">
-          <img src="images/cta.png" width="160px" height="600px" alt="" />
+        <div id="price1" class="set">
+          <img src="images/price1.png" width="160px" height="600px" alt="" />
+        </div>
+        <div id="slash" class="set">
+          <img src="images/slash.png" width="160px" height="600px" alt="" />
+        </div>
+        <div id="price2" class="set">
+          <img src="images/price2.png" width="160px" height="600px" alt="" />
         </div>
         <div id="logo" class="set">
           <img src="images/logo.png" width="160px" height="600px" alt="" />
@@ -89,6 +95,7 @@
             "#frame2",
             "#shadow2",
             "#bg",
+            "#slash",
           ],
           0.25,
           {
@@ -143,14 +150,14 @@
       function frameMove() {
         var tl = gsap.timeline({ id: "frameMove" });
         tl.to(["#frameWrapper1"], 1, {
-          y: 165,
+          y: 140,
           ease: "power3.out",
         });
         tl.to(
           ["#frameWrapper2"],
           1,
           {
-            y: -165,
+            y: -190,
             ease: "power3.out",
           },
           "<"
@@ -174,6 +181,34 @@
         return tl;
       }
 
+      function price() {
+        var tl = gsap.timeline({ id: "price" });
+        tl.from(["#price1"], 1, {
+          x: -15,
+          autoAlpha: 0,
+          ease: "power2.inOut",
+        })
+          .from(
+            "#slash",
+            0.75,
+            {
+              clip: "rect(0, 40px, 600px, 40px)",
+            },
+            "-=.4"
+          )
+          .from(
+            "#price2",
+            0.75,
+            {
+              scale: 0,
+              autoAlpha: 0,
+            },
+            "-=.5"
+          );
+
+        return tl;
+      }
+
       function endframe() {
         var tl = gsap.timeline({ id: "endframe" });
         tl.to(["#copy1", "#copy2"], 0.5, { x: 15, autoAlpha: 0 }).from(
@@ -192,7 +227,8 @@
           .add(copy1(), 0.9)
           .add(copy2(), 2.5)
           .add(frameMove(), 5.7)
-          .add(endframe(), 5.5);
+          .add(endframe(), 5.5)
+          .add(price(), 6.75);
       };
     </script>
   </body>

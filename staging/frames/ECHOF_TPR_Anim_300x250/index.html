@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="ad.size" content="width=320,height=50" />
-    <title>Echo Frames NP 320x50</title>
+    <meta name="ad.size" content="width=300,height=250" />
+    <title>Echo Frames TPR 300x250</title>
     <link rel="stylesheet" href="style.css" />
     <!-- Greensock -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
@@ -18,33 +18,40 @@
     <div id="ad" onclick="window.open(window.clickTag, '_blank')">
       <div id="banner">
         <div id="bg" class="set">
-          <img src="images/bg.jpg" width="320px" height="50px" alt="" />
+          <img src="images/bg.jpg" width="300px" height="250px" alt="" />
         </div>
         <div id="frameWrapper" class="set">
           <div id="frame" class="set">
-            <img src="images/frame.png" width="320px" height="50px" alt="" />
+            <img src="images/frame.png" width="300px" height="250px" alt="" />
           </div>
           <div id="shadow" class="set">
-            <img src="images/shadow.png" width="320px" height="50px" alt="" />
+            <img src="images/shadow.png" width="300px" height="250px" alt="" />
           </div>
         </div>
         <div id="copy1" class="set">
-          <img src="images/copy1.png" width="320px" height="50px" alt="" />
+          <img src="images/copy1.png" width="300px" height="250px" alt="" />
         </div>
         <div id="copy2" class="set">
-          <img src="images/copy2.png" width="320px" height="50px" alt="" />
+          <img src="images/copy2.png" width="300px" height="250px" alt="" />
         </div>
         <div id="copy3" class="set">
-          <img src="images/copy3.png" width="320px" height="50px" alt="" />
+          <img src="images/copy3.png" width="300px" height="250px" alt="" />
         </div>
-        <div id="cta" class="set">
-          <img src="images/cta.png" width="320px" height="50px" alt="" />
+        <div id="price1" class="set">
+          <img src="images/price1.png" width="300px" height="250px" alt="" />
+        </div>
+        <div id="slash" class="set">
+          <img src="images/slash.png" width="300px" height="250px" alt="" />
+        </div>
+        <div id="price2" class="set">
+          <img src="images/price2.png" width="300px" height="250px" alt="" />
         </div>
         <div id="logo" class="set">
-          <img src="images/logo.png" width="320px" height="50px" alt="" />
+          <img src="images/logo.png" width="300px" height="250px" alt="" />
         </div>
       </div>
     </div>
+
     <script>
       //Activate Dev tools
       // GSDevTools.create();
@@ -52,7 +59,7 @@
       //Animation timelines
       function fadeIn() {
         var tl = gsap.timeline({ id: "fadeIn" });
-        tl.from(["#frameWrapper", "#frame", "#shadow", "#bg"], 0.25, {
+        tl.from(["#frameWrapper", "#frame", "#shadow", "#bg", "#slash"], 0.25, {
           autoAlpha: 0,
         });
         return tl;
@@ -106,46 +113,59 @@
           repeat: 1,
           rotationX: -20,
         });
+
         return tl;
       }
 
-      function frameMove() {
-        var tl = gsap.timeline({ id: "frameMove" });
-        tl.to(["#frameWrapper"], 1, {
-          scale: 0.85,
-          x: 35,
-          y: -3,
-        });
-        return tl;
-      }
       function endframe() {
         var tl = gsap.timeline({ id: "endframe" });
-        tl.to(["#copy2"], 0.5, { x: 15, autoAlpha: 0 })
-          .from(["#logo", "#cta"], 1, {
-            y: -15,
-            autoAlpha: 0,
-            ease: "power2.inOut",
-            stagger: ".33",
-          })
-          .from(
-            "#copy3",
-            1,
-            { x: -15, autoAlpha: 0, ease: "power2.inOut" },
-            "-=.66"
-          );
+        tl.to(["#copy2"], 0.5, { x: 15, autoAlpha: 0 }).from(
+          ["#logo", "#copy3", "#cta"],
+          1,
+          { y: -15, autoAlpha: 0, ease: "power2.inOut", stagger: ".33" }
+        );
         return tl;
       }
+
+      function price() {
+        var tl = gsap.timeline({ id: "price" });
+        tl.from(["#price1"], 1, {
+          x: -15,
+          autoAlpha: 0,
+          ease: "power2.inOut",
+        })
+          .from(
+            "#slash",
+            1,
+            {
+              clip: "rect(0, 40px, 500px, 40px)",
+            },
+            "-=.4"
+          )
+          .from(
+            "#price2",
+            0.75,
+            {
+              scale: 0,
+              autoAlpha: 0,
+            },
+            "-=.75"
+          );
+
+        return tl;
+      }
+
       //Main timeline
       window.onload = function () {
         var main = gsap.timeline();
         main
           .add(fadeIn())
           .add(frame())
-          // .add(shadowMove(), 0.8)
+          .add(shadowMove(), 0.8)
           .add(copy1(), 0.8)
           .add(copy2(), 3.25)
-          .add(frameMove(), 5.5)
-          .add(endframe(), 5.25);
+          .add(endframe(), 5.5)
+          .add(price(), 6.75);
       };
     </script>
   </body>
