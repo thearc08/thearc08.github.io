@@ -41,8 +41,8 @@
 .set {
   position: absolute;
   display: block;
-  top: 0px;
-  left: 0px;
+  top: -1px;
+  left: -1px;
   z-index: 10;
   visibility: hidden;
 }

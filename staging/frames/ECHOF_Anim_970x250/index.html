@@ -17,29 +17,59 @@
   <body>
     <div id="ad" onclick="window.open(window.clickTag, '_blank')">
       <div id="banner">
-        <div id="buds" class="set">
-          <img src="images/buds.png" width="970px" height="250px" />
+        <div id="bg" class="set">
+          <img src="images/bg.jpg" width="970px" height="250px" alt="" />
+        </div>
+        <div id="frameWrapper1" class="set">
+          <div id="frame1" class="set">
+            <img
+              src="images/frames-black.png"
+              width="970px"
+              height="250px"
+              alt=""
+            />
+          </div>
+          <div id="shadow1" class="set">
+            <img
+              src="images/frames-black-shadow.png"
+              width="970px"
+              height="250px"
+              alt=""
+            />
+          </div>
+        </div>
+        <div id="frameWrapper2" class="set">
+          <div id="frame2" class="set">
+            <img
+              src="images/frames-clear.png"
+              width="970px"
+              height="250px"
+              alt=""
+            />
+          </div>
+          <div id="shadow2" class="set">
+            <img
+              src="images/frames-clear-shadow.png"
+              width="970px"
+              height="250px"
+              alt=""
+            />
+          </div>
         </div>
         <div id="copy1" class="set">
-          <img src="images/copy1.png" width="970px" height="250px" />
+          <img src="images/copy1.png" width="970px" height="250px" alt="" />
         </div>
         <div id="copy2" class="set">
-          <img src="images/copy2.png" width="970px" height="250px" />
+          <img src="images/copy2.png" width="970px" height="250px" alt="" />
         </div>
         <div id="copy3" class="set">
-          <img src="images/copy3.png" width="970px" height="250px" />
+          <img src="images/copy3.png" width="970px" height="250px" alt="" />
         </div>
-        <div id="highlight" class="set">
-          <img src="images/highlight.png" width="970px" height="250px" />
+        <div id="cta" class="set">
+          <img src="images/cta.png" width="970px" height="250px" alt="" />
         </div>
         <div id="logo" class="set">
-          <img src="images/logo.png" width="970px" height="250px" />
-        </div>
-        <div id="price1" class="set">
-          <img src="images/price1.png" width="970px" height="250px" />
-        </div>
-        <div id="price2" class="set">
-          <img src="images/price2.png" width="970px" height="250px" />
+          <img src="images/logo.png" width="970px" height="250px" alt="" />
         </div>
       </div>
     </div>
@@ -50,27 +80,46 @@
       //Animation timelines
       function fadeIn() {
         var tl = gsap.timeline({ id: "fadeIn" });
-        tl.from(["#buds"], 0.25, {
-          autoAlpha: 0,
-        });
+        tl.from(
+          [
+            "#frameWrapper1",
+            "#frame1",
+            "#shadow1",
+            "#frameWrapper2",
+            "#frame2",
+            "#shadow2",
+            "#bg",
+          ],
+          0.25,
+          {
+            autoAlpha: 0,
+          }
+        );
         return tl;
       }
 
-      function buds() {
-        var tl = gsap.timeline({ id: "buds" });
-        tl.from(["#buds"], 2, {
-          y: 200,
-          scale: 1.75,
+      function frame() {
+        var tl = gsap.timeline({ id: "frame" });
+        tl.from(["#frameWrapper1"], 1, {
+          x: 300,
           ease: "power3.out",
         });
+        tl.from(
+          ["#frameWrapper2"],
+          1,
+          {
+            x: -300,
+            ease: "power3.out",
+          },
+          "<"
+        );
         return tl;
       }
 
       function copy1() {
         var tl = gsap.timeline({ id: "copy1" });
         tl.from(["#copy1"], 1, {
-          y: -15,
-          scale: 1.2,
+          x: -25,
           autoAlpha: 0,
           ease: "power3.out",
         });
@@ -79,102 +128,71 @@
 
       function copy2() {
         var tl = gsap.timeline({ id: "copy2" });
-        tl.to(["#copy1"], 0.5, { y: 15, autoAlpha: 0, scale: 0.8 }).from(
+        tl.from(
           ["#copy2"],
           1,
           {
-            y: -15,
-            scale: 1.15,
+            x: 25,
             autoAlpha: 0,
             ease: "power3.out",
           },
           "-=.25"
         );
+        return tl;
+      }
+      function frameMove() {
+        var tl = gsap.timeline({ id: "frameMove" });
+        tl.to(["#frameWrapper1"], 1, {
+          y: 165,
+          ease: "power3.out",
+        });
+        tl.to(
+          ["#frameWrapper2"],
+          1,
+          {
+            y: -165,
+            ease: "power3.out",
+          },
+          "<"
+        );
+        return tl;
+      }
+      function shadowMove() {
+        var tl = gsap.timeline({ id: "shadow" });
+        tl.to(["#shadow"], 4, {
+          skewX: -65,
+          skewY: 1,
+          scaleX: 1.2,
+          scaleY: 1.35,
+          yoyo: true,
+          y: -9,
+          x: 25,
+          repeat: 1,
+          ease: "power3.out",
+        });
 
         return tl;
       }
-
-      // function subwoofer() {
-      //   var tl = gsap
-      //     .timeline({ id: "subwoofer" })
-      //     .to(["#copy2"], 0.45, {
-      //       scale: 1.2,
-      //       ease: "elastic.in(.7, .03)",
-      //       repeat: 5,
-      //       yoyo: true,
-      //     })
-      //     .to(
-      //       ["#copy2"],
-      //       0.1,
-      //       {
-      //         x: 5,
-      //         ease: "elastic.in(.7, .03)",
-      //         repeat: 9,
-      //         yoyo: true,
-      //       },
-      //       "<"
-      //     );
-      //   return tl;
-      // }
 
       function endframe() {
         var tl = gsap.timeline({ id: "endframe" });
-        tl.to(["#copy2"], 0.5, { y: 15, autoAlpha: 0, scale: 0.8 })
-          .from(
-            "#logo",
-            1,
-            { x: -15, autoAlpha: 0, scale: 1.2, ease: "power2.inOut" },
-            "-=.4"
-          )
-          .to(
-            ["#buds"],
-            1,
-            { x: -590, y: 50, scale: 0.95, ease: "power2.inOut" },
-            "-=1"
-          )
-          .to(
-            "#highlight",
-            0.75,
-            { autoAlpha: 1, ease: "power2.inOut" },
-            "-=.6"
-          )
-          .from(["#copy3", "#price1", "#price2"], 1, {
-            y: -15,
-            scale: 1.2,
-            ease: "power3.out",
-            autoAlpha: 0,
-            stagger: 0.25,
-          });
+        tl.to(["#copy1", "#copy2"], 0.5, { x: 15, autoAlpha: 0 }).from(
+          ["#logo", "#copy3", "#cta"],
+          1,
+          { y: -15, autoAlpha: 0, ease: "power2.inOut", stagger: ".33" }
+        );
         return tl;
       }
-
-      // // rollover functionality
-      // var ad = document.getElementById("ad");
-
-      // ad.addEventListener("mouseover", function () {
-      //   console.log("Mouseover");
-      //   // gsap.timeline
-      //   //   .set("#sparkles", {
-      //   //     autoAlpha: 1,
-      //   //   })
-      //   //   .set(
-      //   //     "#sparkles",
-      //   //     {
-      //   //       autoAlpha: 0,
-      //   //     },
-      //   //     "+=.7"
-      //   //   );
-      // });
-
       //Main timeline
       window.onload = function () {
         var main = gsap.timeline();
         main
           .add(fadeIn())
-          .add(buds())
-          .add(copy1(), 1)
-          .add(copy2(), 3.25)
-          .add(endframe(), 5.75);
+          .add(frame())
+          .add(copy1(), 0.9)
+          .add(copy2(), 2.5)
+          // .add(frameMove(), 5.7)
+          .add(endframe(), 5.5);
       };
     </script>
   </body>
