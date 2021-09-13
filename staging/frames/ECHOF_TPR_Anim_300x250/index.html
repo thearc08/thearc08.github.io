@@ -49,6 +49,9 @@
         <div id="logo" class="set">
           <img src="images/logo.png" width="300px" height="250px" alt="" />
         </div>
+        <div id="legal" class="set">
+          <img src="images/legal.png" width="300px" height="250px" alt="" />
+        </div>
       </div>
     </div>
 
@@ -150,8 +153,11 @@
               autoAlpha: 0,
             },
             "-=.75"
-          );
-
+          )
+          .from("#legal", 0.5, {
+            y: -5,
+            autoAlpha: 0,
+          });
         return tl;
       }
 
