@@ -5,7 +5,7 @@
   display: block;
   border: rgb(50, 50, 50) 1px solid;
   width: 298px;
-  height: 248px;
+  height: 598px;
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
   -webkit-user-select: none;
@@ -20,17 +20,27 @@
   position: absolute;
   display: block;
   width: 298px;
-  height: 248px;
+  height: 598px;
   background-color: #242e35;
   overflow: hidden;
 }
 
 #bg {
-  transform-origin: top right;
+  transform-origin: bottom center;
+}
+
+#bgWrapper {
+  position: absolute;
+  display: block;
+  top: 341px;
+  width: 300px;
+  height: 259px;
+  overflow: hidden;
+  visibility: visible;
 }
 
 #logo {
-  transform-origin: 69px 195px;
+  transform-origin: 150px 250px;
 }
 
 #dot {

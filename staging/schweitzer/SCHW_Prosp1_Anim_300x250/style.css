@@ -13,6 +13,7 @@
   user-select: none;
   background-color: #242e35;
   overflow: hidden;
+  cursor: pointer;
 }
 
 #banner {

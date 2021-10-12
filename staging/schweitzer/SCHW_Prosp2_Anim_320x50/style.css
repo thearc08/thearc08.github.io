@@ -4,8 +4,8 @@
   left: 0;
   display: block;
   border: rgb(50, 50, 50) 1px solid;
-  width: 298px;
-  height: 248px;
+  width: 318px;
+  height: 48px;
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
   -webkit-user-select: none;
@@ -19,18 +19,28 @@
 #banner {
   position: absolute;
   display: block;
-  width: 298px;
-  height: 248px;
+  width: 318px;
+  height: 48px;
   background-color: #242e35;
   overflow: hidden;
 }
 
+#bgWrapper {
+  position: absolute;
+  display: block;
+  left: 231px;
+  width: 89px;
+  height: 50px;
+  overflow: hidden;
+  visibility: visible;
+}
+
 #bg {
-  transform-origin: top right;
+  transform-origin: center right;
 }
 
 #logo {
-  transform-origin: 69px 195px;
+  transform-origin: 198px 27px;
 }
 
 #dot {
