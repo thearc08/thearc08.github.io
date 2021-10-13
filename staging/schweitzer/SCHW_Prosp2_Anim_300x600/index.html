@@ -86,26 +86,16 @@
         tl.to(["#copy1b", "#copy1c", "#copy1d", "#copy1e", "#copy1f"], 0.5, {
           x: 15,
           autoAlpha: 0,
-        })
-          .from(
-            ["#copy2"],
-            1,
-            {
-              x: -25,
-              autoAlpha: 0,
-              ease: "power3.out",
-            },
-            "+=.15"
-          )
-          .to(
-            ["#copy1a"],
-            1,
-            {
-              y: 17,
-              ease: "power3.out",
-            },
-            "<"
-          );
+        }).from(
+          ["#copy2"],
+          1,
+          {
+            x: -25,
+            autoAlpha: 0,
+            ease: "power3.out",
+          },
+          "+=.15"
+        );
         return tl;
       }
 
