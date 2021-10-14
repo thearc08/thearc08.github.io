@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="ad.size" content="width=970,height=250" />
+    <title>Echo Buds 970x250</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Greensock -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <!-- Dev tools -->
+    <!-- <script src="../GSDevTools.min.js"></script> -->
+    <script type="text/javascript">
+      var clickTag = "http://www.example.com";
+    </script>
+  </head>
+  <body>
+    <div id="ad" onclick="window.open(window.clickTag, '_blank')">
+      <div id="banner">
+        <div id="bg" class="set">
+          <img src="images/bg.jpg" width="970px" height="250px" alt="" />
+        </div>
+        <div id="frameWrapper1" class="set">
+          <div id="frame1" class="set">
+            <img
+              src="images/frames-black.png"
+              width="970px"
+              height="250px"
+              alt=""
+            />
+          </div>
+          <div id="shadow1" class="set">
+            <img
+              src="images/frames-black-shadow.png"
+              width="970px"
+              height="250px"
+              alt=""
+            />
+          </div>
+        </div>
+        <div id="frameWrapper2" class="set">
+          <div id="frame2" class="set">
+            <img
+              src="images/frames-clear.png"
+              width="970px"
+              height="250px"
+              alt=""
+            />
+          </div>
+          <div id="shadow2" class="set">
+            <img
+              src="images/frames-clear-shadow.png"
+              width="970px"
+              height="250px"
+              alt=""
+            />
+          </div>
+        </div>
+        <div id="copy1" class="set">
+          <img src="images/copy1.png" width="970px" height="250px" alt="" />
+        </div>
+        <div id="copy2" class="set">
+          <img src="images/copy2.png" width="970px" height="250px" alt="" />
+        </div>
+        <div id="copy3" class="set">
+          <img src="images/copy3.png" width="970px" height="250px" alt="" />
+        </div>
+        <div id="price1" class="set">
+          <img src="images/price1.png" width="970px" height="250px" alt="" />
+        </div>
+        <div id="slash" class="set">
+          <img src="images/slash.png" width="970px" height="250px" alt="" />
+        </div>
+        <div id="price2" class="set">
+          <img src="images/price2.png" width="970px" height="250px" alt="" />
+        </div>
+        <div id="logo" class="set">
+          <img src="images/logo.png" width="970px" height="250px" alt="" />
+        </div>
+        <div id="legal" class="set">
+          <img src="images/legal.png" width="970px" height="250px" alt="" />
+        </div>
+      </div>
+    </div>
+    <script>
+      //Activate Dev tools
+      // GSDevTools.create();
+
+      //Animation timelines
+      function fadeIn() {
+        var tl = gsap.timeline({ id: "fadeIn" });
+        tl.from(
+          [
+            "#frameWrapper1",
+            "#frame1",
+            "#shadow1",
+            "#frameWrapper2",
+            "#frame2",
+            "#shadow2",
+            "#bg",
+            "#slash",
+          ],
+          0.25,
+          {
+            autoAlpha: 0,
+          }
+        );
+        return tl;
+      }
+
+      function frame() {
+        var tl = gsap.timeline({ id: "frame" });
+        tl.from(["#frameWrapper1"], 1, {
+          x: 200,
+          ease: "power3.out",
+        });
+        tl.from(
+          ["#frameWrapper2"],
+          1,
+          {
+            x: -200,
+            ease: "power3.out",
+          },
+          "<"
+        );
+        return tl;
+      }
+
+      function copy1() {
+        var tl = gsap.timeline({ id: "copy1" });
+        tl.from(["#copy1"], 1, {
+          x: -25,
+          autoAlpha: 0,
+          ease: "power3.out",
+        });
+        return tl;
+      }
+
+      function copy2() {
+        var tl = gsap.timeline({ id: "copy2" });
+        tl.from(
+          ["#copy2"],
+          1,
+          {
+            x: 25,
+            autoAlpha: 0,
+            ease: "power3.out",
+          },
+          "-=.25"
+        );
+        return tl;
+      }
+      function frameMove() {
+        var tl = gsap.timeline({ id: "frameMove" });
+        tl.to(["#frameWrapper1"], 1, {
+          y: 165,
+          ease: "power3.out",
+        });
+        tl.to(
+          ["#frameWrapper2"],
+          1,
+          {
+            y: -165,
+            ease: "power3.out",
+          },
+          "<"
+        );
+        return tl;
+      }
+      function shadowMove() {
+        var tl = gsap.timeline({ id: "shadow" });
+        tl.to(["#shadow"], 4, {
+          skewX: -65,
+          skewY: 1,
+          scaleX: 1.2,
+          scaleY: 1.35,
+          yoyo: true,
+          y: -9,
+          x: 25,
+          repeat: 1,
+          ease: "power3.out",
+        });
+
+        return tl;
+      }
+
+      function price() {
+        var tl = gsap.timeline({ id: "price" });
+        tl.from(["#price1"], 1, {
+          x: -15,
+          autoAlpha: 0,
+          ease: "power2.inOut",
+        })
+          .from(
+            "#slash",
+            0.75,
+            {
+              clip: "rect(0, 270px, 250px, 270px)",
+            },
+            "-=.4"
+          )
+          .from(
+            "#price2",
+            0.75,
+            {
+              scale: 0,
+              autoAlpha: 0,
+            },
+            "-=.5"
+          )
+          .from("#legal", 0.5, {
+            y: -5,
+            autoAlpha: 0,
+          });
+
+        return tl;
+      }
+
+      function endframe() {
+        var tl = gsap.timeline({ id: "endframe" });
+        tl.to(["#copy1", "#copy2"], 0.5, { x: 15, autoAlpha: 0 }).from(
+          ["#logo", "#copy3", "#cta"],
+          1,
+          { y: -15, autoAlpha: 0, ease: "power2.inOut", stagger: ".33" }
+        );
+        return tl;
+      }
+      //Main timeline
+      window.onload = function () {
+        var main = gsap.timeline();
+        main
+          .add(fadeIn())
+          .add(frame())
+          .add(copy1(), 0.9)
+          .add(copy2(), 2.5)
+          // .add(frameMove(), 5.7)
+          .add(endframe(), 5.5)
+          .add(price(), 6.75);
+      };
+    </script>
+  </body>
+</html>

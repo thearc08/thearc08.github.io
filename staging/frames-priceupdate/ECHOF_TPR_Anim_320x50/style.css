@@ -1,0 +1,44 @@
+#ad {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border: rgb(50, 50, 50) 1px solid;
+  width: 318px;
+  height: 48px;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+#price2 {
+  transform-origin: 275px 35px;
+}
+
+#slash {
+  clip: rect(0, 320px, 50px, 0);
+}
+
+#banner {
+  position: absolute;
+  display: block;
+  width: 318px;
+  height: 48px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+.set {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  z-index: 10;
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
