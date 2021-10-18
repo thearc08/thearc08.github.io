@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="ad.size" content="width=300,height=250" />
+    <title>Weschud Schweizer RT-1 300x250</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Greensock -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <!-- Dev tools -->
+    <!-- <script src="../GSDevTools.min.js"></script> -->
+    <script type="text/javascript">
+      var clickTag = "http://www.example.com";
+    </script>
+  </head>
+  <body>
+    <div id="ad" onclick="window.open(window.clickTag, '_blank')">
+      <div id="banner">
+        <div id="bg" class="set">
+          <img src="images/bg.jpg" width="300px" height="250px" alt="" />
+        </div>
+        <div id="copy1Wrapper" class="set">
+          <div id="copy1a" class="set">
+            <img src="images/copy1a.png" width="300px" height="250px" alt="" />
+          </div>
+          <div id="copy1b" class="set">
+            <img src="images/copy1b.png" width="300px" height="250px" alt="" />
+          </div>
+          <div id="copy1c" class="set">
+            <img src="images/copy1c.png" width="300px" height="250px" alt="" />
+          </div>
+          <div id="copy1d" class="set">
+            <img src="images/copy1d.png" width="300px" height="250px" alt="" />
+          </div>
+        </div>
+        <div id="copy2" class="set">
+          <img src="images/copy2.png" width="300px" height="250px" alt="" />
+        </div>
+        <div id="cta" class="set">
+          <img src="images/cta.png" width="300px" height="250px" alt="" />
+        </div>
+        <div id="logo" class="set">
+          <img src="images/logo.png" width="300px" height="250px" alt="" />
+        </div>
+        <!-- <div id="dot"></div> -->
+      </div>
+    </div>
+
+    <script>
+      //Activate Dev tools
+      // GSDevTools.create();
+
+      //Animation timelines
+      function fadeIn() {
+        var tl = gsap.timeline({ id: "fadeIn" });
+        tl.from(["#copy1Wrapper", "#frame", "#shadow", "#bg", "#logo"], 0.25, {
+          autoAlpha: 0,
+        });
+        return tl;
+      }
+
+      function bgZoom() {
+        var tl = gsap.timeline({ id: "bgZoom" });
+        tl.from(["#bg"], 12, {
+          scale: 1.1,
+        });
+        return tl;
+      }
+
+      function copy1() {
+        var tl = gsap.timeline({ id: "copy1" });
+        tl.from(["#copy1a", "#copy1b", "#copy1c", "#copy1d"], 1, {
+          x: -25,
+          autoAlpha: 0,
+          ease: "power3.out",
+          stagger: 0.3,
+        });
+      }
+
+      function copy2() {
+        var tl = gsap.timeline({ id: "copy2" });
+        tl.to(["#copy1b", "#copy1c", "#copy1d"], 0.5, {
+          x: 15,
+          autoAlpha: 0,
+        }).from(
+          ["#copy2"],
+          1,
+          {
+            x: -25,
+            autoAlpha: 0,
+            ease: "power3.out",
+          },
+          "+=.15"
+        );
+        return tl;
+      }
+
+      function endframe() {
+        var tl = gsap.timeline({ id: "endframe" });
+        tl.from(["#cta"], 1, {
+          y: -5,
+          autoAlpha: 0,
+          ease: "power3.out",
+        });
+        tl.from(
+          ["#logo"],
+          1,
+          {
+            x: -150,
+            rotate: -180,
+          },
+          "-=.4"
+        );
+        return tl;
+      }
+
+      //Main timeline
+      window.onload = function () {
+        var main = gsap.timeline();
+        main
+          .add(fadeIn())
+          .add(bgZoom())
+          .add(copy1(), 1.2)
+          .add(copy2(), 5)
+          .add(endframe(), 6.25);
+      };
+    </script>
+  </body>
+</html>
