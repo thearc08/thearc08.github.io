@@ -1,0 +1,50 @@
+body {
+  background-color: black;
+}
+
+#background {
+  position: absolute;
+  background-color: black;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+.button {
+  position: relative;
+  border: none;
+  background-color: #d3fd55;
+  color: black;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 25px;
+  width: 66%;
+}
+
+#bg-wrapper {
+  position: absolute;
+  height: 100%;
+  padding-bottom: 12%;
+}
+
+#bg-wrapper img {
+  width: 100%;
+}
+
+/* Media Query for devices with coarse pointers and no hover functionality */
+
+/* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
+
+/* @media (pointer: coarse) and (hover: none) {
+  header {
+    background: url("https://source.unsplash.com/XT5OInaElMw/1600x900") black
+      no-repeat center center scroll;
+  }
+
+  header video {
+    display: none;
+  }
+} */
