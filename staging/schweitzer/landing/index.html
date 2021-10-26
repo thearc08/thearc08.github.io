@@ -13,7 +13,10 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <!-- Greensock -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
   </head>
+
   <body>
     <!-- The HTML5 video element that will create the background video on the header -->
     <div id="background">
@@ -23,6 +26,7 @@
         muted="muted"
         loop="loop"
         class="bgvideo"
+        id="videoPlayer"
         width="100%"
       >
         <source src="Schweitzer_Weschud_1080x1920_small.mp4" type="video/mp4" />
@@ -31,39 +35,90 @@
 
     <div class="container">
       <div class="row">
+        <div class="col d-flex justify-content-end" id="volume">
+          <div class="bg-light bg-opacity-50 w-25 rounded-3">
+            <img src="volume.png" alt="Volume" class="img-fluid" />
+            <h6 class="text-center" id="volumeLabel">
+              <strong>Mute</strong>
+            </h6>
+          </div>
+        </div>
+      </div>
+      <div class="row">
         <div
           class="
+            col
             d-inline-flex
             flex-column
             justify-content-end
             align-items-center
           "
-          id="bg-wrapper"
+          id="button-wrapper"
         >
           <a
             class="btn btn-primary button"
+            id="button1"
             href="https://www.schweitzer.com/discover/conditions-report/"
-            ><img src="button1.png" alt="Snow Report" />
+            ><img src="button1.png" alt="Snow Report" class="img-fluid" />
           </a>
           <a
             class="btn btn-primary button"
+            id="button2"
             href="https://www.schweitzer.com/plan/reservations/#/room"
-            ><img src="button2.png" alt="Find Lodging"
+            ><img src="button2.png" alt="Find Lodging" class="img-fluid"
           /></a>
           <a
             class="btn btn-primary button"
+            id="button3"
             href="https://youtube.com/playlist?list=PLbjO0aGDPmqHNXRch7lJDd6UYyTnrR8R1"
-            ><img src="button3.png" alt="More Dumb Videos"
+            ><img src="button3.png" alt="More Dumb Videos" class="img-fluid"
           /></a>
         </div>
       </div>
     </div>
 
+    </script>
     <!-- Bootstrap JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <!-- Volume Control JS -->
+    <script>
+      var vid = document.getElementById("videoPlayer");
+      var volume = document.getElementById("volume");
+      var volumeLabel = document.getElementById("volumeLabel");
+
+      volume.addEventListener("click", volumeControl);
+      function volumeControl() {
+        // console.log("You clicked it");
+
+        if (vid.muted) {
+          vid.muted = false;
+          volumeLabel.innerHTML = "<strong>Mute</strong>";
+        } else {
+          vid.muted = true;
+          volumeLabel.innerHTML = "<strong>Unmute</strong>";
+        }
+      }
+    //Greensock timelines
+      function fadeIn() {
+        var tl = gsap.timeline({ id: "fadeIn" });
+        tl.from(["#button1", "#button2", "#button3"], 0.5, {
+          autoAlpha: 0,
+          y: -20,
+          stagger: 0.1,
+        });
+        return tl;
+      }
+      // Initiate timeline
+      window.onload = function () {
+        vid.muted = false;
+        var main = gsap.timeline();
+        main.add(fadeIn(), 15);
+      };
+
+</script>
   </body>
 </html>

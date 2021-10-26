@@ -1,7 +1,6 @@
 body {
   background-color: black;
 }
-
 #background {
   position: absolute;
   background-color: black;
@@ -13,7 +12,6 @@ body {
 .button {
   position: relative;
   border: none;
-  background-color: #d3fd55;
   color: black;
   padding: 12px 20px;
   text-align: center;
@@ -24,14 +22,33 @@ body {
   width: 66%;
 }
 
-#bg-wrapper {
-  position: absolute;
-  height: 100%;
-  padding-bottom: 12%;
+.btn-primary {
+  background-color: #d3fd55;
 }
 
-#bg-wrapper img {
-  width: 100%;
+.btn-primary:focus {
+  background-color: #dcff97;
+}
+
+#button-wrapper {
+  position: absolute;
+  height: 75%;
+}
+
+#button1,
+#button2,
+#button3 {
+  visibility: hidden;
+}
+
+#volume {
+  z-index: 10;
+  margin-top: calc(var(--bs-gutter-x) * 0.5);
+}
+
+#volume img {
+  margin-top: -10%;
+  margin-bottom: -20%;
 }
 
 /* Media Query for devices with coarse pointers and no hover functionality */
