@@ -12,7 +12,6 @@ body {
 .button {
   position: relative;
   border: none;
-  border-color: none;
   color: black;
   padding: 12px 20px;
   text-align: center;
@@ -24,15 +23,23 @@ body {
 }
 
 .btn-primary {
-  background-color: #d3fd55;
+  background-color: #d3fd55 !important;
+  border-color: #d3fd55 !important;
 }
 
 .btn-primary:focus {
-  background-color: #ff6338;
+  background-color: #ff6338 !important;
+  border-color: #ff6338 !important;
 }
 
 .btn-primary:active {
-  background-color: #ff6338;
+  background-color: #ff6338 !important;
+  border-color: #ff6338 !important;
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(194, 94, 0, 0.5);
 }
 
 #button-wrapper {
