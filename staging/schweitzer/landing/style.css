@@ -12,6 +12,7 @@ body {
 .button {
   position: relative;
   border: none;
+  border-color: none;
   color: black;
   padding: 12px 20px;
   text-align: center;
@@ -27,7 +28,11 @@ body {
 }
 
 .btn-primary:focus {
-  background-color: #dcff97;
+  background-color: #ff6338;
+}
+
+.btn-primary:active {
+  background-color: #ff6338;
 }
 
 #button-wrapper {
